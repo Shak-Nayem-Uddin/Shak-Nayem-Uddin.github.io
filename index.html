@@ -56,6 +56,12 @@ main{min-height:calc(100vh - 150px)}
 .hero{display:grid;grid-template-columns:1.5fr 1fr;gap:56px;align-items:center}
 h1{font-family:var(--d);font-weight:700;font-size:clamp(40px,5.4vw,76px);line-height:1;letter-spacing:-.035em;margin:0 0 28px}
 .hero p{font-size:21px;max-width:30em;color:var(--cel);margin:0 0 32px}
+.hero p.cred{font-family:var(--d);font-weight:600;font-size:17px;color:var(--brass);margin:-14px 0 18px;letter-spacing:.01em}
+.card-id{font-family:var(--d);margin:-6px 0 26px;line-height:1.4}
+.card-id b{display:block;font-size:20px}
+.card-id span{color:var(--pine2);font-weight:600;font-size:15px}
+.ways .sep{color:var(--mute)}
+.ways dd a{white-space:nowrap}
 .tone-light .hero p,.tone-white .hero p{color:var(--mute)}
 .acts{display:flex;gap:14px;flex-wrap:wrap}
 .btn{font-family:var(--d);font-weight:600;font-size:16px;padding:13px 22px;border-radius:4px;background:var(--brass);color:var(--pine);text-decoration:none;display:inline-block;line-height:1.3}
@@ -330,7 +336,8 @@ function inner(s){
   switch (s.type){
     case 'hero':
       var btns = lines(s.items).map(function(l, i){ var c = cells(l); return link(c[0], c[1], i ? (s.tone === 'dark' ? 'ghost' : 'outline') : ''); }).join('');
-      return '<div class="hero"><div><h1>' + esc(h) + '</h1>' + (b ? '<p>' + esc(b) + '</p>' : '') + (btns ? '<div class="acts">' + btns + '</div>' : '') + '</div>' +
+      var cred = [F.site.name, F.site.degrees].filter(Boolean).join(' · ');
+      return '<div class="hero"><div><h1>' + esc(h) + '</h1>' + (cred ? '<p class="cred">' + esc(cred) + '</p>' : '') + (b ? '<p>' + esc(b) + '</p>' : '') + (btns ? '<div class="acts">' + btns + '</div>' : '') + '</div>' +
         '<div class="arch"><div class="rotbox" data-tag="portrait"></div></div></div>';
     case 'years':
       return '<div class="years"><h2>' + esc(h) + '</h2><p class="js-count"></p><div class="bars js-bars"></div></div>';
@@ -371,21 +378,31 @@ function inner(s){
       var si = F.site, ways = '', acts = '';
       if (si.email){ ways += '<dt>Email</dt><dd><a href="mailto:' + esc(si.email) + '">' + esc(si.email) + '</a></dd>'; acts += '<a class="btn deep" href="mailto:' + esc(si.email) + '">Send an email</a><button class="btn outline" id="copy-email" type="button">Copy email address</button>'; }
       if (si.phone) ways += '<dt>Phone</dt><dd><a href="tel:' + esc(si.phone.replace(/[^\d+]/g, '')) + '">' + esc(si.phone) + '</a></dd>';
+      if (si.work_email) ways += '<dt>Work email</dt><dd><a href="mailto:' + esc(si.work_email) + '">' + esc(si.work_email) + '</a></dd>';
+      var wp = parts(si.work_phone);
+      if (wp.length) ways += '<dt>Work phone</dt><dd>' + wp.map(function(n){ return '<a href="tel:' + esc(n.replace(/[^\d+]/g, '')) + '">' + esc(n) + '</a>'; }).join('<span class="sep"> | </span>') + '</dd>';
+      if (si.office_address) ways += '<dt>Office</dt><dd>' + esc(si.office_address) + '</dd>';
+      if (si.office_website) ways += '<dt>Website</dt><dd><a href="' + esc(si.office_website) + '" target="_blank" rel="noopener">' + esc(si.office_website.replace(/^https?:\/\//, '').replace(/\/$/, '')) + '</a></dd>';
       if (si.linkedin) ways += '<dt>LinkedIn</dt><dd><a href="' + esc(si.linkedin) + '" target="_blank" rel="noopener">' + esc(si.linkedin.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '')) + '</a></dd>';
       if (si.email || si.phone) acts += '<a class="btn outline" id="vcard" href="' + vcard() + '" download="' + esc((si.name || 'contact').replace(/\s+/g, '-')) + '.vcf">Save contact</a>';
-      return '<div class="reachgrid"><div><h1>' + esc(h) + '</h1>' + (b ? '<p class="reach">' + esc(b) + '</p>' : '') + (ways ? '<dl class="ways">' + ways + '</dl>' : '') + (acts ? '<div class="acts">' + acts + '</div>' : '') + '</div>' +
+      return '<div class="reachgrid"><div><h1>' + esc(h) + '</h1>' + (b ? '<p class="reach">' + esc(b) + '</p>' : '') + ((si.name || si.degrees) ? '<p class="card-id"><b>' + esc(si.name || '') + '</b>' + (si.degrees ? '<span>' + esc(si.degrees) + '</span>' : '') + '</p>' : '') + (ways ? '<dl class="ways">' + ways + '</dl>' : '') + (acts ? '<div class="acts">' + acts + '</div>' : '') + '</div>' +
         (photos('contact').length ? '<div class="arch"><div class="rotbox" data-tag="contact"></div></div>' : '') + '</div>';
   }
   return '';
 }
 
 function vcard(){
-  var s = F.site, n = (s.name || '').split(' ');
-  var v = ['BEGIN:VCARD', 'VERSION:3.0', 'N:' + n.slice(-1).join('') + ';' + n.slice(0, -1).join(' ') + ';;;', 'FN:' + (s.name || ''), 'TITLE:' + (s.role || '')];
-  if (s.email) v.push('EMAIL;TYPE=INTERNET:' + s.email);
+  var s = F.site, full = s.name || '', pre = (full.match(/^(Engr\.|Dr\.|Prof\.)\s*/) || [''])[0], n = full.slice(pre.length).split(' ');
+  var x = function(t){ return String(t).replace(/([,;])/g, '\\$1'); };
+  var v = ['BEGIN:VCARD', 'VERSION:3.0', 'N:' + x(n.slice(-1).join('')) + ';' + x(n.slice(0, -1).join(' ')) + ';;' + x(pre.trim()) + ';' + x(s.degrees || ''), 'FN:' + x(full), 'TITLE:' + x(s.role || '')];
+  if (s.email) v.push('EMAIL;TYPE=INTERNET,HOME:' + s.email);
+  if (s.work_email) v.push('EMAIL;TYPE=INTERNET,WORK:' + s.work_email);
   if (s.phone) v.push('TEL;TYPE=CELL:' + s.phone.replace(/[^\d+]/g, ''));
+  parts(s.work_phone).forEach(function(p){ v.push('TEL;TYPE=WORK:' + p.replace(/[^\d+]/g, '')); });
   v.push('URL:' + location.origin + location.pathname);
-  if (s.location) v.push('ADR;TYPE=WORK:;;;' + s.location.replace(/,/g, '\\,') + ';;;');
+  if (s.office_website) v.push('URL;TYPE=WORK:' + s.office_website);
+  if (s.office_address) v.push('ADR;TYPE=WORK:;;' + x(s.office_address) + ';;;;');
+  else if (s.location) v.push('ADR;TYPE=WORK:;;;' + x(s.location) + ';;;');
   v.push('END:VCARD');
   return 'data:text/vcard;charset=utf-8,' + encodeURIComponent(v.join('\r\n'));
 }
