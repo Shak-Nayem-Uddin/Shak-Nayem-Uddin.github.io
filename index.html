@@ -335,6 +335,31 @@ h1{font-family:var(--d);font-weight:700;font-size:clamp(40px,5.4vw,76px);line-he
 }
 @media (prefers-reduced-motion:reduce){.type-intro .intro>div:first-child>*,.type-intro .frame{animation:none}}
 
+/* on-this-page links in the profile header */
+.jump{display:flex;flex-wrap:wrap;gap:8px 10px;margin-top:34px;padding-top:22px;border-top:1px solid rgba(199,210,226,.25)}
+.jump b{width:100%;font-family:var(--d);font-size:13px;font-weight:500;color:var(--cel)}
+.jump button{font-family:var(--d);font-size:14px;font-weight:500;color:var(--white);padding:6px 13px;border-radius:99px;box-shadow:inset 0 0 0 1px rgba(199,210,226,.35);transition:background .2s}
+.jump button:hover{background:rgba(199,210,226,.12)}
+.tone-light .jump,.tone-white .jump{border-color:var(--rule)}
+.tone-light .jump b,.tone-white .jump b{color:var(--mute)}
+.tone-light .jump button,.tone-white .jump button{color:var(--ink);box-shadow:inset 0 0 0 1px var(--rule)}
+
+/* journal summary */
+.jlead{font-size:19px;color:var(--mute);max-width:36em;margin:-12px 0 30px}
+.tone-dark .jlead{color:var(--cel)}
+.areas{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px;margin:0 0 40px}
+.area{padding:20px 20px 18px;border-radius:6px;background:var(--paper);box-shadow:inset 0 0 0 1px var(--rule)}
+.tone-light .area{background:var(--white)}
+.area b{display:block;font-family:var(--d);font-weight:700;font-size:36px;letter-spacing:-.03em;line-height:1;color:var(--pine)}
+.area b small{font-size:14px;font-weight:500;letter-spacing:0;color:var(--mute);margin-left:6px}
+.area span{display:block;font-family:var(--d);font-size:15px;font-weight:600;margin-top:10px}
+.area i{display:block;height:4px;border-radius:2px;background:var(--rule);margin-top:14px;overflow:hidden}
+.area i::after{content:"";display:block;height:100%;width:var(--p);background:var(--brass);border-radius:2px}
+.jfoot{display:flex;flex-wrap:wrap;gap:28px 48px;align-items:flex-start;justify-content:space-between}
+.jfoot>div{flex:1 1 420px}
+.jfoot h3{font-family:var(--d);font-size:19px;font-weight:600;margin:0 0 14px}
+.side-title{font-family:var(--d);font-size:22px;font-weight:600;margin:0 0 12px}
+
 footer{background:var(--pine);color:var(--cel);font-family:var(--d);font-size:14px;padding:26px 0}
 footer .w{display:flex;justify-content:space-between;gap:10px 24px;flex-wrap:wrap}
 footer a{color:var(--white);text-decoration:none}
@@ -421,6 +446,11 @@ function render(feed){
     return '<div class="view" id="v-' + esc(p.id) + '" hidden>' + sections(F.sections.filter(function(s){ return s.page === p.id; })) + '</div>';
   }).join('');
   drawYears(); drawLatest(); drawStats(); rotation(); numbers(); slideshows();
+  all('.js-jump').forEach(function(nav){
+    var hs = [].slice.call(nav.closest('.view').querySelectorAll('section[data-h]'));
+    nav.innerHTML = hs.length > 1 ? '<b>On this page</b>' + hs.map(function(sec){ return '<button type="button" data-jump="' + sec.id + '">' + esc(sec.getAttribute('data-h')) + '</button>'; }).join('') : '';
+    if (hs.length < 2) nav.remove();
+  });
   setTimeout(function(){ document.body.classList.add('settled'); }, 1600);
   show(current(), true);
 }
@@ -462,17 +492,19 @@ function sections(list){
     if (s.column === 'left' || s.column === 'right'){
       var L = [], R = [], tone = s.tone;
       while (i < list.length && (list[i].column === 'left' || list[i].column === 'right')){ (list[i].column === 'left' ? L : R).push(list[i]); i++; }
-      out += wrap('cols', tone, prev, '<div class="cols"><div>' + L.map(inner).join('') + '</div><div>' + R.map(inner).join('') + '</div></div>');
+      out += wrap('cols', tone, prev, '<div class="cols"><div>' + L.map(inner).join('') + '</div><div>' + R.map(inner).join('') + '</div></div>', L[0] || R[0]);
       prev = tone; continue;
     }
     var body = inner(s);
-    if (body){ out += wrap(s.type, s.tone, prev, body); prev = s.tone; }
+    if (body){ out += wrap(s.type, s.tone, prev, body, s); prev = s.tone; }
     i++;
   }
   return out;
 }
-function wrap(type, tone, prev, body){
-  return '<section class="sec type-' + esc(type) + ' tone-' + esc(tone || 'light') + (prev === tone ? ' join' : '') + '"><div class="w">' + body + '</div></section>';
+function wrap(type, tone, prev, body, s){
+  var nav = s && s.heading && ['hero', 'intro', 'title', 'contact', 'cta', 'ticker'].indexOf(s.type) < 0;
+  return '<section class="sec type-' + esc(type) + ' tone-' + esc(tone || 'light') + (prev === tone ? ' join' : '') + '"' +
+    (s ? ' id="s-' + esc(s.id) + '"' : '') + (nav ? ' data-h="' + esc(s.heading) + '"' : '') + '><div class="w">' + body + '</div></section>';
 }
 function link(label, target, cls){
   target = target || '';
@@ -498,15 +530,18 @@ function inner(s){
     case 'record':
       return '<div class="tools"><input id="q" type="search" placeholder="Search entries, skills or tools" aria-label="Search the record"><span id="yearnote"></span></div><div class="chips" id="chips"></div><div id="list"></div>';
     case 'stats':
-      var want = (b || 'areas, skills, tools').toLowerCase();
-      return (h ? '<h3 class="h3">' + esc(h) + '</h3>' : '') +
-        (want.indexOf('areas') > -1 ? '<div class="meter"><h3>Where the work has been</h3><div class="js-mcat"></div></div>' : '') +
-        (want.indexOf('skills') > -1 ? '<div class="meter"><h3>Skills used most often</h3><div class="js-mskill"></div></div>' : '') +
-        (want.indexOf('tools') > -1 ? '<div class="meter"><h3>Tools I use</h3><div class="tags js-mtool"></div></div>' : '');
+      var want = (b || 'areas, skills, tools').toLowerCase(), n = DATA.length;
+      return (h ? '<h2>' + esc(h) + '</h2>' : '') +
+        (n ? '<p class="jlead">I log every finished piece of work in an achievement journal. It has ' + n + ' entries so far. Here is how they split by area.</p>' : '') +
+        (want.indexOf('areas') > -1 ? '<div class="areas js-areas"></div>' : '') +
+        '<div class="jfoot">' +
+        (want.indexOf('skills') > -1 ? '<div><h3>Skills used most often</h3><div class="tags js-mskill"></div></div>' : '') +
+        (want.indexOf('tools') > -1 ? '<div><h3>Tools I use most</h3><div class="tags js-mtool"></div></div>' : '') +
+        (RECPAGE ? '<a class="btn deep" href="#' + esc(RECPAGE) + '" data-go="' + esc(RECPAGE) + '">Read every entry</a>' : '') + '</div>';
     case 'title':
       return '<h1>' + esc(h) + '</h1>' + (b ? '<p class="lead">' + esc(b) + '</p>' : '');
     case 'text':
-      return (h ? '<h3 class="h3">' + esc(h) + '</h3>' : '') + '<div class="prose">' + String(b).split(/\n\s*\n/).filter(function(p){ return p.trim(); }).map(function(p){ return '<p>' + esc(p.trim()).replace(/\n/g, '<br>') + '</p>'; }).join('') + '</div>';
+      return (h ? '<h2 class="side-title">' + esc(h) + '</h2>' : '') + '<div class="prose">' + String(b).split(/\n\s*\n/).filter(function(p){ return p.trim(); }).map(function(p){ return '<p>' + esc(p.trim()).replace(/\n/g, '<br>') + '</p>'; }).join('') + '</div>';
     case 'columns':
       var cols = lines(s.items);
       return (h ? '<h2>' + esc(h) + '</h2>' : '') + '<div class="three" style="--n:' + Math.min(3, cols.length || 1) + '">' + cols.map(function(l){ var c = cells(l); return '<div><h3>' + esc(c[0]) + '</h3>' + (c[1] ? '<p>' + esc(c[1]) + '</p>' : '') + '</div>'; }).join('') + '</div>';
@@ -539,7 +574,7 @@ function inner(s){
       return '<div class="intro"><div><h1>' + esc(h || sp.name || '') + '</h1>' + (sp.degrees ? '<p class="cred">' + esc(sp.degrees) + '</p>' : '') +
         (b ? '<p class="intro-lead">' + esc(b) + '</p>' : '') +
         (facts.length ? '<dl class="facts">' + facts.map(function(c){ return '<div><dt>' + esc(c[0]) + '</dt><dd>' + esc(c[1] || '') + '</dd></div>'; }).join('') + '</dl>' : '') +
-        (ib ? '<div class="acts">' + ib + '</div>' : '') + '</div>' +
+        (ib ? '<div class="acts">' + ib + '</div>' : '') + '<nav class="jump js-jump" aria-label="On this page"></nav></div>' +
         (photos(ptag).length ? '<div class="frame"><div class="rotbox" data-tag="' + ptag + '"></div></div>' : '') + '</div>';
     case 'expertise':
       var groups = lines(s.items);
@@ -708,6 +743,8 @@ window.addEventListener('hashchange', function(){ if (F) show(current()); });
 window.addEventListener('popstate', function(){ if (F) show(current()); });
 
 document.addEventListener('click', function(e){
+  var jb = e.target.closest('[data-jump]');
+  if (jb){ var tgt = $(jb.dataset.jump); if (tgt) tgt.scrollIntoView({behavior: REDUCE ? 'auto' : 'smooth', block: 'start'}); return; }
   var sb = e.target.closest('[data-show],[data-show-to]');
   if (sb){
     var sh = sb.closest('.show');
@@ -794,7 +831,14 @@ function meter(list){
 }
 function drawStats(){
   all('.js-mcat').forEach(function(el){ el.innerHTML = meter(tally('cat', false)); });
-  all('.js-mskill').forEach(function(el){ el.innerHTML = meter(tally('skills', true).slice(0, 12)); });
+  all('.js-mskill').forEach(function(el){ el.innerHTML = tally('skills', true).slice(0, 14).map(function(r){ return '<span class="tag">' + esc(r[0]) + '</span>'; }).join(''); });
+  all('.js-areas').forEach(function(el){
+    var t = tally('cat', false), top = t.slice(0, 6), rest = t.slice(6), max = top.length ? top[0][1] : 1;
+    if (rest.length) top.push(['Other areas', rest.reduce(function(a, r){ return a + r[1]; }, 0)]);
+    el.innerHTML = top.map(function(r){
+      return '<div class="area"><b>' + r[1] + '<small>' + (r[1] === 1 ? 'entry' : 'entries') + '</small></b><span>' + esc(r[0]) + '</span><i style="--p:' + Math.min(100, Math.round(r[1] / max * 100)) + '%"></i></div>';
+    }).join('');
+  });
   all('.js-mtool').forEach(function(el){ el.innerHTML = tally('tools', true).slice(0, 16).map(function(r){ return '<span class="tag">' + esc(r[0]) + '</span>'; }).join(''); });
 }
 
