@@ -1,0 +1,1001 @@
+{
+ "updated": "2026-11-10T06:27:01.766Z",
+ "site": {
+  "name": "Sk Nayem Uddin",
+  "role": "Operations and Administration Manager",
+  "location": "Dhaka, Bangladesh",
+  "email": "shak.nayem.97@gmail.com",
+  "phone": "+880 1882 020679",
+  "linkedin": "https://www.linkedin.com/in/sk-nayem",
+  "pages": "home=Home; experience=Experience; record=The record; profile=Profile; contact=Contact",
+  "rotate_seconds": "5"
+ },
+ "pages": [
+  {
+   "id": "home",
+   "label": "Home"
+  },
+  {
+   "id": "experience",
+   "label": "Experience"
+  },
+  {
+   "id": "record",
+   "label": "The record"
+  },
+  {
+   "id": "profile",
+   "label": "Profile"
+  },
+  {
+   "id": "contact",
+   "label": "Contact"
+  }
+ ],
+ "sections": [
+  {
+   "id": "home-hero",
+   "page": "home",
+   "order": 10,
+   "type": "hero",
+   "tone": "dark",
+   "column": "full",
+   "heading": "I build the systems that keep an institution running.",
+   "body": "Operations and administration manager in Dhaka. I look after procurement, projects and people, and I build the tools behind them.",
+   "items": "Read the record | #record\nGet in touch | #contact",
+   "show": true
+  },
+  {
+   "id": "home-years",
+   "page": "home",
+   "order": 20,
+   "type": "years",
+   "tone": "dark",
+   "column": "full",
+   "heading": "The record, year by year",
+   "body": "",
+   "items": "",
+   "show": true
+  },
+  {
+   "id": "home-asked",
+   "page": "home",
+   "order": 30,
+   "type": "columns",
+   "tone": "light",
+   "column": "full",
+   "heading": "What I am usually asked to do",
+   "body": "",
+   "items": "Put structure where there is none | Procurement procedures, approval flows, KPI frameworks and salary policies, written so that a team can follow them without me in the room.\nReplace manual work with a system | Income, expense, inventory and attendance trackers, live dashboards and small web apps, built on tools the team already knows.\nCarry a project to the finish | Construction coordination, annual programmes, staff training and fundraising campaigns, planned and delivered with contractors, scholars and volunteers.",
+   "show": true
+  },
+  {
+   "id": "home-ground",
+   "page": "home",
+   "order": 40,
+   "type": "gallery",
+   "tone": "dark",
+   "column": "full",
+   "heading": "On the ground",
+   "body": "Most of this work happens in rooms and on sites, not on a screen.",
+   "items": "",
+   "show": true
+  },
+  {
+   "id": "home-latest",
+   "page": "home",
+   "order": 50,
+   "type": "latest",
+   "tone": "white",
+   "column": "full",
+   "heading": "Latest entries",
+   "body": "4",
+   "items": "",
+   "show": true
+  },
+  {
+   "id": "exp-title",
+   "page": "experience",
+   "order": 10,
+   "type": "title",
+   "tone": "light",
+   "column": "full",
+   "heading": "Experience",
+   "body": "Three years running operations for a growing non-profit, after starting out in IT support, automation sales and point-of-sale systems.",
+   "items": "",
+   "show": true
+  },
+  {
+   "id": "exp-jobs",
+   "page": "experience",
+   "order": 20,
+   "type": "roles",
+   "tone": "light",
+   "column": "full",
+   "heading": "",
+   "body": "",
+   "items": "Nov 2023 to present | Manager, Administration and Operations | Imam Bukhari Trust, Munshiganj | I run the administrative and operational side of a non-profit working in education, dawah, research and social welfare. | Wrote the procurement procedure and manage vendor selection, comparative statements and approvals; Built the tracking systems for income, expenses, KPIs, inventory and attendance; Coordinate mosque construction with contractors, engineers and suppliers; Plan and deliver the annual full-day programme, staff training and fundraising campaigns; Started the move to an ERP covering finance, HR, procurement, inventory and donors\nJul to Nov 2023 | Assistant Manager, Sales and Service | TecTesla Technologies Ltd | Sold industrial automation solutions and managed after-sales service.\nFeb to Jun 2023 | IT Executive | Youthbees | Handled IT support, planned technology improvements and carried out market research.\nFeb to Apr 2018 | MIS, contractual | Sajeeb Group | Management information systems support.\nFeb to Apr 2017 | POS Specialist, contractual | Dot BD Solutions Ltd | Operated point-of-sale software and handled cash at the Chittagong International Trade Fair.",
+   "show": true
+  },
+  {
+   "id": "exp-side",
+   "page": "experience",
+   "order": 30,
+   "type": "roles",
+   "tone": "light",
+   "column": "full",
+   "heading": "Alongside the day job",
+   "body": "",
+   "items": "Since Dec 2025 | Strategic Planning and R&D Committee Member | Kulliyatul Quran Model Madrasha\nSince Jan 2025 | Founding Member | Forum of Strategic Dialogue\nCurrent | Treasurer | AYAH Research & Training Center",
+   "show": true
+  },
+  {
+   "id": "rec-title",
+   "page": "record",
+   "order": 10,
+   "type": "title",
+   "tone": "light",
+   "column": "full",
+   "heading": "The record",
+   "body": "I keep a journal of what I finish. This page reads it directly, so a new entry in the journal appears here by itself. Select an entry to see how it was done.",
+   "items": "",
+   "show": true
+  },
+  {
+   "id": "rec-list",
+   "page": "record",
+   "order": 20,
+   "type": "record",
+   "tone": "light",
+   "column": "full",
+   "heading": "",
+   "body": "",
+   "items": "",
+   "show": true
+  },
+  {
+   "id": "pro-title",
+   "page": "profile",
+   "order": 10,
+   "type": "title",
+   "tone": "light",
+   "column": "full",
+   "heading": "Profile",
+   "body": "",
+   "items": "",
+   "show": true
+  },
+  {
+   "id": "pro-about",
+   "page": "profile",
+   "order": 20,
+   "type": "text",
+   "tone": "light",
+   "column": "left",
+   "heading": "",
+   "body": "I am an operations and administration manager based in Dhaka. For the past three years I have run the working side of Imam Bukhari Trust: procurement, HR, compliance, construction coordination, events, and the systems that hold them together.\n\nI trained as an electronics and telecommunication engineer and then took an MBA in supply chain management. That mix shapes how I work. I look for the process underneath a problem, write it down, and where I can, build a tool so nobody has to do it by hand again.\n\nOutside operations I co-author research on Islamic education, prepare training material, and keep studying the Islamic sciences and Arabic.",
+   "items": "",
+   "show": true
+  },
+  {
+   "id": "pro-edu",
+   "page": "profile",
+   "order": 30,
+   "type": "list",
+   "tone": "light",
+   "column": "left",
+   "heading": "Education",
+   "body": "",
+   "items": "MBA in Supply Chain Management | International Islamic University Chittagong\nBSc in Electronics and Telecommunication Engineering | International Islamic University Chittagong\nTwo-year programme in Islamic Sciences | Zad Academy",
+   "show": true
+  },
+  {
+   "id": "pro-cert",
+   "page": "profile",
+   "order": 40,
+   "type": "list",
+   "tone": "light",
+   "column": "left",
+   "heading": "Certificates",
+   "body": "",
+   "items": "Google Project Management Professional Certificate\nSix Sigma White Belt\nAgile and Scrum\nKPI Development and Analysis\nBudget and Methods of Budgeting",
+   "show": true
+  },
+  {
+   "id": "pro-photo",
+   "page": "profile",
+   "order": 50,
+   "type": "photo",
+   "tone": "light",
+   "column": "right",
+   "heading": "",
+   "body": "profile",
+   "items": "",
+   "show": true
+  },
+  {
+   "id": "pro-stats",
+   "page": "profile",
+   "order": 60,
+   "type": "stats",
+   "tone": "light",
+   "column": "right",
+   "heading": "",
+   "body": "",
+   "items": "",
+   "show": true
+  },
+  {
+   "id": "con-main",
+   "page": "contact",
+   "order": 10,
+   "type": "contact",
+   "tone": "light",
+   "column": "full",
+   "heading": "Contact",
+   "body": "For roles, projects or collaboration, write or call. I am based in Dhaka, Bangladesh.",
+   "items": "",
+   "show": true
+  }
+ ],
+ "photos": [
+  {
+   "id": "ph-hero",
+   "url": "img/hero.jpg",
+   "caption": "Studio portrait",
+   "tags": [
+    "portrait"
+   ],
+   "position": "50% 12%"
+  },
+  {
+   "id": "ph-scarf",
+   "url": "img/portrait-2.jpg",
+   "caption": "Portrait",
+   "tags": [
+    "portrait"
+   ],
+   "position": "50% 18%"
+  },
+  {
+   "id": "ph-contact",
+   "url": "img/contact.jpg",
+   "caption": "Portrait on the steps",
+   "tags": [
+    "portrait",
+    "contact"
+   ],
+   "position": "50% 15%"
+  },
+  {
+   "id": "ph-profile",
+   "url": "img/profile.jpg",
+   "caption": "Portrait in a suit",
+   "tags": [
+    "portrait",
+    "profile"
+   ],
+   "position": "50% 20%"
+  },
+  {
+   "id": "ph-cert",
+   "url": "img/certificate.jpg",
+   "caption": "Receiving the certificate of paper presentation at an international academic conference, October 2026",
+   "tags": [
+    "gallery",
+    "big"
+   ],
+   "position": "15% 30%"
+  },
+  {
+   "id": "ph-training",
+   "url": "img/training.jpg",
+   "caption": "Leading a staff session on task, time and SMART planning",
+   "tags": [
+    "gallery",
+    "big"
+   ],
+   "position": "30% 25%"
+  },
+  {
+   "id": "ph-site",
+   "url": "img/site.jpg",
+   "caption": "On site with the project team during construction",
+   "tags": [
+    "gallery"
+   ],
+   "position": "50% 50%"
+  },
+  {
+   "id": "ph-team",
+   "url": "img/team.jpg",
+   "caption": "With colleagues at the conference venue",
+   "tags": [
+    "gallery"
+   ],
+   "position": "50% 50%"
+  },
+  {
+   "id": "ph-mou",
+   "url": "img/mou.jpg",
+   "caption": "At an MoU signing between partner institutions",
+   "tags": [
+    "gallery"
+   ],
+   "position": "50% 50%"
+  }
+ ],
+ "items": [
+  {
+   "year": "2016",
+   "date": "Jan 2016",
+   "cat": "Entrepreneurship",
+   "ach": "Successfully grew the business from a modest initial investment to a profitable venture, generating significant revenue through online sales.",
+   "action": "",
+   "metric": "",
+   "skills": "Entrepreneurship, Sales & Marketing, Negotiation, Online Sales Management, Financial Management, Customer Communication",
+   "tools": "Bickroy.com Platform, Mobile Devices",
+   "org": "Entrepreneurship"
+  },
+  {
+   "year": "2017",
+   "date": "Jan 2017",
+   "cat": "Sales and Marketing",
+   "ach": "Successfully worked in a high-pressure retail environment during the pre-Eid period, effectively managing customer service and supporting sales operations with discipline and consistency.",
+   "action": "",
+   "metric": "",
+   "skills": "Communication",
+   "tools": "Physical",
+   "org": "Kangaroo Shoes"
+  },
+  {
+   "year": "2017",
+   "date": "Feb 2017",
+   "cat": "Operations",
+   "ach": "Successfully operated POS software and managed cash transactions throughout the trade fair without discrepancies, ensuring smooth sales operations during peak visitor hours.",
+   "action": "",
+   "metric": "",
+   "skills": "POS Operations, Cash Handling, Attention to Detail, Customer Service, Time Management",
+   "tools": "POS Software (Dot BD Solutions), Computer System, Excell, Receipt Printer",
+   "org": "Dot Bd Solutions Ltd"
+  },
+  {
+   "year": "2023",
+   "date": "Nov 2026",
+   "cat": "Leadership",
+   "ach": "Appointed Manager, Admin & Ops at Imam Bukhari Trust.",
+   "action": "Successfully cleared the interview and selection process.",
+   "metric": "",
+   "skills": "Operations Management, Administration",
+   "tools": "Operations Management, Administration",
+   "org": "Imam Bukhari Trust"
+  },
+  {
+   "year": "2025",
+   "date": "",
+   "cat": "Project Management",
+   "ach": "Certified in Agile Project Management (Google).",
+   "action": "Completed intensive Coursera program on Scrum and Kanban.",
+   "metric": "",
+   "skills": "Agile, Scrum, Kanban",
+   "tools": "Trello, Monday, Google sheet",
+   "org": "Personal Development"
+  },
+  {
+   "year": "2023",
+   "date": "Mar 2023",
+   "cat": "Technical",
+   "ach": "Certified in Industrial Safety standards.",
+   "action": "Completed Omron Automation eLearning (A063).",
+   "metric": "",
+   "skills": "Safety, Compliance",
+   "tools": "",
+   "org": "Personal Development"
+  },
+  {
+   "year": "2022",
+   "date": "Dec 2022",
+   "cat": "Technical",
+   "ach": "Certified in Factory Automation (A009).",
+   "action": "Completed Omron Automation training for industrial systems.",
+   "metric": "",
+   "skills": "Automation, PLC basics",
+   "tools": "",
+   "org": "Personal Development"
+  },
+  {
+   "year": "2023",
+   "date": "",
+   "cat": "Professional Development",
+   "ach": "Earned B.Sc. in Electronic and Telecommunication Engineering.",
+   "action": "Completed a four-year program with 161 credit hours and a 3.289 CGPA.",
+   "metric": "",
+   "skills": "Electronics, Telecommunications",
+   "tools": "",
+   "org": "Personal Development"
+  },
+  {
+   "year": "2023",
+   "date": "",
+   "cat": "Technical",
+   "ach": "Certified in Industrial Sensor & Power Systems.",
+   "action": "Completed Omron Automation courses for Photoelectric/Proximity Sensors, Relays, and Power Supplies.",
+   "metric": "",
+   "skills": "Sensors, Relays, Power Systems",
+   "tools": "",
+   "org": "Personal Development"
+  },
+  {
+   "year": "2022",
+   "date": "",
+   "cat": "Professional Development",
+   "ach": "Achieved Level 3 Arabic Language Certification.",
+   "action": "Successfully completed sequential Level 2 and Level 3 programs at the Online Arabic Language Institute.",
+   "metric": "",
+   "skills": "Arabic Language",
+   "tools": "",
+   "org": "Personal Development"
+  },
+  {
+   "year": "2019",
+   "date": "",
+   "cat": "Professional Development",
+   "ach": "Certified in Computer Office Applications (BTEB).",
+   "action": "Completed a 360-hour National Skill Standard Basic Course with Grade A.",
+   "metric": "",
+   "skills": "MS Office, Computer Applications",
+   "tools": "",
+   "org": "Personal Development"
+  },
+  {
+   "year": "2025",
+   "date": "Nov 2025",
+   "cat": "Project Management",
+   "ach": "Certified in Project Planning (Google).",
+   "action": "Completed deep-dive into project scheduling, budgeting, and risk management.",
+   "metric": "",
+   "skills": "Project Planning, Risk Mgmt",
+   "tools": "",
+   "org": "Personal Development"
+  },
+  {
+   "year": "2025",
+   "date": "Oct 2025",
+   "cat": "Project Management",
+   "ach": "Certified in Project Initiation (Google).",
+   "action": "Mastered stakeholder analysis, project charters, and goal setting (OKR/SMART).",
+   "metric": "",
+   "skills": "Stakeholder Mgmt, OKRs",
+   "tools": "",
+   "org": "Personal Development"
+  },
+  {
+   "year": "2023",
+   "date": "Jun 2023",
+   "cat": "Leadership",
+   "ach": "Completed tenure as IT Executive at YouthBees.",
+   "action": "Devised tech strategies, conducted market research, and collaborated on IT initiatives.",
+   "metric": "",
+   "skills": "Strategy, Market Research",
+   "tools": "",
+   "org": "Youthbees"
+  },
+  {
+   "year": "2022",
+   "date": "Jan 2022",
+   "cat": "Professional Development",
+   "ach": "Data Center & Professional Career Workshop.",
+   "action": "Completed training at IIUC Telecom Club led by Felicity IDC experts.",
+   "metric": "",
+   "skills": "Data Centers, Telecom",
+   "tools": "",
+   "org": "Personal Development"
+  },
+  {
+   "year": "2020",
+   "date": "May 2020",
+   "cat": "Technical",
+   "ach": "Information Security Certification (Univ. of London).",
+   "action": "Studied security context and risk management frameworks via Royal Holloway.",
+   "metric": "",
+   "skills": "InfoSec, Risk Analysis",
+   "tools": "",
+   "org": "Personal Development"
+  },
+  {
+   "year": "2020",
+   "date": "Mar 2020",
+   "cat": "Leadership",
+   "ach": "Competency-Based Learning (WHO).",
+   "action": "Completed World Health Organization program on skill-based outcome management.",
+   "metric": "",
+   "skills": "Skill Mapping, Ops",
+   "tools": "",
+   "org": "Personal Development"
+  },
+  {
+   "year": "2025",
+   "date": "Dec 2025",
+   "cat": "Project Management",
+   "ach": "Google Project Management Professional Certificate.",
+   "action": "Completed 7-course specialization including Agile, Waterfall, and Capstone.",
+   "metric": "",
+   "skills": "Agile, Scrum, Waterfall",
+   "tools": "",
+   "org": "Personal Development"
+  },
+  {
+   "year": "2025",
+   "date": "Oct 2025",
+   "cat": "Project Management",
+   "ach": "Certified in Foundations of Project Management.",
+   "action": "Mastered PM terminology, roles, and organizational structures.",
+   "metric": "",
+   "skills": "PM Methodologies",
+   "tools": "",
+   "org": "Personal Development"
+  },
+  {
+   "year": "2021",
+   "date": "Jul 2021",
+   "cat": "Technical",
+   "ach": "Certified Cyber Threat Hunter (Level 1).",
+   "action": "Completed 6 hours of technical training with Active Countermeasures.",
+   "metric": "",
+   "skills": "Threat Hunting, InfoSec",
+   "tools": "",
+   "org": "Personal Development"
+  },
+  {
+   "year": "2021",
+   "date": "Jun 2021",
+   "cat": "Professional Development",
+   "ach": "Earned Diploma in Islamic Studies.",
+   "action": "Successfully completed the comprehensive program at Taibah Academy.",
+   "metric": "",
+   "skills": "Ethical Leadership",
+   "tools": "",
+   "org": "Personal Development"
+  },
+  {
+   "year": "2020",
+   "date": "Dec 2020",
+   "cat": "Sales and Marketing",
+   "ach": "Fundamentals of Digital Marketing (Google).",
+   "action": "Completed IAB Europe-endorsed program covering 26 core modules.",
+   "metric": "",
+   "skills": "SEO, SEM, Analytics",
+   "tools": "",
+   "org": "Personal Development"
+  },
+  {
+   "year": "2021",
+   "date": "May 2021",
+   "cat": "Technical",
+   "ach": "Network Security Specialist (PSTU).",
+   "action": "Completed an intensive webinar course via Patuakhali Science and Technology University.",
+   "metric": "",
+   "skills": "Network Security, InfoSec",
+   "tools": "",
+   "org": "Personal Development"
+  },
+  {
+   "year": "2021",
+   "date": "Apr 2021",
+   "cat": "Technical",
+   "ach": "Network Monitoring & Mgmt (PSTU).",
+   "action": "Mastered capacity development for NREN TechGirl and Future IT-Girl project.",
+   "metric": "",
+   "skills": "Network Monitoring",
+   "tools": "",
+   "org": "Personal Development"
+  },
+  {
+   "year": "2021",
+   "date": "Mar 2021",
+   "cat": "Technical",
+   "ach": "Linux Command Line Mastery (NDG/Cisco).",
+   "action": "Successfully completed the NDG Linux Unhatched course.",
+   "metric": "",
+   "skills": "Linux, CLI",
+   "tools": "",
+   "org": "Personal Development"
+  },
+  {
+   "year": "2021",
+   "date": "Mar 2021",
+   "cat": "Technical",
+   "ach": "Global Cyber Threat Literacy (Cisco).",
+   "action": "Completed Cisco Networking Academy course on threat detection and defense.",
+   "metric": "",
+   "skills": "Threat Detection",
+   "tools": "",
+   "org": "Personal Development"
+  },
+  {
+   "year": "2021",
+   "date": "Mar 2021",
+   "cat": "Linguistics",
+   "ach": "Started Arabic Language Track (Level 1).",
+   "action": "Initiated a formal Arabic study program at the Online Arabic Language Institute.",
+   "metric": "",
+   "skills": "Arabic Language",
+   "tools": "",
+   "org": "Personal Development"
+  },
+  {
+   "year": "2025",
+   "date": "Nov 2025",
+   "cat": "Project Management",
+   "ach": "Certified in Project Execution (Google).",
+   "action": "Managed project phases, including tracking tasks and quality management.",
+   "metric": "",
+   "skills": "Project Execution, QA",
+   "tools": "",
+   "org": "Personal Development"
+  },
+  {
+   "year": "2022",
+   "date": "Feb 2022",
+   "cat": "Technical",
+   "ach": "Built a Server Load Balancing System (IIUC).",
+   "action": "Developed a Python-based system for server maintenance and traffic distribution.",
+   "metric": "",
+   "skills": "Python, Load Balancing",
+   "tools": "",
+   "org": "Personal Development"
+  },
+  {
+   "year": "2022",
+   "date": "Feb 2022",
+   "cat": "Personal Education",
+   "ach": "Certified in Talimul Quran.",
+   "action": "Completed the advanced program at Taibah Academy.",
+   "metric": "",
+   "skills": "Communication, Ethics",
+   "tools": "",
+   "org": "Personal Development"
+  },
+  {
+   "year": "2021",
+   "date": "Jun 2021",
+   "cat": "Technical",
+   "ach": "Certified in Splunk 7.x Fundamentals.",
+   "action": "Completed technical training in machine data analysis and visualization.",
+   "metric": "",
+   "skills": "Splunk, Data Analytics",
+   "tools": "",
+   "org": "Personal Development"
+  },
+  {
+   "year": "2021",
+   "date": "Apr 2021",
+   "cat": "Technical",
+   "ach": "Certified in Routing & Switching (IPv4/IPv6).",
+   "action": "Completed intensive training on networking protocols at PSTU.",
+   "metric": "",
+   "skills": "IPv4/IPv6, Networking",
+   "tools": "",
+   "org": "Personal Development"
+  },
+  {
+   "year": "2020",
+   "date": "May 2020",
+   "cat": "Technical",
+   "ach": "Certified in Python Programming.",
+   "action": "Completed the \"Programming for Everybody\" course (Univ. of Michigan).",
+   "metric": "",
+   "skills": "Python 3, Automation",
+   "tools": "",
+   "org": "Personal Development"
+  },
+  {
+   "year": "2020",
+   "date": "May 2020",
+   "cat": "Technical",
+   "ach": "Certified in Computer Networking (Google).",
+   "action": "Mastered the \"Bits and Bytes\" of the TCP/IP model and network layers.",
+   "metric": "",
+   "skills": "TCP/IP, DNS, DHCP",
+   "tools": "",
+   "org": "Personal Development"
+  },
+  {
+   "year": "2020",
+   "date": "Mar 2020",
+   "cat": "Operations",
+   "ach": "WHO Operational Planning Guidelines.",
+   "action": "Completed the WHO COVID-19 preparedness and response platform training.",
+   "metric": "",
+   "skills": "Crisis Mgmt, Planning",
+   "tools": "",
+   "org": "Personal Development"
+  },
+  {
+   "year": "2025",
+   "date": "Jan 2026",
+   "cat": "Operations",
+   "ach": "Established the Trust’s first organized digital expense tracking system, enabling transparent and systematic financial monitoring.",
+   "action": "Analyzed existing expense recording practices, designed categorized sheets and formulas, implemented validation and summaries, and trained relevant staff on proper data entry and usage.",
+   "metric": "",
+   "skills": "Process Improvement, Financial Tracking, Data Organization, Basic Accounting, Analytical Thinking",
+   "tools": "Google Sheets, Google Drive, Google Workspace",
+   "org": "Imam Bukhari Trust"
+  },
+  {
+   "year": "2024",
+   "date": "Jan 2024",
+   "cat": "Operations",
+   "ach": "Successfully established a centralized digital income tracking system that improved financial transparency and reporting accuracy for the organization.",
+   "action": "Reviewed existing income recording methods, designed categorized sheets with formulas and summaries, implemented validation checks, and coordinated with relevant personnel to ensure consistent and timely data entry.",
+   "metric": "",
+   "skills": "Financial Management, Data Analysis, Process Design, Record Keeping, Attention to Detail",
+   "tools": "Google Sheets, Google Drive, Google Workspace",
+   "org": "Imam Bukhari Trust"
+  },
+  {
+   "year": "2025",
+   "date": "Jan 2026",
+   "cat": "Administration",
+   "ach": "Successfully established a structured KPI monitoring framework that improved performance visibility, evaluation consistency, and data-driven decision-making.",
+   "action": "Identified relevant KPIs aligned with organizational goals, designed automated sheets with scoring logic and summaries, standardized reporting formats, and guided team members on KPI reporting and updates.",
+   "metric": "",
+   "skills": "Performance Management, KPI Design, Data Analysis, Process Improvement, Organizational Planning",
+   "tools": "Google Sheets, Google Drive, Google Workspace",
+   "org": "Imam Bukhari Trust"
+  },
+  {
+   "year": "2025",
+   "date": "Feb 2026",
+   "cat": "Leadership",
+   "ach": "Successfully delivered three consecutive large-scale annual events with high attendee engagement, smooth operations, and positive organizational visibility.",
+   "action": "Led end-to-end event planning including budgeting, scheduling, venue coordination, program design, volunteer management, guest coordination, and on-ground supervision, ensuring alignment with organizational goals and timelines.",
+   "metric": "",
+   "skills": "Event Management, Leadership, Operations Management, Team Coordination, Time Management, Problem Solving",
+   "tools": "Google Sheets, Google Docs, WhatsApp, Google Calendar, Phone Communication, Trello",
+   "org": "Imam Bukhari Trust"
+  },
+  {
+   "year": "2025",
+   "date": "Jun 2026",
+   "cat": "Operations",
+   "ach": "Successfully established a formal procurement SOP that improved transparency, compliance, and efficiency in purchasing activities.",
+   "action": "Reviewed existing procurement practices, identified gaps and risks, drafted step-by-step procurement workflows, defined approval authority and documentation requirements, and coordinated with management for review and implementation.",
+   "metric": "",
+   "skills": "Procurement Management, Policy Development, Process Design, Risk Control, Analytical Thinking",
+   "tools": "Google Docs, Google Sheets, Google Drive, Google Workspace, Offce Suite",
+   "org": "Imam Bukhari Trust"
+  },
+  {
+   "year": "2026",
+   "date": "",
+   "cat": "Leadership",
+   "ach": "Played a key role in transforming Imam Bukhari Trust from an early-stage project into a multi-dimensional, active, and impactful Islamic organization.",
+   "action": "Developed short-term and long-term operational plans for education, dawah, and social programs\n\nCoordinated teams, scholars, volunteers, and resources for program execution\n\nImplemented financial, administrative, and performance tracking systems\n\nLed digital dawah initiatives and built online communities\n\nContributed to research, seminars, and policy-oriented Islamic initiatives",
+   "metric": "",
+   "skills": "Organizational Leadership, Strategic Planning, Program Management, Operations Management, Community Development, Data-Driven Decision Making, Dawah Communication",
+   "tools": "Google Sheets, Google Docs, Google Drive, WhatsApp, Facebook, YouTube, Digital Content Platforms",
+   "org": "Imam Bukhari Trust"
+  },
+  {
+   "year": "2025",
+   "date": "Dec 2025",
+   "cat": "Project Management",
+   "ach": "Successfully completed the first-floor construction of the IBT mosque through effective project coordination, contractor supervision, and resource management.",
+   "action": "Coordinated with contractors, engineers, and suppliers; monitored construction progress; ensured material availability; supervised on-site activities; and maintained alignment with timelines, budget, and quality standards.",
+   "metric": "",
+   "skills": "Project Management, Construction Coordination, Vendor Management, Budget Monitoring, Problem Solving, Site Supervision",
+   "tools": "Google Sheets, Google Docs, WhatsApp, Phone Communication, Site Records",
+   "org": "Imam Bukhari Trust"
+  },
+  {
+   "year": "2025",
+   "date": "Dec 2025",
+   "cat": "Leadership",
+   "ach": "Officially recognized as a strategic advisor, contributing to the development and improvement of the madrasa’s educational framework and operations.",
+   "action": "Reviewed existing curriculum and teaching methods\n\nProvided recommendations for academic enhancement and program structuring\n\nAdvised on institutional policies and long-term development strategies",
+   "metric": "",
+   "skills": "Advisory & Consulting, Strategic Planning, Academic Development, Curriculum Design, Stakeholder Collaboration",
+   "tools": "Google Docs, Google Sheets, Communication Platforms (WhatsApp, Email, Phone), Meeting Documentation",
+   "org": "Imam Bukhari Trust"
+  },
+  {
+   "year": "2025",
+   "date": "Jan 2025",
+   "cat": "Leadership",
+   "ach": "Recognized as a founding member of a strategic think-tank, contributing to intellectual discussions, research analysis, and policy formulation for the organization.",
+   "action": "Participated in research and analysis of socio-political, economic, and religious issues\n\nContributed insights and recommendations for strategic decision-making\n\nCollaborated with scholars, professionals, and committee members to shape organizational policies",
+   "metric": "",
+   "skills": "Strategic Analysis, Research, Policy Advisory, Intellectual Collaboration, Critical Thinking, Communication",
+   "tools": "Google Docs, Google Sheets, WhatsApp/Email, Research Databases",
+   "org": "Imam Bukhari Trust"
+  },
+  {
+   "year": "2026",
+   "date": "Jun 2026",
+   "cat": "Personal Education",
+   "ach": "Earned structured Islamic knowledge and certification",
+   "action": "Consistently attended classes, completed coursework, assessments, and academic requirements over two years",
+   "metric": "",
+   "skills": "Islamic Studies, Research, Time Management, Self-Learning",
+   "tools": "LMS, Online Learning Platforms",
+   "org": "Personal Development"
+  },
+  {
+   "year": "2026",
+   "date": "Apr 2026",
+   "cat": "Professional Development",
+   "ach": "Achieved the highest donation collection in organizational history/this year",
+   "action": "Developed fundraising plans, monitored team performance, coordinated donor engagement, and tracked progress regularly",
+   "metric": "",
+   "skills": "Fundraising, Team Leadership, Donor Relations, Project Management, Communication",
+   "tools": "CRM, Excel, Reporting Tools, Call Management Systems",
+   "org": "Imam Bukhari Trust"
+  },
+  {
+   "year": "2026",
+   "date": "",
+   "cat": "Operations",
+   "ach": "Initiated organizational digital transformation and process automation",
+   "action": "Conducted requirements analysis, evaluated ERP solutions, coordinated stakeholders, mapped business processes, supervised implementation, data migration, user training, and system adoption",
+   "metric": "",
+   "skills": "Project Management, Business Process Analysis, Change Management, ERP Implementation, Stakeholder Management, Data Management",
+   "tools": "ERP Software, Excel, Process Flow Diagrams, Project Plans, Training Materials",
+   "org": "Imam Bukhari Trust"
+  },
+  {
+   "year": "2026",
+   "date": "",
+   "cat": "Leadership",
+   "ach": "Established a structured and diversified fundraising framework to enhance donor engagement and revenue generation",
+   "action": "Planned, coordinated, monitored, and evaluated 32 fundraising initiatives, including donor meetings, digital campaigns, events, appeals, memberships, sponsorships, and community engagement activities",
+   "metric": "",
+   "skills": "Fundraising Strategy, Project Management, Team Leadership, Donor Relations, Communication, Event Management, Monitoring & Evaluation",
+   "tools": "Excel, CRM, Call Tracking Systems, Social Media Platforms, Reporting Dashboards",
+   "org": "Imam Bukhari Trust"
+  },
+  {
+   "year": "2026",
+   "date": "Oct 2026",
+   "cat": "Professional Development",
+   "ach": "Paper accepted at an international conference; final full paper and presentation deck completed for the 17 Oct 2026 session.",
+   "action": "Built the Quran KSA database and evidence register/codebook, drafted the full manuscript and a 6-page short version, produced the final Word/PDF paper, and designed the conference slide deck (PPTX + PDF) with AYAH branding.",
+   "metric": "",
+   "skills": "Academic Research, Academic Writing, Qur'an & Sunnah-based Analysis, Data Coding, Presentation Design",
+   "tools": "Google Drive, Google Sheets, MS Word, PowerPoint, Excel",
+   "org": "AYAH Research & Training Center"
+  },
+  {
+   "year": "2026",
+   "date": "Oct 2026",
+   "cat": "Professional Development",
+   "ach": "Strengthened the research evidence base: every code now cites what its core text actually says, with citation errors corrected.",
+   "action": "Checked all 120 codes against the core-text file, rewrote each derivation to cite the core text directly, added a new \"Link\" column explaining each supporting reference, and corrected mis-cited hadith (e.g. K32 to al-Bukhari 143).",
+   "metric": "",
+   "skills": "Research Quality Review, Hadith/Qur'an Referencing, Attention to Detail, Data Validation",
+   "tools": "Google Sheets, Google Docs",
+   "org": "AYAH Research & Training Center"
+  },
+  {
+   "year": "2026",
+   "date": "Oct 2026",
+   "cat": "Operations",
+   "ach": "Delivered a decision-ready comparative statement with Total Cost of Ownership (TCO) analysis for the MC to select the audit firm.",
+   "action": "Collected and compared quotations from 3 audit firms, analysed total cost of ownership beyond the quoted fee, and compiled the comparative statement (Word + PDF) for MC review.",
+   "metric": "",
+   "skills": "Procurement Management, Cost Analysis (TCO), Vendor Evaluation, Financial Compliance",
+   "tools": "MS Word, Google Drive",
+   "org": "Imam Bukhari Trust"
+  },
+  {
+   "year": "2026",
+   "date": "Oct 2026",
+   "cat": "Professional Development",
+   "ach": "Completed a full, fully referenced lecture deck with speaker notes for the opening class of the course.",
+   "action": "Structured the lecture around the Islamic sources of knowledge and their limits, integrated Qur'anic verses and authenticated hadith with Islamic psychology literature (e.g. Malik Badri, G. H. Rassool), wrote speaker notes for each slide, and compiled classical and modern references.",
+   "metric": "",
+   "skills": "Instructional Design, Islamic Studies, Academic Research, Presentation Design, Referencing",
+   "tools": "PowerPoint, Google Drive",
+   "org": "Personal Development"
+  },
+  {
+   "year": "2026",
+   "date": "Oct 2026",
+   "cat": "Professional Development",
+   "ach": "Delivered the paper presentation at an international academic conference and received an official Certificate of Paper Presentation.",
+   "action": "Prepared and rehearsed the conference presentation from the finalised paper and slide deck, presented the framework and its Qur'an- and Sunnah-based evidence base to the conference session, and engaged with the academic audience.",
+   "metric": "",
+   "skills": "Academic Presentation, Public Speaking, Academic Research, Qur'an & Sunnah-based Analysis",
+   "tools": "PowerPoint, Google Drive",
+   "org": "AYAH Research & Training Center"
+  },
+  {
+   "year": "2026",
+   "date": "Oct 2026",
+   "cat": "Leadership",
+   "ach": "Delivered an in-house staff training session supported by a complete, source-graded training package: a reference compilation, a formatted article and a presentation deck, with participation certificates issued by the Trust.",
+   "action": "Scheduled and coordinated the session; compiled Qur'anic verses, hadith and athar on team building with their sources and authenticity grading; identified commonly quoted weak or baseless narrations and supplied authentic alternatives; structured the article around Qur'anic principles, key hadith, lessons from the Salaf and practical implementation steps; and produced the final Word, PDF and PPTX files.",
+   "metric": "",
+   "skills": "Training Design & Delivery, Team Building, Leadership, Islamic Research, Hadith Referencing, Presentation Design",
+   "tools": "MS Word, PowerPoint, Google Drive, Google Calendar",
+   "org": "Imam Bukhari Trust"
+  },
+  {
+   "year": "2026",
+   "date": "Oct 2026",
+   "cat": "Professional Development",
+   "ach": "Completed a two-part, evidence-based lecture deck with speaker notes for the programme's opening session.",
+   "action": "Structured the lecture from the programme outline into two parts — the Islamic philosophy of illness, qadar and tawakkul, and the principles for understanding Prophetic medicine — supported the content with Qur'anic verses and hadith, distinguished authentic narrations from weak health claims, wrote speaker notes, and produced the final PPTX and PDF.",
+   "metric": "",
+   "skills": "Instructional Design, Islamic Studies, Hadith Referencing, Academic Research, Presentation Design",
+   "tools": "PowerPoint, Google Drive",
+   "org": "Imam Bukhari Trust"
+  },
+  {
+   "year": "2026",
+   "date": "Oct 2026",
+   "cat": "Professional Development",
+   "ach": "Completed the detailed agenda and session-guide script together with a full presentation deck for the programme's first three sessions (\"Why Me?\", \"The Heart of the Da'i\" and \"Priorities and Sequence\").",
+   "action": "Structured the programme's objectives and training approach; designed three timed sessions (08:45–10:15) covering every Muslim's role in dawah, sincerity and self-development, and the correct order of priorities; supported each point with Qur'anic verses and referenced hadith; added a qualification ladder, practical scenarios and a persona-based prioritisation activity with a model answer; wrote speaker notes; and produced the final script (Word) and slide deck (PPTX).",
+   "metric": "",
+   "skills": "Training Design, Instructional Design, Islamic Studies, Hadith Referencing, Presentation Design",
+   "tools": "PowerPoint, MS Word, Google Drive",
+   "org": "Imam Bukhari Trust"
+  },
+  {
+   "year": "2026",
+   "date": "Oct 2026",
+   "cat": "Professional Development",
+   "ach": "Produced a submission-ready proposed abstract (full and short versions) backed by a structured literature review, scored research gaps, research questions and a desk-based qualitative methodology.",
+   "action": "Built a literature review matrix across seven outline topics; mapped AI's opportunities and risks against the five Maqasid; analysed stakeholder views and duties; drafted proposed Shari'ah principles for AI regulation and responsibilities for ulama and Muslim engineers; scored research gaps for novelty, feasibility and relevance; designed a four-strand methodology (integrative review, PRISMA-guided review, thematic exegesis with hadith authentication, and document analysis against IIFA Resolution 258, UNESCO, the EU AI Act and Bangladesh's draft AI policy); and wrote the abstract with three title options and a Bangla summary.",
+   "metric": "",
+   "skills": "Academic Research, Literature Review, Research Design, Academic Writing, Qur'an & Sunnah-based Analysis, Policy Analysis",
+   "tools": "Google Sheets, Google Drive",
+   "org": "Personal Development"
+  },
+  {
+   "year": "2026",
+   "date": "Nov 2026",
+   "cat": "Administration",
+   "ach": "Completed a Board-ready salary framework for the institution's first hires, comprising a Bangla policy document and a supporting calculation workbook.",
+   "action": "Designed a 20-grade scale with designations, minimum qualifications, basic pay ranges and increment rates per grade; defined salary components, annual increment rules, festival bonus, probation and deduction rules; reserved the profit-share percentage and distribution method for Board decision; built a formula-driven workbook with salary calculators, increment and bonus checks and a payroll cost projection; and produced the final Word and PDF policy.",
+   "metric": "",
+   "skills": "Compensation Design, HR Policy Development, Financial Modelling, Organizational Planning, Bangla Policy Writing",
+   "tools": "Google Sheets, MS Word, Google Drive",
+   "org": "AYAH Research & Training Center"
+  },
+  {
+   "year": "2026",
+   "date": "Nov 2026",
+   "cat": "Operations",
+   "ach": "Delivered a single, automatically updating people directory with search, a profession dashboard and geographic mapping, replacing the need to maintain separate sheets.",
+   "action": "Linked the sheet live to the main donor master sheet and the Participants Data tab; matched records by mobile number so each person is counted once; built keyword mapping for profession, country and division; created a Profession Finder (search by profession, name, phone or area), a dashboard with a world map and Bangladesh division map, and an Add New Donor tab; and wrote a Bangla user guide for the team.",
+   "metric": "",
+   "skills": "Data Integration, Dashboard Design, Process Automation, Data Cleaning, Documentation",
+   "tools": "Google Sheets, Google Drive",
+   "org": "Imam Bukhari Trust"
+  },
+  {
+   "year": "2026",
+   "date": "Nov 2026",
+   "cat": "Technical",
+   "ach": "Delivered a team-facing data app connected directly to the live source sheet, so that edits to the sheet appear in the app automatically.",
+   "action": "Developed the app on Google Apps Script with user ID and password login; built it first on a duplicate of the data to keep the original untouched; then connected it to the original \"Program Participate Data\" sheet and retired the duplicate.",
+   "metric": "",
+   "skills": "Application Development, Google Apps Script, Access Control, Data Management, Process Automation",
+   "tools": "Google Apps Script, Google Sheets, Google Drive",
+   "org": "Imam Bukhari Trust"
+  },
+  {
+   "year": "2026",
+   "date": "Nov 2026",
+   "cat": "Administration",
+   "ach": "Delivered a clear, score-based hiring recommendation, identifying one candidate as the best overall fit for the institution.",
+   "action": "Assessed each candidate on a 25-point evaluation covering competency and experience, Islamic values and institutional alignment; weighed the results against salary expectations; and documented candidate-wise feedback and the final recommendation in Word and PDF.",
+   "metric": "",
+   "skills": "Recruitment & Selection, Candidate Assessment, Decision Making, Business Writing",
+   "tools": "MS Word, Google Drive",
+   "org": "Imam Bukhari Trust"
+  }
+ ]
+}
