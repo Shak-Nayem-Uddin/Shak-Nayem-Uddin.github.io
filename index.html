@@ -102,9 +102,6 @@ h1{font-family:var(--d);font-weight:700;font-size:clamp(40px,5.4vw,76px);line-he
 .arch .rotbox{position:absolute;inset:0;border-radius:999px 999px 0 0;background:var(--media);box-shadow:0 40px 70px -40px var(--shadow)}
 .frame::before{content:"";position:absolute;inset:0;border:1.5px solid var(--brass);border-radius:8px;transform:translate3d(18px,18px,-46px)}
 .frame .rotbox{position:absolute;inset:0;border-radius:8px;background:var(--media);box-shadow:0 40px 70px -40px var(--shadow)}
-.float{position:absolute;left:-34px;bottom:44px;display:flex;align-items:baseline;gap:10px;max-width:230px;padding:14px 18px;border-radius:10px;background:var(--fg);color:var(--bg);font-family:var(--d);line-height:1.25;transform:translateZ(70px);box-shadow:0 22px 40px -18px rgba(0,0,0,.55)}
-.float b{font-size:30px;font-weight:700;letter-spacing:-.03em;line-height:1}
-.float span{font-size:13.5px;font-weight:500}
 .rotbox{position:relative;overflow:hidden}
 .rotbox img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.2s ease}
 .rotbox img.on{opacity:1}
@@ -336,6 +333,26 @@ h1{font-family:var(--d);font-weight:700;font-size:clamp(40px,5.4vw,76px);line-he
 .jfoot>div{flex:1 1 420px}
 .jfoot h3{font-family:var(--d);font-size:19px;font-weight:600;margin:0 0 14px;color:var(--strong)}
 
+/* ---------- 3D motion
+   The portraits sway slowly in depth, the year chart stands up as its blocks rise,
+   card groups turn up into place the first time they scroll into view, and the
+   visiting card drifts and turns over once to show its back. */
+.type-hero .arch,.type-intro .frame{animation:sway 11s ease-in-out infinite alternate}
+@keyframes sway{0%{transform:rotateY(-7deg) rotateX(2deg)}50%{transform:rotateY(3deg) rotateX(-2deg)}100%{transform:rotateY(7deg) rotateX(1.5deg)}}
+.chart3d{perspective:1100px}
+.chart3d svg{transform:rotateX(38deg) translateY(10px);transform-origin:50% 92%;transition:transform 1.4s cubic-bezier(.2,.7,.2,1)}
+.chart3d.grown svg{transform:none}
+.r3{opacity:0;transform:perspective(900px) rotateX(26deg) translate3d(0,34px,-40px);transform-origin:50% 100%;transition:opacity .7s ease,transform 1s cubic-bezier(.2,.7,.2,1);transition-delay:calc(var(--k,0) * 80ms)}
+.r3.in{opacity:1;transform:perspective(900px) rotateX(0) translate3d(0,0,0)}
+.vcbox{perspective:1200px}
+.vcbox .depth{animation:drift 9s ease-in-out infinite alternate}
+@keyframes drift{0%{transform:rotateY(-9deg) rotateX(4deg) translateY(0)}100%{transform:rotateY(9deg) rotateX(-3deg) translateY(-10px)}}
+@media (prefers-reduced-motion:reduce){
+  .type-hero .arch,.type-intro .frame,.vcbox .depth{animation:none}
+  .chart3d svg{transform:none;transition:none}
+  .r3{opacity:1;transform:none;transition:none}
+}
+
 footer{background:var(--foot-bg);color:#B3C0D3;font-family:var(--d);font-size:14px;padding:26px 0;transition:background-color .35s}
 footer .w{display:flex;justify-content:space-between;gap:10px 24px;flex-wrap:wrap}
 footer a{color:#F4F6FA;text-decoration:none}
@@ -350,8 +367,6 @@ footer a:hover{text-decoration:underline}
   .sec.join{padding-top:0}
   .hero,.intro{grid-template-columns:1fr;gap:40px}
   .type-hero .depth,.type-intro .depth{order:-1;margin:12px 0 0 34px;width:230px}
-  .float{left:-30px;bottom:22px;padding:10px 14px;max-width:190px}
-  .float b{font-size:24px}.float span{font-size:12.5px}
   .nums{grid-template-columns:1fr 1fr}
   .nums div,.nums div+div{padding:24px 12px 0 0;border-left:0}
   .nums div:nth-child(n+3){border-top:1px solid var(--line);margin-top:24px}
@@ -437,7 +452,7 @@ function render(feed){
   $('app').innerHTML = PAGES.map(function(p){
     return '<div class="view" id="v-' + esc(p.id) + '" hidden>' + sections(F.sections.filter(function(s){ return s.page === p.id; })) + '</div>';
   }).join('');
-  drawYears(); drawLatest(); drawStats(); rotation(); numbers(); slideshows(); tilts();
+  drawYears(); drawLatest(); drawStats(); rotation(); numbers(); slideshows(); tilts(); reveals();
   all('.js-jump').forEach(function(nav){
     var hs = [].slice.call(nav.closest('.view').querySelectorAll('section[data-h]'));
     nav.innerHTML = hs.length > 1 ? '<b>On this page</b>' + hs.map(function(sec){ return '<button type="button" data-jump="' + sec.id + '">' + esc(sec.getAttribute('data-h')) + '</button>'; }).join('') : '';
@@ -513,7 +528,7 @@ function inner(s){
       var btns = lines(s.items).map(function(l, i){ var c = cells(l); return link(c[0], c[1], i ? 'outline' : ''); }).join('') + cv('outline');
       var cred = [F.site.name, F.site.degrees].filter(Boolean).join(' · ');
       return '<div class="hero"><div>' + (F.site.current ? '<p class="now"><i></i>' + esc(F.site.current) + '</p>' : '') + '<h1>' + esc(h) + '</h1>' + (cred ? '<p class="cred">' + esc(cred) + '</p>' : '') + (b ? '<p>' + esc(b) + '</p>' : '') + (btns ? '<div class="acts">' + btns + '</div>' : '') + '</div>' +
-        '<div class="depth js-tilt"><div class="tilt"><div class="arch"><div class="rotbox" data-tag="portrait"></div></div>' + chip() + '</div></div></div>';
+        '<div class="depth js-tilt"><div class="tilt"><div class="arch"><div class="rotbox" data-tag="portrait"></div></div></div></div></div>';
     case 'years':
       return '<div class="years"><h2>' + esc(h) + '</h2><p class="js-count"></p><figure class="chart3d js-bars"></figure></div>';
     case 'latest':
@@ -634,11 +649,6 @@ function vcard(){
 
 // ---------------------------------------------------------------- CV, portrait chip, visiting card, tilt
 function cv(cls){ var u = F.site.cv_url; return u ? '<a class="btn ' + cls + '" href="' + esc(u) + '" target="_blank" rel="noopener">Download CV</a>' : ''; }
-function chip(){
-  var ys = DATA.map(function(d){ return d.y; }).filter(Boolean);
-  if (!DATA.length || !ys.length) return '';
-  return '<div class="float"><b>' + DATA.length + '</b><span>achievements in my journal since ' + Math.min.apply(null, ys) + '</span></div>';
-}
 function card3d(){
   var s = F.site, cur = s.current || '', rows = [];
   if (!s.name) return '';
@@ -670,7 +680,33 @@ function tilts(){
     host.addEventListener('pointerleave', function(){ t.classList.remove('live'); ['--ry', '--rx'].forEach(function(k){ t.style.setProperty(k, '0deg'); }); t.style.setProperty('--sx', '50%'); });
   });
 }
-function flip(c){ c.setAttribute('aria-pressed', c.getAttribute('aria-pressed') === 'true' ? 'false' : 'true'); }
+function reveals(){
+  if (REDUCE || !('IntersectionObserver' in window)) return;
+  all('.cards,.xp,.badges,.areas,.three').forEach(function(g){
+    var kids = [].slice.call(g.children);
+    kids.forEach(function(el, k){ el.classList.add('r3'); el.style.setProperty('--k', k % 6); });
+    var io = new IntersectionObserver(function(es){
+      if (!es[0].isIntersecting) return;
+      io.disconnect();
+      kids.forEach(function(el){
+        el.classList.add('in');
+        // hand the element back to its own hover styles once it has landed
+        setTimeout(function(){ el.classList.remove('r3', 'in'); el.style.removeProperty('--k'); }, 1100 + (+el.style.getPropertyValue('--k') || 0) * 80);
+      });
+    }, {threshold: .15});
+    io.observe(g);
+  });
+  all('.vc').forEach(function(c){
+    var io = new IntersectionObserver(function(es){
+      if (!es[0].isIntersecting) return;
+      io.disconnect();
+      setTimeout(function(){ if (c._touched) return; c.setAttribute('aria-pressed', 'true');
+        setTimeout(function(){ if (!c._touched) c.setAttribute('aria-pressed', 'false'); }, 2200); }, 900);
+    }, {threshold: .6});
+    io.observe(c);
+  });
+}
+function flip(c){ c._touched = true; c.setAttribute('aria-pressed', c.getAttribute('aria-pressed') === 'true' ? 'false' : 'true'); }
 document.addEventListener('keydown', function(e){ var c = e.target.closest && e.target.closest('.vc'); if (c && (e.key === 'Enter' || e.key === ' ')){ e.preventDefault(); flip(c); } });
 
 // ---------------------------------------------------------------- light and dark
