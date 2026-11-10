@@ -558,7 +558,13 @@ function slideshows(){
     sh._set = function(i){
       i = (i + figs.length) % figs.length; sh._i = i;
       figs.forEach(function(f, k){ f.classList.toggle('on', k === i); });
-      thumbs.forEach(function(t, k){ if (k === i){ t.setAttribute('aria-current', 'true'); t.scrollIntoView({block: 'nearest', inline: 'nearest'}); } else t.removeAttribute('aria-current'); });
+      thumbs.forEach(function(t, k){ if (k === i) t.setAttribute('aria-current', 'true'); else t.removeAttribute('aria-current'); });
+      // keep the active thumbnail in view by scrolling only the thumbnail strip, never the page
+      var strip = sh.querySelector('.thumbs'), cur = thumbs[i];
+      if (strip && cur && strip.scrollWidth > strip.clientWidth){
+        var left = cur.offsetLeft - strip.offsetLeft, right = left + cur.offsetWidth;
+        if (left < strip.scrollLeft || right > strip.scrollLeft + strip.clientWidth) strip.scrollTo({left: Math.max(0, left - 12), behavior: 'smooth'});
+      }
       if (count) count.textContent = (i + 1) + ' / ' + figs.length;
     };
     sh.addEventListener('mouseenter', function(){ sh._pause = true; });
