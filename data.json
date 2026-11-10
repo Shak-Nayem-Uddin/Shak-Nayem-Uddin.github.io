@@ -1,14 +1,19 @@
 {
- "updated": "2026-11-10T06:27:01.766Z",
+ "updated": "2026-11-10T06:56:08.925Z",
  "site": {
-  "name": "Sk Nayem Uddin",
+  "name": "Engr. Sk Nayem Uddin",
   "role": "Operations and Administration Manager",
   "location": "Dhaka, Bangladesh",
   "email": "shak.nayem.97@gmail.com",
   "phone": "+880 1882 020679",
   "linkedin": "https://www.linkedin.com/in/sk-nayem",
   "pages": "home=Home; experience=Experience; record=The record; profile=Profile; contact=Contact",
-  "rotate_seconds": "5"
+  "rotate_seconds": "5",
+  "degrees": "B.Sc. Engg. (ETE) · MBA (SCM)",
+  "work_email": "nayem.ibt@gmail.com",
+  "work_phone": "+880 1306-746437",
+  "office_address": "House 17, Road 6/A, Sector 5, Uttara, Dhaka 1230",
+  "office_website": "https://www.imambukharitrust.com"
  },
  "pages": [
   {
@@ -996,6 +1001,50 @@
    "skills": "Recruitment & Selection, Candidate Assessment, Decision Making, Business Writing",
    "tools": "MS Word, Google Drive",
    "org": "Imam Bukhari Trust"
+  },
+  {
+   "year": "2025",
+   "date": "Oct 2025",
+   "cat": "Professional Development",
+   "ach": "Certified in Six Sigma (White Belt).",
+   "action": "Completed the Six Sigma White Belt programme and met the certification requirements; certificate AB492NFZ47 issued on 13 October 2025.",
+   "metric": "",
+   "skills": "Six Sigma, Process Improvement, Quality Management",
+   "tools": "",
+   "org": "Personal Development"
+  },
+  {
+   "year": "2025",
+   "date": "Sep 2025",
+   "cat": "Professional Development",
+   "ach": "Completed a workshop on budgeting principles and methods.",
+   "action": "Attended the workshop on 9 September 2025 on the principles, techniques and applications of budgeting in financial planning, and received a certificate of completion.",
+   "metric": "",
+   "skills": "Budgeting, Financial Planning",
+   "tools": "",
+   "org": "Imam Bukhari Trust"
+  },
+  {
+   "year": "2024",
+   "date": "Nov 2024",
+   "cat": "Leadership",
+   "ach": "Received a Certificate of Appreciation for exceptional dedication and valuable contributions to Sunnah Conference Bangladesh 2024.",
+   "action": "Contributed to the two-day national conference as Manager, Admin & Operations of Imam Bukhari Trust; recognised by the conference organising committee.",
+   "metric": "",
+   "skills": "Event Management, Stakeholder Coordination, Operations Management",
+   "tools": "",
+   "org": "Imam Bukhari Trust"
+  },
+  {
+   "year": "2022",
+   "date": "Dec 2022",
+   "cat": "Technical",
+   "ach": "Certified in Fundamentals of Electricity for Industrial Automation (A074).",
+   "action": "Completed the Omron Automation eLearning course A074 on 10 December 2022.",
+   "metric": "",
+   "skills": "Electrical Fundamentals, Industrial Automation",
+   "tools": "",
+   "org": "Personal Development"
   }
  ]
 }
