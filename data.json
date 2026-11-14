@@ -1,19 +1,22 @@
 {
- "updated": "2026-11-10T06:56:08.925Z",
+ "updated": "2026-11-14T22:23:01.319Z",
  "site": {
   "name": "Engr. Sk Nayem Uddin",
-  "role": "Operations and Administration Manager",
+  "role": "Manager, Administration and Operations",
   "location": "Dhaka, Bangladesh",
   "email": "shak.nayem.97@gmail.com",
   "phone": "+880 1882 020679",
   "linkedin": "https://www.linkedin.com/in/sk-nayem",
-  "pages": "home=Home; experience=Experience; record=The record; profile=Profile; contact=Contact",
+  "pages": "home=Home; experience=Experience; record=Achievements; profile=Profile; contact=Contact",
   "rotate_seconds": "5",
   "degrees": "B.Sc. Engg. (ETE) · MBA (SCM)",
   "work_email": "nayem.ibt@gmail.com",
   "work_phone": "+880 1306-746437",
   "office_address": "House 17, Road 6/A, Sector 5, Uttara, Dhaka 1230",
-  "office_website": "https://www.imambukharitrust.com"
+  "office_website": "https://www.imambukharitrust.com",
+  "current": "Manager, Administration and Operations at Imam Bukhari Trust",
+  "hide_tags": "Communication, Attention to Detail, Time Management, Analytical Thinking, Problem Solving, WhatsApp, Phone Communication, Mobile Devices, Physical, Computer System, Receipt Printer, Email, Facebook, YouTube, Excell, Offce Suite, Google sheet, Communication Platforms (WhatsApp",
+  "cv_url": "https://drive.google.com/file/d/1SeChwO_c25KMXVltUOXLul9Mcd2ryw-n/view?usp=sharing"
  },
  "pages": [
   {
@@ -26,7 +29,7 @@
   },
   {
    "id": "record",
-   "label": "The record"
+   "label": "Achievements"
   },
   {
    "id": "profile",
@@ -47,17 +50,29 @@
    "column": "full",
    "heading": "I build the systems that keep an institution running.",
    "body": "Operations and administration manager in Dhaka. I look after procurement, projects and people, and I build the tools behind them.",
-   "items": "Read the record | #record\nGet in touch | #contact",
+   "items": "Get in touch | #contact\nSee achievements | #record",
    "show": true
   },
   {
-   "id": "home-years",
+   "id": "home-numbers",
    "page": "home",
-   "order": 20,
-   "type": "years",
+   "order": 15,
+   "type": "numbers",
    "tone": "dark",
    "column": "full",
-   "heading": "The record, year by year",
+   "heading": "",
+   "body": "",
+   "items": "4+ | years of experience in operations and administration\n{entries} | achievements recorded in my journal\n{certs} | certificates, courses and trainings completed\n2 | degrees, in engineering and supply chain management",
+   "show": true
+  },
+  {
+   "id": "home-ticker",
+   "page": "home",
+   "order": 18,
+   "type": "ticker",
+   "tone": "dark",
+   "column": "full",
+   "heading": "Skills",
    "body": "",
    "items": "",
    "show": true
@@ -93,9 +108,33 @@
    "type": "latest",
    "tone": "white",
    "column": "full",
-   "heading": "Latest entries",
-   "body": "4",
+   "heading": "Recent work",
+   "body": "3",
    "items": "",
+   "show": true
+  },
+  {
+   "id": "home-years",
+   "page": "home",
+   "order": 60,
+   "type": "years",
+   "tone": "light",
+   "column": "full",
+   "heading": "Achievements by year",
+   "body": "",
+   "items": "",
+   "show": true
+  },
+  {
+   "id": "home-cta",
+   "page": "home",
+   "order": 70,
+   "type": "cta",
+   "tone": "dark",
+   "column": "full",
+   "heading": "Have something that needs to run well?",
+   "body": "Write or call for roles, projects or collaboration.",
+   "items": "Get in touch | #contact\nLinkedIn profile | https://www.linkedin.com/in/sk-nayem",
    "show": true
   },
   {
@@ -106,7 +145,7 @@
    "tone": "light",
    "column": "full",
    "heading": "Experience",
-   "body": "Three years running operations for a growing non-profit, after starting out in IT support, automation sales and point-of-sale systems.",
+   "body": "4+ years of experience: three years running operations for a growing non-profit, after starting out in IT support, automation sales and point-of-sale systems.",
    "items": "",
    "show": true
   },
@@ -119,7 +158,7 @@
    "column": "full",
    "heading": "",
    "body": "",
-   "items": "Nov 2023 to present | Manager, Administration and Operations | Imam Bukhari Trust, Munshiganj | I run the administrative and operational side of a non-profit working in education, dawah, research and social welfare. | Wrote the procurement procedure and manage vendor selection, comparative statements and approvals; Built the tracking systems for income, expenses, KPIs, inventory and attendance; Coordinate mosque construction with contractors, engineers and suppliers; Plan and deliver the annual full-day programme, staff training and fundraising campaigns; Started the move to an ERP covering finance, HR, procurement, inventory and donors\nJul to Nov 2023 | Assistant Manager, Sales and Service | TecTesla Technologies Ltd | Sold industrial automation solutions and managed after-sales service.\nFeb to Jun 2023 | IT Executive | Youthbees | Handled IT support, planned technology improvements and carried out market research.\nFeb to Apr 2018 | MIS, contractual | Sajeeb Group | Management information systems support.\nFeb to Apr 2017 | POS Specialist, contractual | Dot BD Solutions Ltd | Operated point-of-sale software and handled cash at the Chittagong International Trade Fair.",
+   "items": "Nov 2023 to present | Manager, Administration and Operations | Imam Bukhari Trust, Dhaka | I run the administrative and operational side of a non-profit working in education, dawah, research and social welfare. | Wrote the procurement procedure and manage vendor selection, comparative statements and approvals; Built the tracking systems for income, expenses, KPIs, inventory and attendance; Coordinate mosque construction with contractors, engineers and suppliers; Plan and deliver the annual full-day programme, staff training and fundraising campaigns; Started the move to an ERP covering finance, HR, procurement, inventory and donors\nJul to Nov 2023 | Assistant Manager, Sales and Service | TecTesla Technologies Ltd | Sold industrial automation solutions and managed after-sales service.\nFeb to Jun 2023 | IT Executive | Youthbees | Handled IT support, planned technology improvements and carried out market research.\n2017 to 2018 | Early contracts in POS and MIS | Dot BD Solutions Ltd and Sajeeb Group | Ran point-of-sale software and cash handling at the Chittagong International Trade Fair (2017), then provided MIS support at Sajeeb Group (2018).",
    "show": true
   },
   {
@@ -141,8 +180,8 @@
    "type": "title",
    "tone": "light",
    "column": "full",
-   "heading": "The record",
-   "body": "I keep a journal of what I finish. This page reads it directly, so a new entry in the journal appears here by itself. Select an entry to see how it was done.",
+   "heading": "Achievements",
+   "body": "Every piece of work I have finished, logged as it happened. Filter by area, search for a skill or tool, and select an entry to see how it was done.",
    "items": "",
    "show": true
   },
@@ -159,74 +198,110 @@
    "show": true
   },
   {
-   "id": "pro-title",
+   "id": "pro-intro",
    "page": "profile",
    "order": 10,
-   "type": "title",
-   "tone": "light",
+   "type": "intro",
+   "tone": "dark",
    "column": "full",
-   "heading": "Profile",
+   "heading": "",
+   "body": "Operations and administration manager with an engineering degree and an MBA in supply chain management. I turn day-to-day work into clear procedures and simple systems, so an institution runs well whoever is in the room.",
+   "items": "Based in | Uttara, Dhaka\nCurrent role | Manager, Administration and Operations, Imam Bukhari Trust\nWorking since | 2017\nFocus | Operations, procurement, projects and systems",
+   "show": true
+  },
+  {
+   "id": "pro-expertise",
+   "page": "profile",
+   "order": 20,
+   "type": "expertise",
+   "tone": "white",
+   "column": "full",
+   "heading": "Areas of expertise",
    "body": "",
-   "items": "",
+   "items": "Operations and administration | Administrative systems, SOPs and policy writing, HR and recruitment, Financial compliance, Programme and event delivery\nProcurement and supply chain | Vendor evaluation, Comparative statements and TCO, Procurement procedures, Inventory control, Cost control\nProject management | Planning and scheduling, Construction coordination, Stakeholder management, Risk management, Agile and Scrum\nSystems and automation | Google Sheets systems, Apps Script web apps, KPI dashboards, Data integration, ERP rollout\nResearch and training | Academic research and writing, Training design and delivery, Qur'an and Sunnah-based analysis, Presentation design",
    "show": true
   },
   {
    "id": "pro-about",
    "page": "profile",
-   "order": 20,
+   "order": 30,
    "type": "text",
    "tone": "light",
    "column": "left",
-   "heading": "",
-   "body": "I am an operations and administration manager based in Dhaka. For the past three years I have run the working side of Imam Bukhari Trust: procurement, HR, compliance, construction coordination, events, and the systems that hold them together.\n\nI trained as an electronics and telecommunication engineer and then took an MBA in supply chain management. That mix shapes how I work. I look for the process underneath a problem, write it down, and where I can, build a tool so nobody has to do it by hand again.\n\nOutside operations I co-author research on Islamic education, prepare training material, and keep studying the Islamic sciences and Arabic.",
+   "heading": "About",
+   "body": "I am an operations and administration manager based in Dhaka with 4+ years of experience. For the past three years I have run the working side of Imam Bukhari Trust: procurement, HR, compliance, construction coordination, events, and the systems that hold them together.\n\nI trained as an electronics and telecommunication engineer and then took an MBA in supply chain management. That mix shapes how I work. I look for the process underneath a problem, write it down, and where I can, build a tool so nobody has to do it by hand again.\n\nOutside operations I co-author research on Islamic education, prepare training material, and keep studying the Islamic sciences and Arabic.",
    "items": "",
+   "show": true
+  },
+  {
+   "id": "pro-lang",
+   "page": "profile",
+   "order": 35,
+   "type": "list",
+   "tone": "light",
+   "column": "right",
+   "heading": "Languages",
+   "body": "",
+   "items": "Bangla | Native language\nEnglish | Working language; both degrees taught in English\nArabic | Level 3 certificate, Online Arabic Language Institute",
    "show": true
   },
   {
    "id": "pro-edu",
    "page": "profile",
-   "order": 30,
-   "type": "list",
-   "tone": "light",
-   "column": "left",
+   "order": 50,
+   "type": "badges",
+   "tone": "white",
+   "column": "full",
    "heading": "Education",
    "body": "",
-   "items": "MBA in Supply Chain Management | International Islamic University Chittagong\nBSc in Electronics and Telecommunication Engineering | International Islamic University Chittagong\nTwo-year programme in Islamic Sciences | Zad Academy",
+   "items": "MBA, Supply Chain Management | International Islamic University Chittagong (IIUC) |\nB.Sc. Engg., Electronics and Telecommunication | International Islamic University Chittagong (IIUC) | 2022\nIslamic Sciences, two-year programme | Zad Academy | 2026\nDiploma in Islamic Studies | Taibah Academy | 2021",
    "show": true
   },
   {
    "id": "pro-cert",
    "page": "profile",
-   "order": 40,
-   "type": "list",
+   "order": 60,
+   "type": "badges",
    "tone": "light",
-   "column": "left",
-   "heading": "Certificates",
+   "column": "full",
+   "heading": "Certifications",
    "body": "",
-   "items": "Google Project Management Professional Certificate\nSix Sigma White Belt\nAgile and Scrum\nKPI Development and Analysis\nBudget and Methods of Budgeting",
+   "items": "Google Project Management Professional Certificate | Google, via Coursera | 2025\nSix Sigma White Belt | Process improvement fundamentals | 2025\nAgile Project Management | Google, via Coursera | 2025\nBudgeting and Methods of Budgeting | Imam Bukhari Trust and Taibah Academy | 2025\nKPI Development and Analysis | Professional training |",
    "show": true
   },
   {
-   "id": "pro-photo",
+   "id": "pro-tech",
    "page": "profile",
-   "order": 50,
-   "type": "photo",
+   "order": 65,
+   "type": "badges",
    "tone": "light",
-   "column": "right",
-   "heading": "",
-   "body": "profile",
-   "items": "",
+   "column": "full",
+   "heading": "Earlier training",
+   "body": "Courses from my engineering years, before I moved into operations.",
+   "items": "Industrial automation series | Omron Automation: factory automation, safety, sensors, relays, power supplies, electricity | 2022-23\nIntroduction to Cybersecurity | Cisco Networking Academy | 2021\nCyber Threat Hunting, Level 1 | Active Countermeasures | 2021\nSplunk 7.x Fundamentals | Splunk | 2021\nLinux Unhatched | NDG and Cisco Networking Academy | 2021\nInformation Security: Context and Introduction | University of London (Royal Holloway), via Coursera | 2020\nThe Bits and Bytes of Computer Networking | Google, via Coursera | 2020\nProgramming for Everybody (Python) | University of Michigan, via Coursera |\nFundamentals of Digital Marketing | Google | 2020",
+   "show": true
+  },
+  {
+   "id": "pro-honours",
+   "page": "profile",
+   "order": 70,
+   "type": "badges",
+   "tone": "dark",
+   "column": "full",
+   "heading": "Recognition",
+   "body": "",
+   "items": "Certificate of Paper Presentation, ICKIEL 2026 | Universiti Sains Islam Malaysia, BIIT and AUST | 2026\nCertificate of Appreciation, Sunnah Conference Bangladesh 2024 | Kulliyatul Quranil Kareem and Daffodil Islamic Center | 2024",
    "show": true
   },
   {
    "id": "pro-stats",
    "page": "profile",
-   "order": 60,
+   "order": 80,
    "type": "stats",
-   "tone": "light",
-   "column": "right",
-   "heading": "",
-   "body": "",
+   "tone": "white",
+   "column": "full",
+   "heading": "From my journal",
+   "body": "areas, skills, tools",
    "items": "",
    "show": true
   },
@@ -249,7 +324,8 @@
    "url": "img/hero.jpg",
    "caption": "Studio portrait",
    "tags": [
-    "portrait"
+    "portrait",
+    "profile"
    ],
    "position": "50% 12%"
   },
@@ -328,6 +404,42 @@
     "gallery"
    ],
    "position": "50% 50%"
+  },
+  {
+   "id": "ph-walton",
+   "url": "img/walton.jpg",
+   "caption": "With my supervisor and the Walton team during an invited tour of their factory and offices",
+   "tags": [
+    "gallery"
+   ],
+   "position": "50% 40%"
+  },
+  {
+   "id": "c4fc1c7d",
+   "url": "https://lh3.googleusercontent.com/d/1bCsTiZuOTiFGnql6B2_t35umvCiwQHL2=w1400",
+   "caption": "Empowering Educators Through Interactive Learning – A glimpse of my contribution to Teacher Training Programme 2026",
+   "tags": [
+    "gallery"
+   ],
+   "position": "50% 30%"
+  },
+  {
+   "id": "e7a4d3d9",
+   "url": "https://lh3.googleusercontent.com/d/1niRiwORAnPOIKkCLXevMzqhWVJQojgY2=w1400",
+   "caption": "Empowering Educators Through Interactive Learning – A glimpse of my contribution to Teacher Training Programme 2026",
+   "tags": [
+    "gallery"
+   ],
+   "position": "50% 30%"
+  },
+  {
+   "id": "81989de4",
+   "url": "https://lh3.googleusercontent.com/d/1XaHD2Mv37aQ-5HOK7-z23mSr5ks4irJb=w1400",
+   "caption": "An insightful knowledge-sharing session on Artificial Intelligence, exploring its future potential and opportunities for integrating AI into institutional operations and strategic management ",
+   "tags": [
+    "gallery"
+   ],
+   "position": "50% 30%"
   }
  ],
  "items": [
@@ -1045,6 +1157,61 @@
    "skills": "Electrical Fundamentals, Industrial Automation",
    "tools": "",
    "org": "Personal Development"
+  },
+  {
+   "year": "2026",
+   "date": "Nov 2026",
+   "cat": "Professional Development",
+   "ach": "Led an engaging, participatory session for 40+ teachers and supported the workshop's academic content with a ready slide deck for the Chairman's sessions.",
+   "action": "Designed and facilitated an interactive session using live audience participation (Mentimeter) to engage teachers from the start; prepared the slide deck for Prof. Dr. Manzur-e-Elahi's sessions.",
+   "metric": "",
+   "skills": "Facilitation, Public Speaking, Training Delivery, Audience Engagement, Presentation Design",
+   "tools": "Mentimeter, PowerPoint, Google Drive",
+   "org": "Kulliyatul Quran Model Madrasha"
+  },
+  {
+   "year": "2026",
+   "date": "Nov 2026",
+   "cat": "Leadership",
+   "ach": "Successfully managed the entire Dawah Skills Training event end to end, from planning and volunteer mobilisation to smooth day-of delivery for 120 participants.",
+   "action": "Built a structured event plan with a task tracker and a full-day schedule of 20 sessions; organised participants into discussion groups; mapped and assigned volunteers by team; ran 4 mock runs before the event; coordinated trainers, logistics and the programme on the day.",
+   "metric": "",
+   "skills": "Event Management, Leadership, Volunteer Management, Team Coordination, Operations Management, Planning",
+   "tools": "Google Sheets, Google Docs, WhatsApp, Phone Communication, Mentimeter",
+   "org": "Imam Bukhari Trust"
+  },
+  {
+   "year": "2026",
+   "date": "Nov 2026",
+   "cat": "Operations",
+   "ach": "Established an organised, easy-to-use digital accounting system for the institution, with clear fund-wise income, expense and balance tracking for each segment.",
+   "action": "Analysed how the madrasah's income and expenses flow across its three segments, designed entry sheets by khat with donor/payee name and contact number on every entry, set up per-khat balances, and made the system English-first with Bangla support.",
+   "metric": "",
+   "skills": "Accounting System Design, Financial Tracking, Process Design, Data Organization, Documentation",
+   "tools": "Google Sheets, Google Drive",
+   "org": "Kulliyatul Quran Model Madrasha"
+  },
+  {
+   "year": "2026",
+   "date": "Nov 2026",
+   "cat": "Operations",
+   "ach": "Replaced separate, manual income and expense records with a single entry sheet and automatic monthly reporting, improving accuracy, speed and financial transparency.",
+   "action": "Merged the donor donation history and expense sheets without altering the original sources, designed one unified entry sheet with dropdown lists, built formulas to auto-generate the monthly Receipts & Payments statement, notes and management reports, and wrote a user guide for the team.",
+   "metric": "",
+   "skills": "Financial Reporting, Accounting System Design, Data Integration, Process Automation, Documentation",
+   "tools": "Google Sheets, Google Drive",
+   "org": "Imam Bukhari Trust"
+  },
+  {
+   "year": "2026",
+   "date": "Oct 2026",
+   "cat": "Professional Development",
+   "ach": "Completed a full-day workshop on effective teaching that integrates modern and Islamic perspectives.",
+   "action": "Attended and completed the full-day teachers' training workshop on 10 October 2026.",
+   "metric": "",
+   "skills": "Teaching Methodology, Educational Leadership, Islamic Education",
+   "tools": "",
+   "org": "Kulliyatul Quran Model Madrasha"
   }
  ]
 }
