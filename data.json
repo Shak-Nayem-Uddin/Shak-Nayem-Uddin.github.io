@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-17T20:38:20.784Z",
+ "updated": "2026-11-17T21:22:16.020Z",
  "site": {
   "name": "Engr. Sk Nayem Uddin",
   "role": "Manager, Administration and Operations",
@@ -272,6 +272,18 @@
    "heading": "Flagship programmes",
    "body": "Counts come from the Trust's programme records.",
    "items": "Family Get-together | 432 attendees in 2025 and 605 in 2026 | 2025–26\nCare of the Heart: women's spiritual and mental wellbeing | 833 online attendees | 2025\nRamadan Reflection and Iftar with Ulama | Two evenings, 504 attendees in all | 2026\nSpecial Hajj Training: Hajj 360° | 229 attendees in 2025 and 120 in 2026 | 2025–26\nTraining on washing and shrouding the deceased | 220 attendees in 2024 and 245 in 2025 | 2024–25\nWeekly halaqa | 98 sessions, about 115 attendees each where recorded | 2024–26\nDay-long Teacher Training Workshop | 57 teachers | 2026\nDawah Skills Training Programme | 103 participants | 2026",
+   "show": true
+  },
+  {
+   "id": "proj-pictures",
+   "page": "projects",
+   "order": 40,
+   "type": "gallery",
+   "tone": "light",
+   "column": "full",
+   "heading": "Work *in pictures*",
+   "body": "From construction sites, training rooms and partner meetings.",
+   "items": "grid | infrastructure, programmes, institutional-development, training, stakeholders",
    "show": true
   },
   {
@@ -648,6 +660,24 @@
     "institutional-development"
    ],
    "position": "50% 40%"
+  },
+  {
+   "id": "ph-procurement-illus",
+   "url": "img/procurement-illustration.jpg",
+   "caption": "Illustration: how a comparative statement sets quotations side by side before the committee decides",
+   "tags": [
+    "procurement"
+   ],
+   "position": "50% 50%"
+  },
+  {
+   "id": "ph-digital-illus",
+   "url": "img/digital-systems-illustration.jpg",
+   "caption": "Illustration: an operations dashboard of the kind I build in Google Sheets and Apps Script",
+   "tags": [
+    "digital-systems"
+   ],
+   "position": "50% 50%"
   },
   {
    "id": "c4fc1c7d",
