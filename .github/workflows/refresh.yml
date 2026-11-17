@@ -1,14 +1,15 @@
 name: Refresh journal snapshot
 
-# Keeps data.json (the fallback copy of the achievement journal) in step with
-# the live feed. The site always tries the live feed first; this copy is used
-# for a fast first paint and if the feed is ever unreachable.
+# Keeps data.json (the snapshot of the whole site: settings, pages, sections,
+# photos and the journal) in step with the live feed. A first-time visitor sees
+# this copy first, so it must follow every change made in the admin panel, not
+# only new journal entries.
 on:
   push:
     branches: [main]
     paths-ignore: [data.json]
   schedule:
-    - cron: "17 */6 * * *"
+    - cron: "17 * * * *"
   workflow_dispatch:
 
 permissions:
@@ -29,11 +30,12 @@ jobs:
           new = json.load(open("feed.tmp"))
           assert isinstance(new.get("items"), list) and new["items"], "feed returned no entries"
           old = json.load(open("data.json")) if os.path.exists("data.json") else {}
-          if old.get("items") == new["items"]:
-              print("No change in the journal")
+          strip = lambda d: {k: v for k, v in d.items() if k != "updated"}
+          if strip(old) == strip(new):
+              print("No change in the site content")
           else:
               json.dump(new, open("data.json", "w"), ensure_ascii=False, indent=1)
-              print("Snapshot updated:", len(new["items"]), "entries")
+              print("Snapshot updated:", len(new["items"]), "entries,", len(new.get("sections", [])), "sections")
           PY
           rm -f feed.tmp
       - name: Commit if changed
@@ -42,5 +44,5 @@ jobs:
           if git diff --cached --quiet; then exit 0; fi
           git config user.name "journal-bot"
           git config user.email "journal-bot@users.noreply.github.com"
-          git commit -m "Refresh journal snapshot"
+          git commit -m "Refresh site snapshot"
           git push
