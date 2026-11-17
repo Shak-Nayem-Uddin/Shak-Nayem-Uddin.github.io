@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-14T22:23:01.319Z",
+ "updated": "2026-11-17T19:33:49.478Z",
  "site": {
   "name": "Engr. Sk Nayem Uddin",
   "role": "Manager, Administration and Operations",
@@ -9,7 +9,7 @@
   "linkedin": "https://www.linkedin.com/in/sk-nayem",
   "pages": "home=Home; experience=Experience; record=Achievements; profile=Profile; contact=Contact",
   "rotate_seconds": "5",
-  "degrees": "B.Sc. Engg. (ETE) · MBA (SCM)",
+  "degrees": "B.Sc. Engg. (ETE) · MBA (Supply Chain Management)",
   "work_email": "nayem.ibt@gmail.com",
   "work_phone": "+880 1306-746437",
   "office_address": "House 17, Road 6/A, Sector 5, Uttara, Dhaka 1230",
@@ -48,8 +48,8 @@
    "type": "hero",
    "tone": "dark",
    "column": "full",
-   "heading": "I build the systems that keep an institution running.",
-   "body": "Operations and administration manager in Dhaka. I look after procurement, projects and people, and I build the tools behind them.",
+   "heading": "I build the systems that keep institutions running.",
+   "body": "An operations and management professional based in Dhaka, Bangladesh, focused on building efficient systems, strengthening institutional operations, and turning strategic objectives into measurable outcomes.\n\nMy work spans operations and administration, procurement and supply chain management, project coordination, financial oversight, and people management. I believe sustainable institutions are built through effective leadership, structured processes, accountable teams, and continuous improvement.\n\nBuilding systems. Strengthening operations. Enabling growth.",
    "items": "Get in touch | #contact\nSee achievements | #record",
    "show": true
   },
@@ -62,7 +62,7 @@
    "column": "full",
    "heading": "",
    "body": "",
-   "items": "4+ | years of experience in operations and administration\n{entries} | achievements recorded in my journal\n{certs} | certificates, courses and trainings completed\n2 | degrees, in engineering and supply chain management",
+   "items": "4+ | Years of Experience | across operations, administration, sales and IT\n70+ | Professional Milestones | achievements and contributions documented\n31+ | Professional Development | certifications, courses and training\n2 | Academic Degrees | Engineering and Supply Chain Management",
    "show": true
   },
   {
@@ -74,7 +74,7 @@
    "column": "full",
    "heading": "Skills",
    "body": "",
-   "items": "",
+   "items": "OPERATIONS MANAGEMENT\nSTRATEGIC PLANNING\nPROCUREMENT & SUPPLY CHAIN\nPROJECT COORDINATION\nPROCESS IMPROVEMENT\nTEAM LEADERSHIP\nINSTITUTIONAL DEVELOPMENT\nACADEMIC RESEARCH",
    "show": true
   },
   {
@@ -162,6 +162,18 @@
    "show": true
   },
   {
+   "id": "exp-projects",
+   "page": "experience",
+   "order": 25,
+   "type": "projects",
+   "tone": "white",
+   "column": "full",
+   "heading": "Selected projects",
+   "body": "Five pieces of work from Imam Bukhari Trust, each set out as the challenge, my role, what I did and the result.",
+   "items": "Finance systems | Accounts and reporting system | Donations and expenses sat in separate sheets, and each month's Receipts and Payments report had to be put together by hand. | Designed and built the system, and wrote the user guide for staff. | Merged donation and expense records into a single entry sheet with controlled dropdown lists, and set the monthly Receipts and Payments and management reports to build themselves from those entries. | Every income and expense is entered once, in one place, and the monthly reports come straight from it.\nProcurement | Procurement procedure and vendor selection | Purchases and service contracts needed a written, repeatable procedure that the management committee could review. | Wrote the procedure and run it day to day. | Set out the steps for quotations, comparative statements and approvals, and apply them to each purchase, including choosing an external audit firm from three quotations. | Each buying decision reaches the committee with a comparative statement behind it, so choices can be checked and defended.\nConstruction | Mosque and academic building | IBT is building a seven-storey mosque and an eleven-storey academic building, with several contractors, engineers and suppliers involved. | Coordinate the project on the operations side for management. | Coordinate contractors, engineers and suppliers, keep track of the timeline and costs, and arrange site services such as separate three-phase power connections for each building. | Since piling began in 2024, management has had one clear view of progress and spending as the work moves forward.\nProgrammes | Programmes, training and campaigns | Full-day programmes, staff training and fundraising campaigns each bring many people together who need to work to one plan. | Plan and run them with programme managers, scholars, staff and volunteers. | Build the plan and volunteer map, assign roles across IBT staff, partner institutions and volunteers, manage logistics on the day, and lead staff sessions such as task, time and SMART planning. | Each event runs from one shared plan, so every staff member and volunteer knows their role.\nOperations systems | Office systems and the move to an ERP | Tasks, attendance, stock and staff reports needed to be tracked consistently, and attendance was still kept in a paper register. | Designed and built the tools, and lead the move to an ERP. | Built a task tracker for staff assignments, committee decisions and recurring payments; an attendance and leave system that follows the HR policy; and an inventory system with a staff manual. Started the move to an ERP covering finance, HR, procurement, inventory and donors. | Staff work, attendance and stock are each tracked in one place, and management receives regular performance reports.",
+   "show": true
+  },
+  {
    "id": "exp-side",
    "page": "experience",
    "order": 30,
@@ -206,7 +218,7 @@
    "column": "full",
    "heading": "",
    "body": "Operations and administration manager with an engineering degree and an MBA in supply chain management. I turn day-to-day work into clear procedures and simple systems, so an institution runs well whoever is in the room.",
-   "items": "Based in | Uttara, Dhaka\nCurrent role | Manager, Administration and Operations, Imam Bukhari Trust\nWorking since | 2017\nFocus | Operations, procurement, projects and systems",
+   "items": "Based in | Uttara, Dhaka\nCurrent role | Manager, Administration and Operations, Imam Bukhari Trust\nExperience | 4+ years; managing operations since Nov 2023\nFocus | Operations, procurement, projects and systems",
    "show": true
   },
   {
@@ -242,7 +254,7 @@
    "column": "right",
    "heading": "Languages",
    "body": "",
-   "items": "Bangla | Native language\nEnglish | Working language; both degrees taught in English\nArabic | Level 3 certificate, Online Arabic Language Institute",
+   "items": "Bangla | Native language\nEnglish | Used at work for reports, policies, correspondence and presentations\nArabic | Level 3 certificate, Online Arabic Language Institute",
    "show": true
   },
   {
@@ -254,7 +266,7 @@
    "column": "full",
    "heading": "Education",
    "body": "",
-   "items": "MBA, Supply Chain Management | International Islamic University Chittagong (IIUC) |\nB.Sc. Engg., Electronics and Telecommunication | International Islamic University Chittagong (IIUC) | 2022\nIslamic Sciences, two-year programme | Zad Academy | 2026\nDiploma in Islamic Studies | Taibah Academy | 2021",
+   "items": "MBA, Supply Chain Management | International Islamic University Chittagong (IIUC). Thesis: Impact of Procurement Efficiency on Project Performance in Infrastructure Development Projects | 2026\nB.Sc. Engg., Electronics and Telecommunication | International Islamic University Chittagong (IIUC) | 2022\nIslamic Sciences, two-year programme | Zad Academy | 2026\nDiploma in Islamic Studies | Taibah Academy | 2021",
    "show": true
   },
   {
@@ -266,7 +278,7 @@
    "column": "full",
    "heading": "Certifications",
    "body": "",
-   "items": "Google Project Management Professional Certificate | Google, via Coursera | 2025\nSix Sigma White Belt | Process improvement fundamentals | 2025\nAgile Project Management | Google, via Coursera | 2025\nBudgeting and Methods of Budgeting | Imam Bukhari Trust and Taibah Academy | 2025\nKPI Development and Analysis | Professional training |",
+   "items": "Google Project Management Professional Certificate | Google, via Coursera | 2025\nSix Sigma White Belt | Process improvement fundamentals | 2025\nAgile Project Management | Google, via Coursera | 2025\nBudgeting and Methods of Budgeting | Imam Bukhari Trust and Taibah Academy | 2025\nKPI Development and Analysis | Professional training |\nAgentX AI skilling: Generative AI, Microsoft Copilot and prompt engineering | Currently learning | In progress",
    "show": true
   },
   {
@@ -369,6 +381,33 @@
    "position": "15% 30%"
   },
   {
+   "id": "ph-tb-present",
+   "url": "img/teambuilding-present.jpg",
+   "caption": "Presenting our group's work on team building in the light of Islam, at IBT's staff training",
+   "tags": [
+    "gallery"
+   ],
+   "position": "30% 35%"
+  },
+  {
+   "id": "ph-tb-room",
+   "url": "img/teambuilding-room.jpg",
+   "caption": "Our group's session at IBT's training on communication, coordination and team building",
+   "tags": [
+    "gallery"
+   ],
+   "position": "50% 45%"
+  },
+  {
+   "id": "ph-podcast",
+   "url": "img/podcast-education.jpg",
+   "caption": "On a podcast about the education system and parenting, with the principal of Kulliyatul Quran Model Madrasha",
+   "tags": [
+    "gallery"
+   ],
+   "position": "50% 30%"
+  },
+  {
    "id": "ph-training",
    "url": "img/training.jpg",
    "caption": "Leading a staff session on task, time and SMART planning",
@@ -377,6 +416,15 @@
     "big"
    ],
    "position": "30% 25%"
+  },
+  {
+   "id": "ph-site-chairman",
+   "url": "img/site-visit-chairman.jpg",
+   "caption": "At IBT's construction site with the Chairman, talking through progress with the site engineer",
+   "tags": [
+    "gallery"
+   ],
+   "position": "50% 30%"
   },
   {
    "id": "ph-site",
@@ -400,6 +448,24 @@
    "id": "ph-mou",
    "url": "img/mou.jpg",
    "caption": "At an MoU signing between partner institutions",
+   "tags": [
+    "gallery"
+   ],
+   "position": "50% 50%"
+  },
+  {
+   "id": "ph-expo-2024",
+   "url": "img/muslim-expo-2024.jpg",
+   "caption": "With Dr. Abdul Bashir Madani at the joint stall of IBT, Taibah Academy and Kulliyatul Quran, Muslim Expo 2024",
+   "tags": [
+    "gallery"
+   ],
+   "position": "50% 56%"
+  },
+  {
+   "id": "ph-football",
+   "url": "img/football-match.jpg",
+   "caption": "After a friendly football match with friends and colleagues, where I played in defence",
    "tags": [
     "gallery"
    ],
