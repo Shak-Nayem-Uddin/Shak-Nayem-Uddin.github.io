@@ -6,7 +6,7 @@
 <title>Engr. Sk Nayem Uddin | Manager, Administration and Operations</title>
 <meta name="description" content="Operations and management professional in Dhaka, Bangladesh: operations and administration, procurement and supply chain, project coordination and the systems that hold them together.">
 <meta name="theme-color" content="#0D1B2E">
-<script>(function(){var t;try{t=localStorage.getItem('theme')}catch(e){}if(t!=='light'&&t!=='dark')t=(window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';document.documentElement.setAttribute('data-theme',t)})()</script>
+<script>(function(){var t;try{t=localStorage.getItem('theme')}catch(e){}if(t!=='light'&&t!=='dark')t='dark';document.documentElement.setAttribute('data-theme',t)})()</script>
 
 <link rel="canonical" href="https://shak-nayem-uddin.github.io/">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -24,7 +24,7 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300&family=Nunito:wght@300..800&display=swap" rel="stylesheet">
 <link rel="preload" as="image" href="img/hero.jpg">
 <style>
 /* ---------- palette and themes
@@ -525,6 +525,180 @@ footer a:hover{text-decoration:underline}
   .ticker-track{animation:none;flex-wrap:wrap;width:auto}
   .stage figure.on img{transform:none}
 }
+
+/* =====================================================================
+   Night plum theme
+   Near-black with a plum glow, glass surfaces, white pill buttons,
+   Inria Sans headings set with air between the letters, Nunito for reading.
+   Light mode keeps the same structure on a warm off-white.
+   ===================================================================== */
+:root{--d:"Inria Sans",ui-sans-serif,system-ui,sans-serif;--s:"Nunito",ui-sans-serif,system-ui,sans-serif;
+  --navy:#0E0B0D;--brass:#7E3A5E;--accent:#7E3A5E;--glow1:rgba(126,58,94,.10);--glow2:rgba(84,42,94,.08);
+  --page:#F6F2F4;--body:#1C1418;--head-bg:rgba(250,246,248,.82);--head-fg:#1C1418;--head-soft:#6E6169;--head-line:rgba(28,20,24,.08);--foot-bg:#140D11}
+html[data-theme=dark]{--brass:#D6A9C0;--accent:#D6A9C0;--glow1:rgba(122,34,82,.30);--glow2:rgba(70,30,90,.22);
+  --page:#0E0B0D;--body:#F4EFF2;--head-bg:rgba(14,11,13,.72);--head-fg:#FFFFFF;--head-soft:#CFC4CA;--head-line:rgba(255,255,255,.06);--foot-bg:#0A0809}
+
+/* tones: light mode */
+.tone-light{--bg:#F6F2F4;--surface:rgba(255,255,255,.72)}
+.tone-white{--bg:#FCFAFB;--surface:rgba(246,242,244,.9)}
+.tone-light,.tone-white{--fg:#1C1418;--soft:#6B5E66;--line:rgba(28,20,24,.10);--line2:rgba(28,20,24,.2);--strong:#140D11;--sub:#7E3A5E;--acc:#7E3A5E;--deep-bg:#1C1418;--deep-fg:#FFFFFF;--ring:rgba(28,20,24,.55);--media:#E7DCE2;--on-bg:#1C1418;--on-fg:#FFFFFF;--b1:#8E4A6E;--b2:#C08AA6;--b3:#5E2A47;--shadow:rgba(40,12,28,.18);--btn-bg:#1C1418;--btn-fg:#FFFFFF;--glass-line:rgba(28,20,24,.08)}
+.tone-dark{--bg:#140D11;--surface:rgba(103,95,100,.16);--fg:#F4EFF2;--soft:#C9BCC3;--line:rgba(255,255,255,.09);--line2:rgba(255,255,255,.18);--strong:#FFFFFF;--sub:#E2C3D3;--acc:#D6A9C0;--deep-bg:#FFFFFF;--deep-fg:#0E0B0D;--ring:rgba(255,255,255,.4);--media:#2A1B24;--on-bg:#FFFFFF;--on-fg:#0E0B0D;--b1:#8E4A6E;--b2:#C08AA6;--b3:#5E2A47;--shadow:rgba(0,0,0,.55);--btn-bg:#FFFFFF;--btn-fg:#0E0B0D;--glass-line:rgba(255,255,255,.08)}
+/* tones: dark mode, one continuous night with glows that move from side to side */
+[data-theme=dark] .tone-dark,[data-theme=dark] .tone-light,[data-theme=dark] .tone-white{--bg:#0E0B0D;--surface:rgba(103,95,100,.14);--fg:#F4EFF2;--soft:#BFB2B9;--line:rgba(255,255,255,.08);--line2:rgba(255,255,255,.16);--strong:#FFFFFF;--sub:#E2C3D3;--acc:#D6A9C0;--deep-bg:#FFFFFF;--deep-fg:#0E0B0D;--ring:rgba(255,255,255,.38);--media:#251820;--on-bg:#FFFFFF;--on-fg:#0E0B0D;--b1:#7A3A5E;--b2:#B47A98;--b3:#4E2038;--shadow:rgba(0,0,0,.6);--btn-bg:#FFFFFF;--btn-fg:#0E0B0D;--glass-line:rgba(255,255,255,.08)}
+/* in dark mode the page is one continuous night: sections are clear and the glow sits behind them */
+html[data-theme=dark] body{background:radial-gradient(1100px 700px at 15% 25%,rgba(122,34,82,.22),transparent 70%),radial-gradient(1000px 700px at 85% 75%,rgba(70,30,90,.18),transparent 70%),#0E0B0D;background-attachment:fixed}
+[data-theme=dark] .sec.tone-dark,[data-theme=dark] .sec.tone-light,[data-theme=dark] .sec.tone-white{background-color:transparent;background-image:none}
+.sec.tone-light{background-image:radial-gradient(900px 520px at 10% 10%,var(--glow1),transparent 70%)}
+.sec.tone-white{background-image:radial-gradient(900px 520px at 90% 20%,var(--glow2),transparent 70%)}
+.sec{padding:96px 0}
+.sec.join{padding-top:0}
+
+body{font-family:var(--s);font-size:17px;line-height:1.7}
+.top .w{height:72px}
+.top{border-bottom-color:var(--head-line)}
+.mark{font-family:var(--s);font-weight:600;font-size:16px;letter-spacing:.12em;text-transform:uppercase}
+.nav{gap:34px}
+.nav a{font-family:var(--s);font-size:15px;font-weight:500;border-bottom-width:1px}
+.nav a[aria-current=page]{border-color:var(--head-fg)}
+.mode{box-shadow:inset 0 0 0 1px var(--head-line)}
+#prog{background:linear-gradient(90deg,#7E3A5E,#D6A9C0)}
+
+/* headings: centred, airy, light with bold words */
+h1{font-family:var(--d);font-weight:300;letter-spacing:.06em;line-height:1.12}
+h1 strong,.sec h2 strong{font-weight:700}
+.sec h2{font-family:var(--d);font-weight:300;font-size:clamp(30px,3.6vw,46px);letter-spacing:.04em;line-height:1.15;text-align:center;margin:0 auto 18px;max-width:22em}
+.sec h2.sub,.sec h2.side-title{text-align:left;margin-left:0;font-weight:400;letter-spacing:.02em}
+.lead2,.jlead,.years p,.years>p{text-align:center;margin-left:auto;margin-right:auto}
+.lead2{margin-top:-4px;margin-bottom:44px}
+.type-title{padding:84px 0 20px;text-align:center}
+.type-title h1{font-size:clamp(38px,5.4vw,72px);margin-left:auto;margin-right:auto;max-width:16em}
+.type-title .lead{margin:0 auto 40px;text-align:center;font-size:19px}
+
+/* buttons: white pills on dark, ink pills on light */
+.btn{font-family:var(--s);font-weight:600;font-size:14px;letter-spacing:.06em;text-transform:uppercase;padding:13px 28px;border-radius:10px;background:var(--btn-bg);color:var(--btn-fg)}
+.btn.ghost,.btn.outline{background:var(--surface);color:var(--fg);box-shadow:inset 0 0 0 1px var(--glass-line);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+.btn.ghost:hover,.btn.outline:hover{box-shadow:inset 0 0 0 1px var(--line2)}
+.btn.deep{background:var(--btn-bg);color:var(--btn-fg)}
+
+/* glass surfaces */
+.card,.xp article,.badge,.area,.vc-back{border-radius:16px}
+.card,.xp article,.badge,.area{background:var(--surface);box-shadow:inset 0 0 0 1px var(--glass-line);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}
+.card:hover{box-shadow:inset 0 0 0 1px var(--line2),0 24px 40px -28px var(--shadow)}
+.xp article::before{display:none}
+.tag{background:transparent;box-shadow:inset 0 0 0 1px var(--line2);font-family:var(--s)}
+.badge time,.proj-tag,.card .org,.card .meta b,.clist time,.area b small,.vc-deg{color:var(--acc)}
+.badge b,.xp h3,.card h3,.three h3,.proj h3,.role h3,.clist b{font-family:var(--d);letter-spacing:.02em}
+
+/* centred opening */
+.type-hero{padding:0;min-height:calc(100vh - 72px);display:flex;align-items:center;position:relative;overflow:hidden;isolation:isolate}
+.type-hero>.w{width:100%}
+.type-hero::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background:radial-gradient(800px 520px at 30% 30%,rgba(126,58,94,.35),transparent 70%),radial-gradient(700px 500px at 80% 70%,rgba(80,30,90,.22),transparent 70%);transform:none;-webkit-mask-image:none;mask-image:none;animation:night 22s ease-in-out infinite alternate;background-size:auto;height:auto;left:0;right:0;bottom:0}
+.type-hero::after{display:none}
+@keyframes night{0%{transform:translate(0,0)}100%{transform:translate(-40px,30px) scale(1.08)}}
+html:not([data-theme=dark]) .type-hero.tone-dark{--bg:#140D11}
+.hero2{position:relative;text-align:center;padding:90px 0 110px}
+.hero2-in{position:relative;z-index:2;max-width:980px;margin:0 auto}
+.eyebrow{font-family:var(--d);font-size:clamp(13px,1.3vw,17px);font-weight:400;letter-spacing:.22em;text-transform:uppercase;color:var(--soft);margin:0 0 26px}
+.hero2 h1{font-size:clamp(34px,5.2vw,66px);letter-spacing:.08em;margin:0 0 28px;color:var(--strong)}
+.hero2 .sub{font-size:clamp(17px,1.5vw,20px);line-height:1.7;max-width:40em;margin:0 auto 26px;color:var(--soft)}
+.hero2 .who{display:flex;flex-wrap:wrap;justify-content:center;gap:4px 18px;font-size:15px;color:var(--soft);margin:0 0 34px}
+.hero2 .who b{color:var(--fg);font-weight:700}
+.hero2 .who span+span::before,.hero2 .who b+span::before{content:"";display:inline-block;width:4px;height:4px;border-radius:50%;background:var(--acc);margin:0 14px 0 0;vertical-align:middle}
+.hero2 .acts{justify-content:center}
+.scrollhint{position:absolute;left:0;bottom:30px;font-size:14px;color:var(--soft);letter-spacing:.04em}
+.scrollhint::after{content:"";display:inline-block;width:40px;height:1px;background:var(--soft);margin-left:12px;vertical-align:middle;animation:hint 2.4s ease-in-out infinite}
+@keyframes hint{0%,100%{transform:scaleX(.3);transform-origin:0 50%}50%{transform:scaleX(1)}}
+/* the glass shape behind the headline */
+.glass{position:absolute;left:50%;top:50%;width:min(560px,80vw);aspect-ratio:1;transform:translate(-50%,-52%);z-index:1;perspective:1200px;pointer-events:none;animation:none;margin:0}
+.glass .tilt{position:absolute;inset:0;transform-style:preserve-3d;animation:spin 26s ease-in-out infinite alternate}
+.glass i{position:absolute;border-radius:22%;background:linear-gradient(135deg,rgba(255,255,255,.13),rgba(255,255,255,.02) 55%,rgba(214,169,192,.06));box-shadow:inset 0 0 0 1px rgba(255,255,255,.07),0 40px 80px -40px rgba(0,0,0,.7);-webkit-backdrop-filter:blur(2px);backdrop-filter:blur(2px)}
+.glass .g1{inset:14% 30% 14% 6%;transform:rotate(45deg) translateZ(40px)}
+.glass .g2{inset:14% 6% 14% 30%;transform:rotate(45deg) translateZ(-30px)}
+.glass .g3{inset:38% 38% 38% 38%;border-radius:50%;background:radial-gradient(circle,rgba(214,169,192,.35),transparent 70%);box-shadow:none;transform:translateZ(80px);filter:blur(14px)}
+@keyframes spin{0%{transform:rotateX(14deg) rotateY(-18deg)}100%{transform:rotateX(-10deg) rotateY(20deg)}}
+html:not([data-theme=dark]) .glass i{background:linear-gradient(135deg,rgba(255,255,255,.16),rgba(255,255,255,.03) 55%,rgba(214,169,192,.08))}
+
+.type-hero .glass{animation:none;margin:0;width:min(560px,80vw);order:0}
+.proj-pic.depth{width:100%;margin:0}
+/* meet the person */
+.meet-h{margin-bottom:56px}
+.meet{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:64px;align-items:center;max-width:980px;margin:0 auto}
+.meet-pic{width:100%;margin:0}
+.meet-pic .rotbox{aspect-ratio:4/5;border-radius:18px;background:var(--media);box-shadow:0 50px 80px -40px var(--shadow),inset 0 0 0 1px var(--glass-line)}
+.meet-text p{margin:0 0 16px;font-size:17.5px;color:var(--fg)}
+.meet-text p.hey{font-family:var(--d);font-weight:700;font-size:30px;letter-spacing:.03em;margin-bottom:12px}
+.meet-text p.motto{font-family:var(--d);font-weight:700;font-size:20px;letter-spacing:.02em;margin-top:22px;color:var(--strong)}
+.meet-sig{display:flex;flex-direction:column;gap:2px;margin-top:26px!important;padding-top:18px;border-top:1px solid var(--line)}
+.meet-sig b{font-family:var(--d);font-size:19px;letter-spacing:.03em}
+.meet-sig span{font-size:15px;color:var(--acc)}
+
+/* projects with photos */
+.projects{border-top:1px solid var(--line)}
+.proj{display:block}
+.proj .proj-body{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:20px 48px}
+.proj.has-pic{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:56px;align-items:start;padding:56px 0}
+.proj.has-pic.flip .proj-pic{order:2}
+.proj.has-pic .proj-body{display:block}
+.proj.has-pic header{margin-bottom:22px}
+.proj.has-pic h3{font-size:30px}
+.proj-pic{position:sticky;top:96px;margin:0}
+.proj-pic .rotbox{aspect-ratio:16/11;border-radius:16px;background:var(--media);box-shadow:0 40px 70px -40px var(--shadow),inset 0 0 0 1px var(--glass-line)}
+.proj-pic figcaption{font-size:13px;color:var(--soft);margin-top:10px}
+.proj dt{font-family:var(--s);font-weight:700}
+.proj dd{font-size:16.5px}
+.proj .res dd{font-family:var(--s)}
+
+/* other blocks */
+.nums div+div{border-left-color:var(--line)}
+.nums b{font-family:var(--d);font-weight:700;letter-spacing:.01em}
+.nums strong{font-family:var(--d);letter-spacing:.02em}
+.career-n{font-family:var(--d)}
+.three{text-align:left}
+.ticker span{font-family:var(--s);letter-spacing:.14em;font-weight:600}
+.ticker span::after{background:var(--acc)}
+.stage{border-radius:18px}
+.stage figcaption small{color:#E2C3D3}
+.cta{text-align:left}
+.reach{font-family:var(--s)}
+.vc-front{background:linear-gradient(135deg,#1E1218,#0E0B0D);box-shadow:inset 0 0 0 1px rgba(214,169,192,.35),0 34px 60px -26px rgba(0,0,0,.7)}
+.vc-rule{background:#D6A9C0}
+.role.current>div::before,.role.current::before{background:var(--acc);box-shadow:0 0 0 5px rgba(214,169,192,.18)}
+.role>div::after,.role::after{background:var(--acc)}
+.role li::marker{color:var(--acc)}
+.seg.cur{background:linear-gradient(180deg,#E8C9D8,#B47A98)}
+.seg em{color:#140D11}
+.chart3d .pk .f{fill:#B47A98}.chart3d .pk .t{fill:#E2C3D3}.chart3d .pk .s{fill:#7A3A5E}
+.chart3d a:hover .f,.chart3d a:focus-visible .f{fill:#B47A98}
+.chart3d a:hover .t,.chart3d a:focus-visible .t{fill:#E2C3D3}
+.chart3d a:hover .s,.chart3d a:focus-visible .s{fill:#7A3A5E}
+.area i::after{background:var(--acc)}
+.thumbs button[aria-current=true]{box-shadow:0 0 0 2px var(--acc)}
+.jump button,.chips button{font-family:var(--s)}
+footer{font-family:var(--s)}
+.mform input,.mform select,.mform textarea{font-family:var(--s);border-radius:10px}
+.mform input:focus,.mform select:focus,.mform textarea:focus{border-color:var(--acc)}
+:focus-visible{outline-color:var(--acc)}
+
+@media(max-width:820px){
+  .sec{padding:64px 0}
+  .type-hero{min-height:auto}
+  .hero2{padding:56px 0 80px}
+  .hero2 h1{letter-spacing:.04em}
+  .eyebrow{letter-spacing:.14em}
+  .type-hero .glass{width:92vw;top:42%;margin:0}
+  .scrollhint{display:none}
+  .meet{grid-template-columns:1fr;gap:32px}
+  .meet-pic{max-width:300px;margin:0 auto}
+  .proj.has-pic{grid-template-columns:1fr;gap:24px;padding:36px 0}
+  .proj.has-pic.flip .proj-pic{order:0}
+  .proj-pic{position:static}
+  .proj .proj-body{grid-template-columns:1fr}
+  .proj.has-pic h3{font-size:24px}
+  .mark{font-size:14px;letter-spacing:.08em}
+}
+@media (prefers-reduced-motion:reduce){
+  .glass .tilt,.type-hero::before,.scrollhint::after{animation:none}
+}
 </style>
 </head>
 <body>
@@ -670,7 +844,7 @@ function sections(list){
 function wrap(type, tone, prev, body, s){
   var nav = s && s.heading && ['hero', 'intro', 'title', 'contact', 'cta', 'ticker'].indexOf(s.type) < 0;
   return '<section class="sec type-' + esc(type) + ' tone-' + esc(tone || 'light') + (prev === tone ? ' join' : '') + '"' +
-    (s ? ' id="s-' + esc(s.id) + '"' : '') + (nav ? ' data-h="' + esc(s.heading) + '"' : '') + '><div class="w">' + body + '</div></section>';
+    (s ? ' id="s-' + esc(s.id) + '"' : '') + (nav ? ' data-h="' + esc(plain(s.heading)) + '"' : '') + '><div class="w">' + body + '</div></section>';
 }
 function link(label, target, cls){
   target = target || '';
@@ -689,18 +863,29 @@ function inner(s){
       // body paragraphs are separated by a blank line; a short closing paragraph is shown as a motto
       var ps = String(b || '').split(/\n\s*\n/).map(function(x){ return x.trim(); }).filter(Boolean);
       var lede = ps.map(function(x, i){ return '<p' + (ps.length > 1 && i === ps.length - 1 && x.length < 90 ? ' class="motto"' : '') + '>' + esc(x) + '</p>'; }).join('');
-      return '<div class="hero"><div>' + (F.site.current ? '<p class="now"><i></i>' + esc(F.site.current) + '</p>' : '') + kin(h) + (cred ? '<p class="cred">' + cred + '</p>' : '') + (lede ? '<div class="lede">' + lede + '</div>' : '') + (btns ? '<div class="acts">' + btns + '</div>' : '') + '</div>' +
-        '<div class="depth js-tilt"><div class="tilt"><div class="arch"><div class="rotbox" data-tag="portrait"></div></div></div></div></div>';
+      // centred opening: positioning line, headline, first paragraph, buttons; the rest of the body lives in the Meet section
+      return '<div class="hero2"><div class="glass depth js-tilt" aria-hidden="true"><div class="tilt"><i class="g1"></i><i class="g2"></i><i class="g3"></i></div></div>' +
+        '<div class="hero2-in">' + (F.site.positioning ? '<p class="eyebrow">' + esc(F.site.positioning) + '</p>' : '') + kin(h) +
+        (ps[0] ? '<p class="sub">' + esc(ps[0]) + '</p>' : '') +
+        '<p class="who">' + (F.site.name ? '<b>' + esc(F.site.name) + '</b>' : '') + (F.site.degrees ? '<span>' + esc(F.site.degrees) + '</span>' : '') + (F.site.current ? '<span>' + esc(F.site.current) + '</span>' : '') + '</p>' +
+        (btns ? '<div class="acts">' + btns + '</div>' : '') + '</div><span class="scrollhint" aria-hidden="true">Scroll to explore</span></div>';
+    case 'meet':
+      // photo on one side, a short personal introduction on the other
+      var mp = String(b || '').split(/\n\s*\n/).map(function(x){ return x.trim(); }).filter(Boolean);
+      var mtag = (s.items || '').trim() || 'portrait';
+      return (h ? '<h2 class="meet-h">' + md(h) + '</h2>' : '') + '<div class="meet"><div class="meet-pic depth js-tilt"><div class="tilt"><div class="rotbox" data-tag="' + esc(mtag) + '"></div></div></div><div class="meet-text">' +
+        mp.map(function(x, i){ return '<p' + (i === 0 && x.length < 40 ? ' class="hey"' : (mp.length > 1 && i === mp.length - 1 && x.length < 90 ? ' class="motto"' : '')) + '>' + md(x) + '</p>'; }).join('') +
+        (F.site.name ? '<p class="meet-sig"><b>' + esc(F.site.name) + '</b>' + (F.site.degrees ? '<span>' + esc(F.site.degrees) + '</span>' : '') + '</p>' : '') + '</div></div>';
     case 'years':
-      return '<div class="years"><h2>' + esc(h) + '</h2><p class="js-count"></p><figure class="chart3d js-bars"></figure></div>';
+      return '<div class="years"><h2>' + md(h) + '</h2><p class="js-count"></p><figure class="chart3d js-bars"></figure></div>';
     case 'latest':
-      return (h ? '<h2>' + esc(h) + '</h2>' : '') + '<div class="cards js-latest" data-n="' + (parseInt(b, 10) || 3) + '"></div>' +
+      return (h ? '<h2>' + md(h) + '</h2>' : '') + '<div class="cards js-latest" data-n="' + (parseInt(b, 10) || 3) + '"></div>' +
         (RECPAGE ? '<a class="btn deep" href="#' + esc(RECPAGE) + '" data-go="' + esc(RECPAGE) + '">See every entry</a>' : '');
     case 'record':
       return '<div class="tools"><input id="q" type="search" placeholder="Search entries, skills or tools" aria-label="Search the record"><span id="yearnote"></span></div><div class="chips" id="chips"></div><div id="list"></div>';
     case 'stats':
       var want = (b || 'areas, skills, tools').toLowerCase(), n = DATA.length;
-      return (h ? '<h2>' + esc(h) + '</h2>' : '') +
+      return (h ? '<h2>' + md(h) + '</h2>' : '') +
         (n ? '<p class="jlead">I log every finished piece of work in an achievement journal. It has ' + n + ' entries so far. Here is how they split by area.</p>' : '') +
         (want.indexOf('areas') > -1 ? '<div class="areas js-areas"></div>' : '') +
         '<div class="jfoot">' +
@@ -713,7 +898,7 @@ function inner(s){
       return (h ? '<h2 class="side-title">' + esc(h) + '</h2>' : '') + '<div class="prose">' + String(b).split(/\n\s*\n/).filter(function(p){ return p.trim(); }).map(function(p){ return '<p>' + esc(p.trim()).replace(/\n/g, '<br>') + '</p>'; }).join('') + '</div>';
     case 'columns':
       var cols = lines(s.items);
-      return (h ? '<h2>' + esc(h) + '</h2>' : '') + '<div class="three" style="--n:' + Math.min(3, cols.length || 1) + '">' + cols.map(function(l){ var c = cells(l); return '<div><h3>' + esc(c[0]) + '</h3>' + (c[1] ? '<p>' + esc(c[1]) + '</p>' : '') + '</div>'; }).join('') + '</div>';
+      return (h ? '<h2>' + md(h) + '</h2>' : '') + '<div class="three" style="--n:' + Math.min(3, cols.length || 1) + '">' + cols.map(function(l){ var c = cells(l); return '<div><h3>' + esc(c[0]) + '</h3>' + (c[1] ? '<p>' + esc(c[1]) + '</p>' : '') + '</div>'; }).join('') + '</div>';
     case 'list':
       return '<div class="plain">' + (h ? '<h3>' + esc(h) + '</h3>' : '') + '<ul>' + lines(s.items).map(function(l){ var c = cells(l); return '<li>' + esc(c[0]) + (c[1] ? '<span>' + esc(c[1]) + '</span>' : '') + '</li>'; }).join('') + '</ul></div>';
     case 'roles':
@@ -725,7 +910,7 @@ function inner(s){
     case 'gallery':
       var g = photos('gallery').map(function(p, i){ var c = pcat(p); return {p: p, c: c, i: i}; }).sort(function(a, b){ return a.c.k - b.c.k || a.i - b.i; }).map(function(x){ x.p._cat = x.c.label; return x.p; });
       if (!g.length) return '';
-      return (h ? '<h2>' + esc(h) + '</h2>' : '') + (b ? '<p class="lead2">' + esc(b) + '</p>' : '') +
+      return (h ? '<h2>' + md(h) + '</h2>' : '') + (b ? '<p class="lead2">' + esc(b) + '</p>' : '') +
         '<div class="show" aria-roledescription="carousel" aria-label="' + esc(h || 'Photos') + '"><div class="stage">' + g.map(function(p, i){
           return '<figure' + (i ? '' : ' class="on"') + '><img src="' + esc(p.url) + '"' + (i > 1 ? ' loading="lazy"' : '') + ' alt="' + esc(p.caption || 'Photo') + '" style="object-position:' + esc(p.position || '50% 50%') + '">' +
             (p.caption || p._cat ? '<figcaption>' + (p._cat ? '<small>' + esc(p._cat) + '</small>' : '') + esc(p.caption || '') + '</figcaption>' : '') + '</figure>';
@@ -749,21 +934,23 @@ function inner(s){
     case 'expertise':
       var groups = lines(s.items);
       if (!groups.length) return '';
-      return (h ? '<h2>' + esc(h) + '</h2>' : '') + (b ? '<p class="lead2">' + esc(b) + '</p>' : '') + '<div class="xp">' + groups.map(function(l){
+      return (h ? '<h2>' + md(h) + '</h2>' : '') + (b ? '<p class="lead2">' + esc(b) + '</p>' : '') + '<div class="xp">' + groups.map(function(l){
         var c = cells(l);
         // Area | skill, skill | Evidence: where it shows (optional)
         return '<article><h3>' + esc(c[0]) + '</h3><div class="tags">' + parts(c[1] || '').map(function(t){ return '<span class="tag">' + esc(t) + '</span>'; }).join('') + '</div>' + (c[2] ? '<p class="ev">' + esc(c[2]) + '</p>' : '') + '</article>';
       }).join('') + '</div>';
     case 'projects':
-      // Tag | Title | Challenge | My role | What I did | Result | skill, skill (optional)
+      // Tag | Title | Challenge | My role | What I did | Result | skill, skill (optional) | photo tag (optional)
+      // Photos: upload them in the photo library with the project's tag, e.g. "infrastructure" or "digital-systems".
       var pj = lines(s.items);
       if (!pj.length) return '';
       var lab = ['Challenge', 'My role', 'What I did', 'Result'];
-      return (h ? '<h2>' + esc(h) + '</h2>' : '') + (b ? '<p class="lead2">' + esc(b) + '</p>' : '') + '<div class="projects">' + pj.map(function(l){
-        var c = cells(l);
-        return '<article class="proj"><header>' + (c[0] ? '<span class="proj-tag">' + esc(c[0]) + '</span>' : '') + '<h3>' + esc(c[1] || '') + '</h3></header><dl>' +
+      return (h ? '<h2>' + md(h) + '</h2>' : '') + (b ? '<p class="lead2">' + esc(b) + '</p>' : '') + '<div class="projects">' + pj.map(function(l, n){
+        var c = cells(l), ptg = (c[7] || c[0] || '').toLowerCase().trim().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''), pics = ptg ? photos(ptg) : [];
+        var pic = pics.length ? '<figure class="proj-pic depth js-tilt"><div class="tilt"><div class="rotbox" data-tag="' + esc(ptg) + '"></div></div>' + (pics.length > 1 ? '<figcaption>' + pics.length + ' photos</figcaption>' : '') + '</figure>' : '';
+        return '<article class="proj' + (pic ? ' has-pic' + (n % 2 ? ' flip' : '') : '') + '">' + pic + '<div class="proj-body"><header>' + (c[0] ? '<span class="proj-tag">' + esc(c[0]) + '</span>' : '') + '<h3>' + esc(c[1] || '') + '</h3></header><dl>' +
           lab.map(function(t, k){ return c[k + 2] ? '<div' + (k === 3 ? ' class="res"' : '') + '><dt>' + t + '</dt><dd>' + esc(c[k + 2]) + '</dd></div>' : ''; }).join('') +
-          (c[6] ? '<div class="skl"><dt>Skills applied</dt><dd><span class="tags">' + parts(c[6]).map(function(x){ return '<span class="tag">' + esc(x) + '</span>'; }).join('') + '</span></dd></div>' : '') + '</dl></article>';
+          (c[6] ? '<div class="skl"><dt>Skills applied</dt><dd><span class="tags">' + parts(c[6]).map(function(x){ return '<span class="tag">' + esc(x) + '</span>'; }).join('') + '</span></dd></div>' : '') + '</dl></div></article>';
       }).join('') + '</div>';
     case 'career':
       // Title | Organisation | When | months (a number, or {since:YYYY-MM} for a current role)
@@ -772,7 +959,7 @@ function inner(s){
       var tot = cr.reduce(function(a, r){ return a + r.m; }, 0), yy = Math.floor(tot / 12), mm = tot % 12;
       var dur = function(m){ var y = Math.floor(m / 12), r = m % 12; return (y ? y + (y === 1 ? ' year' : ' years') : '') + (y && r ? ' ' : '') + (r ? r + (r === 1 ? ' month' : ' months') : ''); };
       var old = cr.slice().reverse();
-      return (h ? '<h2>' + esc(h) + '</h2>' : '') + '<div class="career"><div class="career-top"><div><b class="career-n">' + yy + '<i class="plus" aria-hidden="true">+</i></b><span class="career-u">years of professional experience</span></div>' +
+      return (h ? '<h2>' + md(h) + '</h2>' : '') + '<div class="career"><div class="career-top"><div><b class="career-n">' + yy + '<i class="plus" aria-hidden="true">+</i></b><span class="career-u">years of professional experience</span></div>' +
         '<p>' + esc(b || '') + ' In total: ' + dur(tot) + ' across ' + cr.length + ' roles.</p></div>' +
         '<div class="cbar js-cbar" role="img" aria-label="Career length by role">' + old.map(function(r, i){ return '<span class="seg' + (i === old.length - 1 ? ' cur' : '') + '" style="--w:' + (r.m / tot * 100).toFixed(2) + ';--i:' + i + '" title="' + esc(r.t + ', ' + r.o + ': ' + dur(r.m)) + '"><em>' + (r.m / tot > .12 ? esc(r.o) : '') + '</em></span>'; }).join('') + '</div>' +
         '<ol class="clist">' + cr.map(function(r, i){ return '<li' + (i === 0 ? ' class="cur"' : '') + '><i></i><div><b>' + esc(r.t) + '</b><span>' + esc(r.o) + (r.w ? ', ' + esc(r.w) : '') + '</span></div><time>' + dur(r.m) + '</time></li>'; }).join('') + '</ol></div>';
@@ -781,28 +968,28 @@ function inner(s){
       var fs = F.sections.filter(function(x){ return x.type === 'projects'; })[0];
       if (!fs) return '';
       var fl = lines(fs.items).slice(0, parseInt(b, 10) || 3);
-      return (h ? '<h2>' + esc(h) + '</h2>' : '') + '<div class="cards feat">' + fl.map(function(l){
+      return (h ? '<h2>' + md(h) + '</h2>' : '') + '<div class="cards feat">' + fl.map(function(l){
         var c = cells(l);
         return '<a class="card" href="#' + esc(fs.page) + '" data-go="' + esc(fs.page) + '"><div class="meta"><b>' + esc(c[0] || '') + '</b></div><h3>' + esc(c[1] || '') + '</h3><p>' + esc(c[5] || c[2] || '') + '</p><span class="org">Read the case study</span></a>';
       }).join('') + '</div>' + '<a class="btn deep" href="#' + esc(fs.page) + '" data-go="' + esc(fs.page) + '">See all projects</a>';
     case 'message':
       // a short form that opens the visitor's email app with the message filled in
       if (!F.site.email) return '';
-      return '<div class="msg"><div>' + (h ? '<h2>' + esc(h) + '</h2>' : '') + (b ? '<p class="lead2">' + esc(b) + '</p>' : '') + '</div>' +
+      return '<div class="msg"><div>' + (h ? '<h2>' + md(h) + '</h2>' : '') + (b ? '<p class="lead2">' + esc(b) + '</p>' : '') + '</div>' +
         '<form class="mform js-mform" novalidate><label>Your name<input name="n" autocomplete="name" required></label><label>Organisation<input name="o" autocomplete="organization"></label>' +
         '<label class="wide">What is it about?<select name="t"><option>A job opportunity</option><option>A project or consultancy</option><option>Collaboration or research</option><option>Something else</option></select></label>' +
         '<label class="wide">Message<textarea name="m" rows="5" required></textarea></label><div class="wide mform-foot"><button class="btn" type="submit">Write the email</button><span class="mform-note">Opens your email app with this message ready to send to ' + esc(F.site.email) + '.</span></div></form></div>';
     case 'badges':
       var bs = lines(s.items);
       if (!bs.length) return '';
-      return (h ? '<h2>' + esc(h) + '</h2>' : '') + (b ? '<p class="lead2">' + esc(b) + '</p>' : '') + '<div class="badges' + (bs.length === 2 || bs.length === 4 ? ' two' : '') + '">' + bs.map(function(l){
+      return (h ? '<h2>' + md(h) + '</h2>' : '') + (b ? '<p class="lead2">' + esc(b) + '</p>' : '') + '<div class="badges' + (bs.length === 2 || bs.length === 4 ? ' two' : '') + '">' + bs.map(function(l){
         var c = cells(l);
         return '<div class="badge"><b>' + esc(c[0]) + '</b>' + (c[2] ? '<time>' + esc(c[2]) + '</time>' : '') + (c[1] ? '<span>' + esc(c[1]) + '</span>' : '') + '</div>';
       }).join('') + '</div>';
     case 'numbers':
       var ns = lines(s.items);
       if (!ns.length) return '';
-      return (h ? '<h2>' + esc(h) + '</h2>' : '') + '<div class="nums" style="--n:' + Math.min(4, ns.length) + '">' + ns.map(function(l){
+      return (h ? '<h2>' + md(h) + '</h2>' : '') + '<div class="nums" style="--n:' + Math.min(4, ns.length) + '">' + ns.map(function(l){
         // number | title | short note (the note is optional); a trailing + is drawn in brass
         var c = cells(l), v = token(c[0]).replace(/(\d),(?=\d{3})/g, '$1'), m = v.match(/^(\D*)(\d+)(.*)$/);
         var num = m ? esc(m[1]) + '<span class="js-num" data-v="' + m[2] + '">' + (+m[2]).toLocaleString('en-US') + '</span>' + (m[3] === '+' ? '<i class="plus" aria-hidden="true">+</i><span class="sr">+</span>' : esc(m[3])) : esc(v);
@@ -816,7 +1003,7 @@ function inner(s){
       return '<div class="ticker" aria-label="' + esc(h || 'Skills') + '"><div class="ticker-track" style="--dur:' + Math.max(30, words.length * 4) + 's">' + run + run.replace(/<span>/g, '<span aria-hidden="true">') + '</div></div>';
     case 'cta':
       var cb = lines(s.items).map(function(l, i){ var c = cells(l); return link(c[0], c[1], i ? 'outline' : ''); }).join('');
-      return '<div class="cta"><div>' + (h ? '<h2>' + esc(h) + '</h2>' : '') + (b ? '<p>' + esc(b) + '</p>' : '') + '</div>' + (cb ? '<div class="acts">' + cb + '</div>' : '') + '</div>';
+      return '<div class="cta"><div>' + (h ? '<h2>' + md(h) + '</h2>' : '') + (b ? '<p>' + esc(b) + '</p>' : '') + '</div>' + (cb ? '<div class="acts">' + cb + '</div>' : '') + '</div>';
     case 'contact':
       var si = F.site, ways = '', acts = '';
       if (si.email){ ways += '<dt>Email</dt><dd><a href="mailto:' + esc(si.email) + '">' + esc(si.email) + '</a></dd>'; acts += '<a class="btn deep" href="mailto:' + esc(si.email) + '">Send an email</a><button class="btn outline" id="copy-email" type="button">Copy email address</button>'; }
@@ -932,15 +1119,25 @@ function setTheme(t, save){
 setTheme(document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light', false);
 $('mode').addEventListener('click', function(){ setTheme(document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark', true); });
 if (window.matchMedia){
-  var mq = matchMedia('(prefers-color-scheme: dark)'), follow = function(e){ var s = null; try { s = localStorage.getItem('theme'); } catch (x) {} if (!s) setTheme(e.matches ? 'dark' : 'light', false); };
+  var mq = matchMedia('(prefers-color-scheme: dark)'), follow = function(e){ var s = null; try { s = localStorage.getItem('theme'); } catch (x) {} if (!s && false) setTheme(e.matches ? 'dark' : 'light', false); };
   if (mq.addEventListener) mq.addEventListener('change', follow); else if (mq.addListener) mq.addListener(follow);
 }
 
 // ---------------------------------------------------------------- motion layer
+// headings: a word written as *word* is set bold, the rest stays light
+function md(t){ return esc(String(t || '')).replace(/\*([^*]+)\*/g, '<strong>$1</strong>'); }
+function plain(t){ return String(t || '').replace(/\*/g, ''); }
 function kin(t){
   t = String(t || '');
-  if (QUIET || REDUCE) return '<h1>' + esc(t) + '</h1>';
-  return '<h1 class="kin" aria-label="' + esc(t) + '">' + t.split(/\s+/).filter(Boolean).map(function(w, i){ return '<span class="wd" aria-hidden="true"><span style="--w:' + i + '">' + esc(w) + '</span></span>'; }).join(' ') + '</h1>';
+  if (QUIET || REDUCE) return '<h1>' + md(t) + '</h1>';
+  var bold = false;
+  return '<h1 class="kin" aria-label="' + esc(plain(t)) + '">' + t.split(/\s+/).filter(Boolean).map(function(w, i){
+    var start = w.charAt(0) === '*', end = w.replace(/[.,!?;:]+$/, '').slice(-1) === '*';
+    if (start) bold = true;
+    var on = bold; if (end) bold = false;
+    var txt = esc(w.replace(/\*/g, ''));
+    return '<span class="wd" aria-hidden="true"><span style="--w:' + i + '">' + (on ? '<strong>' + txt + '</strong>' : txt) + '</span></span>';
+  }).join(' ') + '</h1>';
 }
 var FINE = !!(window.matchMedia && matchMedia('(hover: hover) and (pointer: fine)').matches);
 function motion(){
