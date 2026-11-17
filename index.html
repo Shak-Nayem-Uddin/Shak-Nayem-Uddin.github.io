@@ -128,7 +128,11 @@ h1{font-family:var(--d);font-weight:700;font-size:clamp(40px,5.4vw,76px);line-he
 .nums div{padding:30px 24px 0 0}
 .nums div+div{padding-left:28px;border-left:1px solid var(--line)}
 .nums b{display:block;font-family:var(--d);font-weight:700;font-size:clamp(42px,5.2vw,68px);letter-spacing:-.04em;line-height:1;color:var(--strong);font-variant-numeric:tabular-nums}
-.nums span{display:block;margin-top:12px;font-size:16px;line-height:1.45;color:var(--soft);max-width:15em}
+.nums b .plus{font-style:normal;color:var(--brass);margin-left:.04em}
+.nums b .js-num{display:inline;margin:0;font-size:inherit;color:inherit;max-width:none}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.nums strong{display:block;margin-top:18px;font-family:var(--d);font-size:19px;font-weight:600;line-height:1.3;letter-spacing:-.005em;color:var(--fg)}
+.nums>div>span{display:block;margin-top:6px;font-size:16px;line-height:1.45;color:var(--soft);max-width:15em}
 
 /* ---------- skills ticker */
 .type-ticker{padding:0}
@@ -610,8 +614,11 @@ function inner(s){
       var ns = lines(s.items);
       if (!ns.length) return '';
       return (h ? '<h2>' + esc(h) + '</h2>' : '') + '<div class="nums" style="--n:' + Math.min(4, ns.length) + '">' + ns.map(function(l){
-        var c = cells(l), v = token(c[0]);
-        return '<div><b class="js-num" data-v="' + esc(v) + '">' + esc(v) + '</b>' + (c[1] ? '<span>' + esc(c[1]) + '</span>' : '') + '</div>';
+        // number | title | short note (the note is optional); a trailing + is drawn in brass
+        var c = cells(l), v = token(c[0]), m = v.match(/^(\D*)(\d+)(.*)$/);
+        var num = m ? esc(m[1]) + '<span class="js-num" data-v="' + m[2] + '">' + m[2] + '</span>' + (m[3] === '+' ? '<i class="plus" aria-hidden="true">+</i><span class="sr">+</span>' : esc(m[3])) : esc(v);
+        var title = c.length > 2 ? c[1] : '', note = c.length > 2 ? c[2] : c[1];
+        return '<div><b>' + num + '</b>' + (title ? '<strong>' + esc(title) + '</strong>' : '') + (note ? '<span>' + esc(note) + '</span>' : '') + '</div>';
       }).join('') + '</div>';
     case 'ticker':
       var words = parts(s.items).length ? parts(s.items) : tally('skills', true).slice(0, 20).map(function(r){ return r[0]; });
