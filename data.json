@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-17T19:33:49.478Z",
+ "updated": "2026-11-17T19:46:54.677Z",
  "site": {
   "name": "Engr. Sk Nayem Uddin",
   "role": "Manager, Administration and Operations",
@@ -16,7 +16,7 @@
   "office_website": "https://www.imambukharitrust.com",
   "current": "Manager, Administration and Operations at Imam Bukhari Trust",
   "hide_tags": "Communication, Attention to Detail, Time Management, Analytical Thinking, Problem Solving, WhatsApp, Phone Communication, Mobile Devices, Physical, Computer System, Receipt Printer, Email, Facebook, YouTube, Excell, Offce Suite, Google sheet, Communication Platforms (WhatsApp",
-  "cv_url": "https://drive.google.com/file/d/1SeChwO_c25KMXVltUOXLul9Mcd2ryw-n/view?usp=sharing"
+  "cv_url": "https://drive.google.com/file/d/1yuzZHfd40T470ZJbM8s33e0JzlRXkVYk/view"
  },
  "pages": [
   {
@@ -182,7 +182,7 @@
    "column": "full",
    "heading": "Alongside the day job",
    "body": "",
-   "items": "Since Dec 2025 | Strategic Planning and R&D Committee Member | Kulliyatul Quran Model Madrasha\nSince Jan 2025 | Founding Member | Forum of Strategic Dialogue\nCurrent | Treasurer | AYAH Research & Training Center",
+   "items": "Since Dec 2025 | Strategic Planning and R&D Committee Member | Kulliyatul Quran Model Madrasha | Appointed by the Imam Bukhari Trust Management Committee for strategic planning and R&D across curriculum, academic planning, policy and long-term development.\nSince Oct 2026 | Treasurer | AYAH Research & Training Center | Built the finance system, finance SOPs, procurement policy and organisational policy manual for an education-focused research and training body.\nSince Jan 2025 | Founding Member | Forum of Strategic Dialogue | A policy and research forum on national and global issues from an Islamic perspective.",
    "show": true
   },
   {
@@ -270,15 +270,27 @@
    "show": true
   },
   {
+   "id": "pro-research",
+   "page": "profile",
+   "order": 55,
+   "type": "badges",
+   "tone": "light",
+   "column": "full",
+   "heading": "Research and publications",
+   "body": "",
+   "items": "Impact of Procurement Efficiency on Project Performance in Infrastructure Development Projects | MBA thesis, IIUC: quantitative survey analysed in SPSS | 2026\nA Qur'an and Sunnah-Based Framework of Knowledge, Skills and Human Values for Developing a Balanced Pre-University Student | Co-author and presenter, ICKIEL 2026 international conference, AUST, Dhaka | 2026\nThe Authenticity of the Sunnah in the Light of the Qur'an and Related Doubts: An Analytical Review | Co-author and paper presenter, international academic conference, Dhaka | 2024",
+   "show": true
+  },
+  {
    "id": "pro-cert",
    "page": "profile",
    "order": 60,
    "type": "badges",
-   "tone": "light",
+   "tone": "white",
    "column": "full",
    "heading": "Certifications",
    "body": "",
-   "items": "Google Project Management Professional Certificate | Google, via Coursera | 2025\nSix Sigma White Belt | Process improvement fundamentals | 2025\nAgile Project Management | Google, via Coursera | 2025\nBudgeting and Methods of Budgeting | Imam Bukhari Trust and Taibah Academy | 2025\nKPI Development and Analysis | Professional training |\nAgentX AI skilling: Generative AI, Microsoft Copilot and prompt engineering | Currently learning | In progress",
+   "items": "Google Project Management Professional Certificate | Google, via Coursera | 2025\nSix Sigma White Belt | Council for Six Sigma Certification | 2025\nAgile Project Management | Google, via Coursera | 2025\nBudgeting and Methods of Budgeting | Imam Bukhari Trust and Taibah Academy | 2025\nKPI Development and Analysis | Professional training |\nSupply Chain Analytics, Professional Certificate | Rutgers University, via Coursera | In progress\nAgentX AI skilling: Generative AI, Microsoft Copilot and prompt engineering | AgentX AI Skilling | In progress",
    "show": true
   },
   {
@@ -286,11 +298,23 @@
    "page": "profile",
    "order": 65,
    "type": "badges",
-   "tone": "light",
+   "tone": "white",
    "column": "full",
    "heading": "Earlier training",
    "body": "Courses from my engineering years, before I moved into operations.",
-   "items": "Industrial automation series | Omron Automation: factory automation, safety, sensors, relays, power supplies, electricity | 2022-23\nIntroduction to Cybersecurity | Cisco Networking Academy | 2021\nCyber Threat Hunting, Level 1 | Active Countermeasures | 2021\nSplunk 7.x Fundamentals | Splunk | 2021\nLinux Unhatched | NDG and Cisco Networking Academy | 2021\nInformation Security: Context and Introduction | University of London (Royal Holloway), via Coursera | 2020\nThe Bits and Bytes of Computer Networking | Google, via Coursera | 2020\nProgramming for Everybody (Python) | University of Michigan, via Coursera |\nFundamentals of Digital Marketing | Google | 2020",
+   "items": "Industrial automation series | Omron Automation: factory automation, safety, sensors, relays, power supplies, electricity | 2022-23\nComputer Office Applications, National Skill Standard | BTEB, 360-hour programme, Grade A |\nIntroduction to Cybersecurity | Cisco Networking Academy | 2021\nCyber Threat Hunting, Level 1 | Active Countermeasures | 2021\nSplunk 7.x Fundamentals | Splunk | 2021\nLinux Unhatched | NDG and Cisco Networking Academy | 2021\nInformation Security: Context and Introduction | University of London (Royal Holloway), via Coursera | 2020\nThe Bits and Bytes of Computer Networking | Google, via Coursera | 2020\nProgramming for Everybody (Python) | University of Michigan, via Coursera |\nFundamentals of Digital Marketing | Google | 2020",
+   "show": true
+  },
+  {
+   "id": "pro-taught",
+   "page": "profile",
+   "order": 67,
+   "type": "badges",
+   "tone": "light",
+   "column": "full",
+   "heading": "Training I have delivered",
+   "body": "",
+   "items": "Professional Ethics and Team Building | Designed and delivered for Imam Bukhari Trust staff | 2026\nEffective Teaching Workshop, opening session | For Kulliyatul Quran teachers | 2026\nTask, time and SMART planning | Staff session at Imam Bukhari Trust |",
    "show": true
   },
   {
