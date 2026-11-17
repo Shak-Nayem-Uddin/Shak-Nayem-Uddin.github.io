@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-17T20:18:27.958Z",
+ "updated": "2026-11-17T20:38:20.784Z",
  "site": {
   "name": "Engr. Sk Nayem Uddin",
   "role": "Manager, Administration and Operations",
@@ -53,9 +53,21 @@
    "type": "hero",
    "tone": "dark",
    "column": "full",
-   "heading": "I build the systems that keep institutions running.",
+   "heading": "I build the *systems* that keep *institutions* running.",
    "body": "An operations and management professional based in Dhaka, Bangladesh, focused on building efficient systems, strengthening institutional operations, and turning strategic objectives into measurable outcomes.\n\nMy work spans operations and administration, procurement and supply chain management, project coordination, financial oversight, and people management. I believe sustainable institutions are built through effective leadership, structured processes, accountable teams, and continuous improvement.\n\nBuilding systems. Strengthening operations. Enabling growth.",
    "items": "View experience | #experience\nExplore my work | #projects",
+   "show": true
+  },
+  {
+   "id": "home-meet",
+   "page": "home",
+   "order": 12,
+   "type": "meet",
+   "tone": "light",
+   "column": "full",
+   "heading": "Meet the *person* behind the *systems*",
+   "body": "Assalamu alaikum,\n\nMy work spans operations and administration, procurement and supply chain management, project coordination, financial oversight, and people management. I believe sustainable institutions are built through effective leadership, structured processes, accountable teams, and continuous improvement.\n\nBuilding systems. Strengthening operations. Enabling growth.",
+   "items": "portrait",
    "show": true
   },
   {
@@ -89,7 +101,7 @@
    "type": "columns",
    "tone": "light",
    "column": "full",
-   "heading": "What I bring to an organisation",
+   "heading": "What I *bring* to an organisation",
    "body": "",
    "items": "Effective operational systems | Administrative procedures, procurement frameworks, approval workflows, KPI structures and organisational policies that make work consistent and accountable.\nProcess improvement and digitalisation | Manual processes turned into structured digital workflows, dashboards and reporting systems, built with practical technology and automation.\nProjects and institutional initiatives | Construction projects, organisational programmes, staff development and stakeholder engagement, coordinated from planning through to delivery.",
    "show": true
@@ -101,7 +113,7 @@
    "type": "gallery",
    "tone": "dark",
    "column": "full",
-   "heading": "On the ground",
+   "heading": "On the *ground*",
    "body": "Most of this work happens in rooms and on sites, not on a screen.",
    "items": "",
    "show": true
@@ -113,7 +125,7 @@
    "type": "featured",
    "tone": "white",
    "column": "full",
-   "heading": "Featured work",
+   "heading": "Featured *work*",
    "body": "3",
    "items": "",
    "show": true
@@ -125,7 +137,7 @@
    "type": "latest",
    "tone": "light",
    "column": "full",
-   "heading": "Latest from my journal",
+   "heading": "Latest from my *journal*",
    "body": "3",
    "items": "",
    "show": true
@@ -137,7 +149,7 @@
    "type": "years",
    "tone": "light",
    "column": "full",
-   "heading": "Achievements by year",
+   "heading": "Achievements *by year*",
    "body": "",
    "items": "",
    "show": true
@@ -161,7 +173,7 @@
    "type": "title",
    "tone": "light",
    "column": "full",
-   "heading": "Professional Experience & Career Journey",
+   "heading": "Professional *Experience* & Career *Journey*",
    "body": "A career built across institutional operations, administration, project coordination, technology and business support.",
    "items": "",
    "show": true
@@ -173,7 +185,7 @@
    "type": "career",
    "tone": "white",
    "column": "full",
-   "heading": "Career at a glance",
+   "heading": "Career *at a glance*",
    "body": "Three years leading operations and administration at Imam Bukhari Trust, built on earlier roles in industrial automation sales, IT and MIS.",
    "items": "Manager, Administration and Operations | Imam Bukhari Trust | Nov 2023 to present | {since:2023-11}\nAssistant Manager, Sales and Service | TecTesla Technologies Ltd | Jul to Nov 2023 | 4\nIT Executive | YouthBees | Feb to Jun 2023 | 5\nMIS Executive (contract) | Sajeeb Group | Feb to Apr 2018 | 3\nPoint of Sale Executive (contract) | Dot BD Solutions Ltd | Feb to Apr 2017 | 3",
    "show": true
@@ -197,7 +209,7 @@
    "type": "badges",
    "tone": "white",
    "column": "full",
-   "heading": "Management scope",
+   "heading": "Management *scope*",
    "body": "",
    "items": "Team | A cross-functional team of 8 to 10 staff |\nReporting line | Report performance and compliance to the Management Committee |\nFunctions covered | Administration, procurement, finance coordination, HR, projects and programmes |\nCurrent initiatives | Mosque and academic building construction, ERP rollout, programmes and fundraising |",
    "show": true
@@ -221,7 +233,7 @@
    "type": "title",
    "tone": "light",
    "column": "full",
-   "heading": "Projects and case studies",
+   "heading": "Projects and *case studies*",
    "body": "Five pieces of work from Imam Bukhari Trust. Each one sets out the challenge, my role, what I did, the result and the skills it called on.",
    "items": "",
    "show": true
@@ -524,7 +536,8 @@
    "caption": "Presenting our group's work on team building in the light of Islam, at IBT's staff training",
    "tags": [
     "gallery",
-    "training"
+    "training",
+    "programmes"
    ],
    "position": "30% 35%"
   },
@@ -534,7 +547,8 @@
    "caption": "Our group's session at IBT's training on communication, coordination and team building",
    "tags": [
     "gallery",
-    "training"
+    "training",
+    "programmes"
    ],
    "position": "50% 45%"
   },
@@ -555,7 +569,8 @@
    "tags": [
     "gallery",
     "big",
-    "training"
+    "training",
+    "programmes"
    ],
    "position": "30% 25%"
   },
@@ -565,7 +580,8 @@
    "caption": "At IBT's construction site with the Chairman, talking through progress with the site engineer",
    "tags": [
     "gallery",
-    "projects"
+    "projects",
+    "infrastructure"
    ],
    "position": "50% 30%"
   },
@@ -575,7 +591,8 @@
    "caption": "On site with the project team during construction",
    "tags": [
     "gallery",
-    "projects"
+    "projects",
+    "infrastructure"
    ],
    "position": "50% 50%"
   },
@@ -595,7 +612,8 @@
    "caption": "At an MoU signing between partner institutions",
    "tags": [
     "gallery",
-    "stakeholders"
+    "stakeholders",
+    "institutional-development"
    ],
    "position": "50% 50%"
   },
@@ -605,7 +623,8 @@
    "caption": "With Dr. Abdul Bashir Madani at the joint stall of IBT, Taibah Academy and Kulliyatul Quran, Muslim Expo 2024",
    "tags": [
     "gallery",
-    "stakeholders"
+    "stakeholders",
+    "institutional-development"
    ],
    "position": "50% 56%"
   },
@@ -625,7 +644,8 @@
    "caption": "With my supervisor and the Walton team during an invited tour of their factory and offices",
    "tags": [
     "gallery",
-    "stakeholders"
+    "stakeholders",
+    "institutional-development"
    ],
    "position": "50% 40%"
   },
@@ -635,7 +655,8 @@
    "caption": "Running a live poll in my participatory session for 40+ teachers, Teacher Training Programme 2026",
    "tags": [
     "gallery",
-    "training"
+    "training",
+    "programmes"
    ],
    "position": "50% 30%"
   },
@@ -645,7 +666,8 @@
    "caption": "Teacher Training Programme 2026: a participatory session for 40+ teachers",
    "tags": [
     "gallery",
-    "training"
+    "training",
+    "programmes"
    ],
    "position": "50% 30%"
   },
