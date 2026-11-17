@@ -140,7 +140,7 @@ h1{font-family:var(--d);font-weight:700;font-size:clamp(40px,5.4vw,76px);line-he
 .ticker{overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line);-webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent)}
 .ticker-track{display:flex;width:max-content;animation:tick var(--dur,70s) linear infinite}
 .ticker:hover .ticker-track{animation-play-state:paused}
-.ticker span{font-family:var(--d);font-size:15.5px;font-weight:500;color:var(--soft);padding:20px 0;white-space:nowrap}
+.ticker span{font-family:var(--d);font-size:15px;font-weight:600;letter-spacing:.06em;color:var(--soft);padding:20px 0;white-space:nowrap}
 .ticker span::after{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--brass);margin:0 24px;vertical-align:middle}
 @keyframes tick{to{transform:translateX(-50%)}}
 
