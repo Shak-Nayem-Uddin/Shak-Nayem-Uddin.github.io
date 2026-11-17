@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Engr. Sk Nayem Uddin | Manager, Administration and Operations</title>
-<meta name="description" content="Operations and management professional in Dhaka, Bangladesh: operations and administration, procurement and supply chain, project coordination and the systems that hold them together.">
-<meta name="theme-color" content="#0D1B2E">
+<meta name="description" content="Engr. Sk Nayem Uddin, operations and management professional in Dhaka, Bangladesh: administration and operations, procurement and supply chain, project coordination and digital management systems. Case studies, experience and CV.">
+<meta name="theme-color" content="#0E0B0D">
 <script>(function(){var t;try{t=localStorage.getItem('theme')}catch(e){}if(t!=='light'&&t!=='dark')t='dark';document.documentElement.setAttribute('data-theme',t)})()</script>
 
 <link rel="canonical" href="https://shak-nayem-uddin.github.io/">
@@ -13,7 +13,7 @@
 <meta property="og:type" content="profile">
 <meta property="og:site_name" content="Sk Nayem Uddin">
 <meta property="og:title" content="Engr. Sk Nayem Uddin | Manager, Administration and Operations">
-<meta property="og:description" content="I build the systems that keep institutions running. Operations, procurement and supply chain, project coordination and people.">
+<meta property="og:description" content="I build the systems that keep institutions running. Operations and administration, procurement and supply chain, project coordination and digital management systems.">
 <meta property="og:url" content="https://shak-nayem-uddin.github.io/">
 <meta property="og:image" content="https://shak-nayem-uddin.github.io/img/og.jpg">
 <meta property="og:image:width" content="1200">
@@ -25,7 +25,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300&family=Nunito:wght@300..800&display=swap" rel="stylesheet">
-<link rel="preload" as="image" href="img/hero.jpg">
 <style>
 /* ---------- palette and themes
    Every section carries a tone (dark, light, white). Each tone sets the same small set of
@@ -781,6 +780,15 @@ html:not([data-theme=dark]) .type-hero{--strong:#fff;--soft:#D9C9D2;--fg:#F4ECF0
   .hero2 .eyebrow,.hero2 .sub,.hero2 .acts,.hero2 .scrollhint,.pmore[open] dl{animation:none}
   .proj-pic:hover .rotbox img,.meet-pic:hover .rotbox img,.pgrid figure:hover img{transform:none}
 }
+
+/* ---------- the CV is one click away on every page */
+.hcv{order:2;flex:none;font-family:var(--s);font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;color:#0E0B0D;background:#fff;border-radius:999px;padding:9px 16px;line-height:1;white-space:nowrap;transition:background .2s}
+.hcv:hover{background:#EAD6E1}
+.hcv[hidden]{display:none}
+.mode{order:3}
+@media(max-width:820px){ .hcv{padding:8px 12px;font-size:12px} }
+.xp:has(>article:nth-child(4):last-child){grid-template-columns:repeat(2,minmax(0,1fr))}
+@media(max-width:820px){.xp:has(>article:nth-child(4):last-child){grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -790,6 +798,7 @@ html:not([data-theme=dark]) .type-hero{--strong:#fff;--soft:#D9C9D2;--fg:#F4ECF0
   <a class="mark" id="mark" href="#">Sk Nayem Uddin</a>
   <button class="mode" id="mode" type="button" aria-label="Switch to dark mode"><svg class="moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.6A8.2 8.2 0 0 1 9.4 4a8.2 8.2 0 1 0 10.6 10.6z"/></svg><svg class="sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6"/></svg></button>
   <nav class="nav" id="nav" aria-label="Pages"></nav>
+  <a class="hcv" id="hcv" href="#" target="_blank" rel="noopener" hidden>Download CV</a>
 </div></header>
 <main id="main"><div id="app"><section class="sec tone-dark boot"><div class="w">Loading…</div></section></div></main>
 <footer><div class="w"><span id="foot-l">Sk Nayem Uddin</span><span id="foot-r"></span></div></footer>
@@ -801,13 +810,19 @@ var FEED = 'https://script.google.com/macros/s/AKfycbzWSjYxyV9uwzzUYLCOJSlAuK-ST
 var MON = {jan:1,feb:2,mar:3,apr:4,may:5,jun:6,jul:7,aug:8,sep:9,oct:10,nov:11,dec:12};
 var MN = ['','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
 var F = null, DATA = [], cats = ['Highlights'], st = {cat: 'Highlights', year: 0, q: ''};
-var GROUPS = ['Work achievements', 'Projects and contributions', 'Education and research', 'Professional development'];
+// the achievement record is sorted into six areas; the journal's own category is only a hint
+var GROUPS = ['Operations and administration', 'Procurement and supply chain', 'Project and programme management', 'Leadership and organisational development', 'Digital transformation and technology', 'Education, research and professional development'];
 function grp(d){
   var a = String(d.ach || '').toLowerCase(), c = String(d.cat || '').toLowerCase().trim();
-  if (/\b(paper|research|conference|abstract|thesis|article|literature|citation|degree|b\.sc|diploma|islamic knowledge)\b/.test(a)) return GROUPS[2];
-  if (c === 'technical' || c === 'linguistics' || /^(certified|achieved level|mastered|started|earned)|certificat|fundamentals|workshop|\((google|cisco|pstu|who|ndg)/.test(a)) return GROUPS[3];
-  if (c === 'project management' || /^(delivered|led|completed|produced|successfully managed|successfully delivered|successfully completed)/.test(a)) return GROUPS[1];
-  if (c === 'professional development') return GROUPS[3];
+  if (/appointed|founding member|helped build|transform|fundrais|donation/.test(a)) return GROUPS[3];
+  if (/^(led|delivered|organised) .*\b(session|training)\b/.test(a)) return GROUPS[3];
+  if (/construction|mosque/.test(a)) return GROUPS[2];
+  if (/procure|comparative statement|vendor|purchas|supplier|audit firm/.test(a)) return GROUPS[1];
+  if (c === 'linguistics' || c === 'personal education' || /^(certified|achieved level|earned|started (an? )?arabic|completed (a|the) (full-day |two-year )?(workshop|programme|islamic))|certificat|fundamentals|workshop|diploma|degree|b\.sc|thesis|paper|research|abstract|lecture deck|codebook|agenda and session|guidelines|competency|\((google|cisco|pstu|who|ndg|ndg\/cisco|iiuc|bteb|univ\. of london)\)/.test(a)) return GROUPS[5];
+  if (/digital|dashboard|data app|directory|automat|\berp\b|entry sheet|tracking system|accounting system/.test(a)) return GROUPS[4];
+  if (c === 'technical') return GROUPS[5];
+  if (/event|programme|project/.test(a) || c === 'project management') return GROUPS[2];
+  if (c === 'leadership' || c === 'entrepreneurship' || /hiring|salary/.test(a)) return GROUPS[3];
   return GROUPS[0];
 }
 var PAGES = [], HOME = 'home', RECPAGE = null, animated = false, live = false, rotTimer = null, showTimer = null, counted = false, SIG = '';
@@ -882,6 +897,7 @@ function chrome(){
     return '<a href="' + (i ? '#' + esc(p.id) : '#') + '" data-go="' + esc(p.id) + '"' + (i ? '' : ' class="home-link"') + '>' + esc(p.label) + '</a>';
   }).join('');
   $('foot-l').textContent = '© ' + new Date().getFullYear() + ' ' + name;
+  if (s.cv_url){ $('hcv').href = s.cv_url; $('hcv').hidden = false; }
   var r = [];
   if (s.email) r.push('<a href="mailto:' + esc(s.email) + '">' + esc(s.email) + '</a>');
   if (s.phone) r.push('<a href="tel:' + esc(s.phone.replace(/[^\d+]/g, '')) + '">' + esc(s.phone) + '</a>');
@@ -963,7 +979,7 @@ function inner(s){
       // centred opening: name, headline, first paragraph, two buttons. The 3D doorway is drawn behind it by js/hero3d.js
       var hb = lines(s.items).map(function(l, i){ var c = cells(l); return link(c[0], c[1], i ? 'outline' : ''); }).join('');
       return '<div class="hero2"><div class="glass" aria-hidden="true"><div class="tilt"><i class="g1"></i><i class="g2"></i><i class="g3"></i></div></div>' +
-        '<div class="hero2-in">' + (F.site.role ? '<p class="eyebrow">' + esc(F.site.role) + '</p>' : '') + kin(h) +
+        '<div class="hero2-in">' + ((F.site.positioning || F.site.role) ? '<p class="eyebrow">' + esc(F.site.positioning || F.site.role) + '</p>' : '') + kin(h) +
         (ps[0] ? '<p class="sub">' + esc(ps[0]) + '</p>' : '') +
         (hb ? '<div class="acts">' + hb + '</div>' : '') + '</div><span class="scrollhint" aria-hidden="true">Scroll to explore</span></div>';
     case 'meet':
@@ -1047,7 +1063,7 @@ function inner(s){
         return '<article><h3>' + esc(c[0]) + '</h3><div class="tags">' + parts(c[1] || '').map(function(t){ return '<span class="tag">' + esc(t) + '</span>'; }).join('') + '</div>' + (c[2] ? '<p class="ev">' + esc(c[2]) + '</p>' : '') + '</article>';
       }).join('') + '</div>';
     case 'projects':
-      // Tag | Title | Challenge | My role | What I did | Result | skill, skill (optional) | photo tag (optional)
+      // Tag | Title | Challenge | My role | What I did | Result | skill, skill (optional) | photo tag (optional) | Overview (optional) | Evidence (optional)
       // Photos: upload them in the photo library with the project's tag, e.g. "infrastructure" or "digital-systems".
       var pj = lines(s.items);
       if (!pj.length) return '';
@@ -1057,10 +1073,13 @@ function inner(s){
       return (h ? '<h2>' + md(h) + '</h2>' : '') + (b ? '<p class="lead2">' + esc(b) + '</p>' : '') + '<div class="projects pro2">' + pj.map(function(l, n){
         var c = cells(l), ptg = slug(c[7] || c[0]), pics = ptg ? photos(ptg) : [];
         var pic = pics.length ? '<figure class="proj-pic"><div class="rotbox" data-tag="' + esc(ptg) + '"></div></figure>' : '';
-        var more = (c[3] ? '<div><dt>My role</dt><dd>' + esc(c[3]) + '</dd></div>' : '') + (c[4] ? '<div><dt>What I did</dt><dd>' + esc(c[4]) + '</dd></div>' : '') +
+        // Overview (cell 9) leads when present, and the challenge moves under Learn more; Evidence is cell 10
+        var lead = c[8] || c[2] || '';
+        var more = (c[8] && c[2] ? '<div><dt>The challenge</dt><dd>' + esc(c[2]) + '</dd></div>' : '') + (c[3] ? '<div><dt>My role</dt><dd>' + esc(c[3]) + '</dd></div>' : '') + (c[4] ? '<div><dt>What I did</dt><dd>' + esc(c[4]) + '</dd></div>' : '') +
+          (c[9] ? '<div><dt>Evidence</dt><dd>' + esc(c[9]) + '</dd></div>' : '') +
           (c[6] ? '<div class="skl"><dt>Skills applied</dt><dd><span class="tags">' + parts(c[6]).map(function(x){ return '<span class="tag">' + esc(x) + '</span>'; }).join('') + '</span></dd></div>' : '');
         return '<article class="proj' + (pic ? ' has-pic' + (n % 2 ? ' flip' : '') : '') + '" id="pj-' + esc(ptg) + '">' + pic + '<div class="proj-body">' + (c[0] ? '<span class="proj-tag">' + esc(c[0]) + '</span>' : '') + '<h3>' + esc(c[1] || '') + '</h3>' +
-          (c[2] ? '<p>' + esc(c[2]) + '</p>' : '') + (c[5] ? '<p class="res"><b>Result.</b> ' + esc(c[5]) + '</p>' : '') +
+          (lead ? '<p>' + esc(lead) + '</p>' : '') + (c[5] ? '<p class="res"><b>Result.</b> ' + esc(c[5]) + '</p>' : '') +
           (more ? '<details class="pmore"><summary><span class="lm">Learn more</span><span class="ls">Show less</span></summary><dl>' + more + '</dl></details>' : '') + '</div></article>';
       }).join('') + '</div>';
     case 'career':
@@ -1119,6 +1138,7 @@ function inner(s){
     case 'contact':
       var si = F.site, ways = '', acts = '';
       if (si.email){ ways += '<dt>Email</dt><dd><a href="mailto:' + esc(si.email) + '">' + esc(si.email) + '</a></dd>'; acts += '<a class="btn deep" href="mailto:' + esc(si.email) + '">Send an email</a><button class="btn outline" id="copy-email" type="button">Copy email address</button>'; }
+      if (si.location) ways += '<dt>Location</dt><dd>' + esc(si.location) + '</dd>';
       if (si.phone) ways += '<dt>Phone</dt><dd><a href="tel:' + esc(si.phone.replace(/[^\d+]/g, '')) + '">' + esc(si.phone) + '</a></dd>';
       if (si.work_email) ways += '<dt>Work email</dt><dd><a href="mailto:' + esc(si.work_email) + '">' + esc(si.work_email) + '</a></dd>';
       var wp = parts(si.work_phone);
@@ -1226,7 +1246,7 @@ function setTheme(t, save){
   document.documentElement.setAttribute('data-theme', t);
   if (save) try { localStorage.setItem('theme', t); } catch (e) {}
   $('mode').setAttribute('aria-label', t === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
-  var m = document.querySelector('meta[name=theme-color]'); if (m) m.setAttribute('content', t === 'dark' ? '#070E18' : '#0D1B2E');
+  var m = document.querySelector('meta[name=theme-color]'); if (m) m.setAttribute('content', t === 'dark' ? '#0E0B0D' : '#140D11');
 }
 setTheme(document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light', false);
 $('mode').addEventListener('click', function(){ setTheme(document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark', true); });
@@ -1514,7 +1534,7 @@ function drawRecord(){
   $('chips').innerHTML = cats.map(function(c){ return '<button data-c="' + esc(c) + '" aria-pressed="' + (c === st.cat) + '">' + esc(c) + '</button>'; }).join('');
   $('yearnote').innerHTML = st.year ? '<button id="clr">Showing ' + st.year + ' only. Show every year</button>' : '';
   if ($('q').value.trim().toLowerCase() !== st.q) $('q').value = st.q;
-  var inCat = function(d){ return st.cat === 'Everything' || (st.cat === 'Highlights' ? d.g !== GROUPS[3] : d.g === st.cat); };
+  var inCat = function(d){ return st.cat === 'Everything' || (st.cat === 'Highlights' ? d.g !== GROUPS[5] && d.y >= 2023 : d.g === st.cat); };
   var rows = DATA.filter(function(d){ return inCat(d) && (!st.year || d.y === st.year) && (!st.q || d.hay.indexOf(st.q) > -1); });
   if (!rows.length){ $('list').innerHTML = '<p class="none">Nothing matches. Clear the search or choose another category.</p>'; return; }
   var html = '', cur = null, group = [];
@@ -1525,7 +1545,7 @@ function drawRecord(){
     if (d.skills) dl += '<dt>Skills</dt><dd>' + esc(parts(d.skills).join(', ')) + '</dd>';
     if (d.tools) dl += '<dt>Tools</dt><dd>' + esc(parts(d.tools).join(', ')) + '</dd>';
     if (d.org) dl += '<dt>For</dt><dd>' + esc(d.org) + '</dd>';
-    group.push('<li class="entry"><button class="line" aria-expanded="false"><span class="when">' + (d.m ? MN[d.m] : '') + '</span><span class="what">' + esc(d.ach) + '</span><span class="cat">' + esc(d.cat) + '</span></button><div class="more" hidden>' +
+    group.push('<li class="entry"><button class="line" aria-expanded="false"><span class="when">' + (d.m ? MN[d.m] : '') + '</span><span class="what">' + esc(d.ach) + '</span><span class="cat">' + esc(d.g) + '</span></button><div class="more" hidden>' +
       (d.action ? '<p>' + esc(d.action) + '</p>' : '') + (d.metric ? '<p>' + esc(d.metric) + '</p>' : '') + (dl ? '<dl>' + dl + '</dl>' : '') + '</div></li>');
   });
   flush();
