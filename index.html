@@ -699,6 +699,88 @@ footer{font-family:var(--s)}
 @media (prefers-reduced-motion:reduce){
   .glass .tilt,.type-hero::before,.scrollhint::after{animation:none}
 }
+
+/* ---------- 3D opening (js/hero3d.js draws the doorway into the hero) */
+.hero3d{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;display:block}
+.type-hero .glass{opacity:0;transition:opacity .8s}
+.type-hero.nogl .glass{opacity:.7}
+.type-hero::before{opacity:.75}
+.hero2-in{isolation:isolate}
+.hero2-in::before{content:"";position:absolute;left:50%;top:50%;width:min(1100px,120%);height:150%;transform:translate(-50%,-50%);z-index:-1;pointer-events:none;
+  background:radial-gradient(closest-side,rgba(14,11,13,.7),rgba(14,11,13,.4) 55%,rgba(14,11,13,0))}
+.hero2 .eyebrow{font-size:clamp(13px,1.15vw,15px);letter-spacing:.3em;color:#EAD6E1;margin:0 0 24px}
+.hero2 h1{font-weight:400;letter-spacing:.05em;line-height:1.12;color:#FFF;text-shadow:0 2px 28px rgba(14,11,13,.7)}
+.hero2 h1 strong{font-weight:700}
+.hero2 .sub{color:#E6DAE0;max-width:35em;margin-bottom:36px;text-shadow:0 1px 16px rgba(14,11,13,.85)}
+.hero2 .eyebrow{animation:rise .9s cubic-bezier(.2,.7,.2,1) .55s both}
+.hero2 .sub{animation:rise 1s cubic-bezier(.2,.7,.2,1) 1.25s both}
+.hero2 .acts{animation:rise 1s cubic-bezier(.2,.7,.2,1) 1.45s both}
+.hero2 .scrollhint{animation:fade 1s ease 2.3s both}
+.type-hero.gl .scrollhint{left:50%;transform:translateX(-50%)}
+@keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+.q .hero2 .eyebrow,.q .hero2 .sub,.q .hero2 .acts,.q .hero2 .scrollhint,.q .kin .wd>span{animation:none;opacity:1;transform:none}
+html:not([data-theme=dark]) .type-hero{--strong:#fff;--soft:#D9C9D2;--fg:#F4ECF0}
+.meet-sig .cur-role{color:var(--soft)!important}
+.meet-text .acts{margin-top:22px}
+
+/* ---------- photos stay still under the pointer: only a slow, slight zoom */
+.tilt{transform:none!important}
+.rotbox img{transition:opacity 1.2s ease,transform 1.2s cubic-bezier(.2,.7,.2,1)}
+.proj-pic:hover .rotbox img,.meet-pic:hover .rotbox img,.pgrid figure:hover img{transform:scale(1.03)}
+.lean::after{display:none}
+
+/* ---------- projects, one per row (large photo, short story, Learn more) */
+.pro2{border-top:0}
+.pro2 .proj{display:block;padding:0;border:0;margin:0 0 120px}
+.pro2 .proj:last-child{margin-bottom:0}
+.pro2 .proj.has-pic{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:64px;align-items:center;padding:0}
+.pro2 .proj.has-pic.flip{grid-template-columns:minmax(0,1fr) minmax(0,1.35fr)}
+.pro2 .proj.has-pic.flip .proj-pic{order:2}
+.pro2 .proj-pic{position:static;margin:0}
+.pro2 .proj-pic .rotbox{aspect-ratio:16/10;border-radius:6px;box-shadow:0 50px 90px -40px var(--shadow),inset 0 0 0 1px var(--glass-line)}
+.pro2 .proj-body{display:block;max-width:34em}
+.pro2 .proj-tag{font-family:var(--s);font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-bottom:12px}
+.pro2 .proj h3{font-family:var(--d);font-weight:400;font-size:clamp(26px,2.5vw,34px);letter-spacing:.03em;line-height:1.2;margin:0 0 18px}
+.pro2 .proj-body>p{font-size:17px;line-height:1.7;color:var(--fg);margin:0 0 14px}
+.pro2 .proj-body>p.res{color:var(--soft)}
+.pro2 .proj-body>p.res b{color:var(--strong);font-weight:700}
+.pmore{margin-top:18px}
+.pmore summary,.lmore{display:inline-block;cursor:pointer;list-style:none;font-family:var(--s);font-size:16px;font-weight:600;color:var(--strong);text-decoration:none;padding-bottom:3px;border-bottom:1px solid currentColor}
+.pmore summary::-webkit-details-marker{display:none}
+.pmore summary:hover,.lmore:hover{color:var(--acc)}
+.pmore .ls,.pmore[open] .lm{display:none}
+.pmore[open] .ls{display:inline}
+.pmore dl{display:grid;gap:16px;margin:22px 0 0;padding-top:20px;border-top:1px solid var(--line)}
+.pmore dl div{display:block}
+.pmore dt{font-family:var(--s);font-weight:700;font-size:14px;color:var(--acc);margin-bottom:4px}
+.pmore dd{margin:0;font-size:16px;line-height:1.65;color:var(--fg)}
+.pmore[open] dl{animation:rise .5s cubic-bezier(.2,.7,.2,1)}
+.pro2 .proj{scroll-margin-top:110px}
+.feat2 .proj{margin-bottom:96px}
+.feat-all{display:flex;justify-content:center;margin-top:72px}
+
+/* ---------- photo grid (gallery with Items "grid | tags") */
+.pgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.pgrid figure{margin:0}
+.pgrid figure.extra{display:none}
+.pg-img{aspect-ratio:16/10;overflow:hidden;border-radius:6px;background:var(--media);box-shadow:inset 0 0 0 1px var(--glass-line)}
+.pg-img img{display:block;width:100%;height:100%;object-fit:cover;transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
+.pgrid figcaption{font-size:14.5px;line-height:1.5;color:var(--soft);margin:12px 2px 18px;max-width:46em}
+
+@media(max-width:820px){
+  .hero2 h1{letter-spacing:.03em}
+  .hero2-in::before{width:140%}
+  .nav{gap:4px 18px}
+  .pro2 .proj,.pro2 .proj.has-pic,.pro2 .proj.has-pic.flip{grid-template-columns:1fr;gap:26px;margin-bottom:72px}
+  .pro2 .proj.has-pic.flip .proj-pic{order:0}
+  .pgrid{grid-template-columns:1fr}
+  .feat-all{margin-top:40px}
+}
+@media (prefers-reduced-motion:reduce){
+  .hero2 .eyebrow,.hero2 .sub,.hero2 .acts,.hero2 .scrollhint,.pmore[open] dl{animation:none}
+  .proj-pic:hover .rotbox img,.meet-pic:hover .rotbox img,.pgrid figure:hover img{transform:none}
+}
 </style>
 </head>
 <body>
@@ -739,6 +821,7 @@ function cells(line){ return line.split('|').map(function(x){ return x.trim(); }
 // gallery groups, chosen by a tag in the photo library
 var PCATS = [['projects', 'Project and construction coordination'], ['leadership', 'Leadership and meetings'], ['training', 'Training, programmes and conferences'], ['stakeholders', 'Stakeholder engagement'], ['team', 'Team and community']];
 function pcat(p){ for (var k = 0; k < PCATS.length; k++) if ((p.tags || []).indexOf(PCATS[k][0]) > -1) return {k: k, label: PCATS[k][1]}; return {k: PCATS.length, label: ''}; }
+function slug(t){ return String(t || '').toLowerCase().trim().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''); }
 function photos(tag){ return (F.photos || []).filter(function(p){ return (p.tags || []).indexOf(tag) > -1; }); }
 function all(sel){ return [].slice.call(document.querySelectorAll(sel)); }
 
@@ -775,6 +858,21 @@ function render(feed){
   });
   if (!QUIET) setTimeout(function(){ document.body.classList.add('settled'); }, 1600);
   show(current(), true);
+  hero3d();
+}
+// load the 3D opening only when the page has a hero, and only once
+var GL = (function(){ try { var c = document.createElement('canvas'); return !!(window.WebGLRenderingContext && (c.getContext('webgl2') || c.getContext('webgl'))); } catch (e) { return false; } })();
+function hero3d(){
+  var el = document.querySelector('.type-hero');
+  if (!el) return;
+  if (!GL){ el.classList.add('nogl'); return; }
+  if (window.hero3d && window.hero3d.mount) return window.hero3d.mount(el, QUIET);
+  window._hero3d = {el: el, quiet: QUIET};
+  if (document.getElementById('h3d')) return;
+  var sc = document.createElement('script');
+  sc.type = 'module'; sc.src = 'js/hero3d.js'; sc.id = 'h3d';
+  sc.onerror = function(){ var e = document.querySelector('.type-hero'); if (e) e.classList.add('nogl'); };
+  document.body.appendChild(sc);
 }
 
 function chrome(){
@@ -804,7 +902,7 @@ function take(j){
   var x = sig(j); if (x === SIG) return;
   var again = !!SIG, y = window.scrollY;
   SIG = x;
-  if (again){ QUIET = true; document.body.classList.add('settled'); }
+  if (again){ QUIET = true; document.body.classList.add('settled', 'q'); }
   render(j);
   if (again){ window.scrollTo(0, y); QUIET = false; }
 }
@@ -858,24 +956,24 @@ function inner(s){
   var h = s.heading || '', b = s.body || '';
   switch (s.type){
     case 'hero':
-      var btns = lines(s.items).map(function(l, i){ var c = cells(l); return link(c[0], c[1], i ? 'outline' : ''); }).join('') + cv('outline');
-      var cred = (F.site.name ? '<b>' + esc(F.site.name) + '</b>' : '') + (F.site.degrees ? '<span>' + esc(F.site.degrees) + '</span>' : '') + (F.site.positioning ? '<em>' + esc(F.site.positioning) + '</em>' : '');
       // body paragraphs are separated by a blank line; a short closing paragraph is shown as a motto
       var ps = String(b || '').split(/\n\s*\n/).map(function(x){ return x.trim(); }).filter(Boolean);
       var lede = ps.map(function(x, i){ return '<p' + (ps.length > 1 && i === ps.length - 1 && x.length < 90 ? ' class="motto"' : '') + '>' + esc(x) + '</p>'; }).join('');
       // centred opening: positioning line, headline, first paragraph, buttons; the rest of the body lives in the Meet section
-      return '<div class="hero2"><div class="glass depth js-tilt" aria-hidden="true"><div class="tilt"><i class="g1"></i><i class="g2"></i><i class="g3"></i></div></div>' +
-        '<div class="hero2-in">' + (F.site.positioning ? '<p class="eyebrow">' + esc(F.site.positioning) + '</p>' : '') + kin(h) +
+      // centred opening: name, headline, first paragraph, two buttons. The 3D doorway is drawn behind it by js/hero3d.js
+      var hb = lines(s.items).map(function(l, i){ var c = cells(l); return link(c[0], c[1], i ? 'outline' : ''); }).join('');
+      return '<div class="hero2"><div class="glass" aria-hidden="true"><div class="tilt"><i class="g1"></i><i class="g2"></i><i class="g3"></i></div></div>' +
+        '<div class="hero2-in">' + (F.site.role ? '<p class="eyebrow">' + esc(F.site.role) + '</p>' : '') + kin(h) +
         (ps[0] ? '<p class="sub">' + esc(ps[0]) + '</p>' : '') +
-        '<p class="who">' + (F.site.name ? '<b>' + esc(F.site.name) + '</b>' : '') + (F.site.degrees ? '<span>' + esc(F.site.degrees) + '</span>' : '') + (F.site.current ? '<span>' + esc(F.site.current) + '</span>' : '') + '</p>' +
-        (btns ? '<div class="acts">' + btns + '</div>' : '') + '</div><span class="scrollhint" aria-hidden="true">Scroll to explore</span></div>';
+        (hb ? '<div class="acts">' + hb + '</div>' : '') + '</div><span class="scrollhint" aria-hidden="true">Scroll to explore</span></div>';
     case 'meet':
       // photo on one side, a short personal introduction on the other
       var mp = String(b || '').split(/\n\s*\n/).map(function(x){ return x.trim(); }).filter(Boolean);
       var mtag = (s.items || '').trim() || 'portrait';
-      return (h ? '<h2 class="meet-h">' + md(h) + '</h2>' : '') + '<div class="meet"><div class="meet-pic depth js-tilt"><div class="tilt"><div class="rotbox" data-tag="' + esc(mtag) + '"></div></div></div><div class="meet-text">' +
+      return (h ? '<h2 class="meet-h">' + md(h) + '</h2>' : '') + '<div class="meet"><div class="meet-pic"><div class="rotbox" data-tag="' + esc(mtag) + '"></div></div><div class="meet-text">' +
         mp.map(function(x, i){ return '<p' + (i === 0 && x.length < 40 ? ' class="hey"' : (mp.length > 1 && i === mp.length - 1 && x.length < 90 ? ' class="motto"' : '')) + '>' + md(x) + '</p>'; }).join('') +
-        (F.site.name ? '<p class="meet-sig"><b>' + esc(F.site.name) + '</b>' + (F.site.degrees ? '<span>' + esc(F.site.degrees) + '</span>' : '') + '</p>' : '') + '</div></div>';
+        (F.site.name ? '<p class="meet-sig"><b>' + esc(F.site.name) + '</b>' + (F.site.degrees ? '<span>' + esc(F.site.degrees) + '</span>' : '') + (F.site.current ? '<span class="cur-role">' + esc(F.site.current) + '</span>' : '') + '</p>' : '') +
+        (F.site.cv_url ? '<div class="acts">' + cv('outline') + '</div>' : '') + '</div></div>';
     case 'years':
       return '<div class="years"><h2>' + md(h) + '</h2><p class="js-count"></p><figure class="chart3d js-bars"></figure></div>';
     case 'latest':
@@ -908,6 +1006,15 @@ function inner(s){
           (c[3] ? '<p>' + esc(c[3]) + '</p>' : '') + (pts.length ? '<ul>' + pts.map(function(p){ var m = p.match(/^([^:]{2,60}):\s+(.+)$/); return '<li>' + (m ? '<b>' + esc(m[1]) + ':</b> ' + esc(m[2]) : esc(p)) + '</li>'; }).join('') + '</ul>' : '') + '</div></div>';
       }).join('');
     case 'gallery':
+      // Items "grid | tag, tag" shows a two-column grid of large photos instead of the slideshow
+      var gopt = cells(lines(s.items)[0] || '');
+      if (/^grid$/i.test(gopt[0] || '')){
+        var gt = parts(gopt[1] || 'gallery'), seen = {}, gg = (F.photos || []).filter(function(p){ return (p.tags || []).some(function(t){ return gt.indexOf(t) > -1; }) && !seen[p.url] && (seen[p.url] = 1); });
+        if (!gg.length) return '';
+        return (h ? '<h2>' + md(h) + '</h2>' : '') + (b ? '<p class="lead2">' + esc(b) + '</p>' : '') + '<div class="pgrid">' + gg.map(function(p, i){
+          return '<figure' + (i > 3 ? ' class="extra"' : '') + '><div class="pg-img"><img src="' + esc(p.url) + '" loading="lazy" alt="' + esc(p.caption || 'Photo') + '" style="object-position:' + esc(p.position || '50% 50%') + '"></div>' + (p.caption ? '<figcaption>' + esc(p.caption) + '</figcaption>' : '') + '</figure>';
+        }).join('') + '</div>' + (gg.length > 4 ? '<div class="feat-all"><button class="btn outline js-more" type="button">Show more photos</button></div>' : '');
+      }
       var g = photos('gallery').map(function(p, i){ var c = pcat(p); return {p: p, c: c, i: i}; }).sort(function(a, b){ return a.c.k - b.c.k || a.i - b.i; }).map(function(x){ x.p._cat = x.c.label; return x.p; });
       if (!g.length) return '';
       return (h ? '<h2>' + md(h) + '</h2>' : '') + (b ? '<p class="lead2">' + esc(b) + '</p>' : '') +
@@ -930,7 +1037,7 @@ function inner(s){
         (b ? '<p class="intro-lead">' + esc(b) + '</p>' : '') +
         (facts.length ? '<dl class="facts">' + facts.map(function(c){ return '<div><dt>' + esc(c[0]) + '</dt><dd>' + esc(c[1] || '') + '</dd></div>'; }).join('') + '</dl>' : '') +
         (ib ? '<div class="acts">' + ib + '</div>' : '') + '<nav class="jump js-jump" aria-label="On this page"></nav></div>' +
-        (photos(ptag).length ? '<div class="depth js-tilt"><div class="tilt"><div class="frame"><div class="rotbox" data-tag="' + ptag + '"></div></div></div></div>' : '') + '</div>';
+        (photos(ptag).length ? '<div class="depth"><div class="frame"><div class="rotbox" data-tag="' + ptag + '"></div></div></div>' : '') + '</div>';
     case 'expertise':
       var groups = lines(s.items);
       if (!groups.length) return '';
@@ -945,12 +1052,16 @@ function inner(s){
       var pj = lines(s.items);
       if (!pj.length) return '';
       var lab = ['Challenge', 'My role', 'What I did', 'Result'];
-      return (h ? '<h2>' + md(h) + '</h2>' : '') + (b ? '<p class="lead2">' + esc(b) + '</p>' : '') + '<div class="projects">' + pj.map(function(l, n){
-        var c = cells(l), ptg = (c[7] || c[0] || '').toLowerCase().trim().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''), pics = ptg ? photos(ptg) : [];
-        var pic = pics.length ? '<figure class="proj-pic depth js-tilt"><div class="tilt"><div class="rotbox" data-tag="' + esc(ptg) + '"></div></div>' + (pics.length > 1 ? '<figcaption>' + pics.length + ' photos</figcaption>' : '') + '</figure>' : '';
-        return '<article class="proj' + (pic ? ' has-pic' + (n % 2 ? ' flip' : '') : '') + '">' + pic + '<div class="proj-body"><header>' + (c[0] ? '<span class="proj-tag">' + esc(c[0]) + '</span>' : '') + '<h3>' + esc(c[1] || '') + '</h3></header><dl>' +
-          lab.map(function(t, k){ return c[k + 2] ? '<div' + (k === 3 ? ' class="res"' : '') + '><dt>' + t + '</dt><dd>' + esc(c[k + 2]) + '</dd></div>' : ''; }).join('') +
-          (c[6] ? '<div class="skl"><dt>Skills applied</dt><dd><span class="tags">' + parts(c[6]).map(function(x){ return '<span class="tag">' + esc(x) + '</span>'; }).join('') + '</span></dd></div>' : '') + '</dl></div></article>';
+      // one project per row: a large photo on one side, the story on the other, sides alternating;
+      // "Learn more" opens the role, the work and the skills
+      return (h ? '<h2>' + md(h) + '</h2>' : '') + (b ? '<p class="lead2">' + esc(b) + '</p>' : '') + '<div class="projects pro2">' + pj.map(function(l, n){
+        var c = cells(l), ptg = slug(c[7] || c[0]), pics = ptg ? photos(ptg) : [];
+        var pic = pics.length ? '<figure class="proj-pic"><div class="rotbox" data-tag="' + esc(ptg) + '"></div></figure>' : '';
+        var more = (c[3] ? '<div><dt>My role</dt><dd>' + esc(c[3]) + '</dd></div>' : '') + (c[4] ? '<div><dt>What I did</dt><dd>' + esc(c[4]) + '</dd></div>' : '') +
+          (c[6] ? '<div class="skl"><dt>Skills applied</dt><dd><span class="tags">' + parts(c[6]).map(function(x){ return '<span class="tag">' + esc(x) + '</span>'; }).join('') + '</span></dd></div>' : '');
+        return '<article class="proj' + (pic ? ' has-pic' + (n % 2 ? ' flip' : '') : '') + '" id="pj-' + esc(ptg) + '">' + pic + '<div class="proj-body">' + (c[0] ? '<span class="proj-tag">' + esc(c[0]) + '</span>' : '') + '<h3>' + esc(c[1] || '') + '</h3>' +
+          (c[2] ? '<p>' + esc(c[2]) + '</p>' : '') + (c[5] ? '<p class="res"><b>Result.</b> ' + esc(c[5]) + '</p>' : '') +
+          (more ? '<details class="pmore"><summary><span class="lm">Learn more</span><span class="ls">Show less</span></summary><dl>' + more + '</dl></details>' : '') + '</div></article>';
       }).join('') + '</div>';
     case 'career':
       // Title | Organisation | When | months (a number, or {since:YYYY-MM} for a current role)
@@ -968,10 +1079,11 @@ function inner(s){
       var fs = F.sections.filter(function(x){ return x.type === 'projects'; })[0];
       if (!fs) return '';
       var fl = lines(fs.items).slice(0, parseInt(b, 10) || 3);
-      return (h ? '<h2>' + md(h) + '</h2>' : '') + '<div class="cards feat">' + fl.map(function(l){
-        var c = cells(l);
-        return '<a class="card" href="#' + esc(fs.page) + '" data-go="' + esc(fs.page) + '"><div class="meta"><b>' + esc(c[0] || '') + '</b></div><h3>' + esc(c[1] || '') + '</h3><p>' + esc(c[5] || c[2] || '') + '</p><span class="org">Read the case study</span></a>';
-      }).join('') + '</div>' + '<a class="btn deep" href="#' + esc(fs.page) + '" data-go="' + esc(fs.page) + '">See all projects</a>';
+      return (h ? '<h2>' + md(h) + '</h2>' : '') + '<div class="pro2 feat2">' + fl.map(function(l, n){
+        var c = cells(l), ptg = slug(c[7] || c[0]), pic = ptg && photos(ptg).length ? '<figure class="proj-pic"><div class="rotbox" data-tag="' + esc(ptg) + '"></div></figure>' : '';
+        return '<article class="proj' + (pic ? ' has-pic' + (n % 2 ? ' flip' : '') : '') + '">' + pic + '<div class="proj-body">' + (c[0] ? '<span class="proj-tag">' + esc(c[0]) + '</span>' : '') + '<h3>' + esc(c[1] || '') + '</h3>' +
+          '<p>' + esc(c[5] || c[2] || '') + '</p><a class="lmore" href="#' + esc(fs.page) + '" data-go="' + esc(fs.page) + '" data-to="pj-' + esc(ptg) + '">Learn more</a></div></article>';
+      }).join('') + '</div>' + '<div class="feat-all"><a class="btn outline" href="#' + esc(fs.page) + '" data-go="' + esc(fs.page) + '">See all projects</a></div>';
     case 'message':
       // a short form that opens the visitor's email app with the message filled in
       if (!F.site.email) return '';
@@ -1156,7 +1268,7 @@ function motion(){
     s.addEventListener('pointermove', function(e){ var r = s.getBoundingClientRect(); s.classList.add('spot'); s.style.setProperty('--mx', (e.clientX - r.left) + 'px'); s.style.setProperty('--my', (e.clientY - r.top) + 'px'); });
     s.addEventListener('pointerleave', function(){ s.classList.remove('spot'); });
   });
-  // cards lean toward the pointer, with a small highlight
+  // a soft highlight follows the pointer across cards (no tilting, so the page stays calm)
   all('.card,.xp article,.badge,.area').forEach(function(c){
     c.classList.add('lean');
     c.addEventListener('pointermove', function(e){
@@ -1164,7 +1276,6 @@ function motion(){
       var r = c.getBoundingClientRect(), x = (e.clientX - r.left) / r.width, y = (e.clientY - r.top) / r.height;
       c.classList.add('on');
       c.style.transition = 'transform .12s linear, box-shadow .25s';
-      c.style.transform = 'perspective(900px) rotateX(' + ((.5 - y) * 7).toFixed(2) + 'deg) rotateY(' + ((x - .5) * 9).toFixed(2) + 'deg) translateZ(6px)';
       c.style.setProperty('--gx', (x * 100).toFixed(1) + '%'); c.style.setProperty('--gy', (y * 100).toFixed(1) + '%');
     });
     c.addEventListener('pointerleave', function(){ c.classList.remove('on'); c.style.transition = 'transform .6s cubic-bezier(.2,.7,.2,1), box-shadow .25s'; c.style.transform = ''; });
@@ -1323,8 +1434,14 @@ document.addEventListener('click', function(e){
   if (g && F){
     e.preventDefault();
     if (g.dataset.year){ st.year = +g.dataset.year; st.cat = 'Everything'; st.q = ''; if ($('q')) $('q').value = ''; }
-    go(g.dataset.go); return;
+    go(g.dataset.go);
+    // "Learn more" on the home page opens that project on the projects page
+    var to = g.dataset.to && $(g.dataset.to);
+    if (to){ var d = to.querySelector('details'); if (d) d.open = true; setTimeout(function(){ to.scrollIntoView({behavior: 'auto', block: 'start'}); }, 30); }
+    return;
   }
+  var mo = e.target.closest('.js-more');
+  if (mo){ var pg = mo.parentNode.previousElementSibling; all('.extra').forEach(function(f){ if (pg.contains(f)) f.classList.remove('extra'); }); mo.parentNode.remove(); return; }
   var line = e.target.closest('#list .line');
   if (line){ var more = line.nextElementSibling, open = more.hidden; more.hidden = !open; line.setAttribute('aria-expanded', open ? 'true' : 'false'); return; }
   var chip = e.target.closest('#chips button');
