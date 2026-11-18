@@ -223,6 +223,9 @@ h1{font-family:var(--d);font-weight:700;font-size:clamp(40px,5.4vw,76px);line-he
 .role.current>div::before{background:var(--brass);box-shadow:0 0 0 5px rgba(193,154,75,.22)}
 .role h3{font-family:var(--d);font-size:23px;font-weight:600;margin:0;letter-spacing:-.01em;line-height:1.25;color:var(--strong)}
 .role .org{color:var(--sub);font-style:italic;margin:2px 0 10px}
+.olink{color:inherit;text-decoration:underline;text-decoration-color:color-mix(in srgb,var(--accent) 45%,transparent);text-underline-offset:3px;text-decoration-thickness:1px;transition:color .3s,text-decoration-color .3s}
+.olink::after{content:'\2197';font-size:.72em;margin-left:3px;opacity:.55;font-style:normal;display:inline-block}
+.olink:hover,.olink:focus-visible{color:var(--accent);text-decoration-color:currentColor}
 .role p{margin:0 0 8px;max-width:38em}
 .role ul{margin:8px 0 0;padding-left:20px;max-width:38em}
 .role li{margin-bottom:4px}
@@ -968,7 +971,7 @@ function render(feed){
   $('app').innerHTML = PAGES.map(function(p){
     return '<div class="view" id="v-' + esc(p.id) + '" hidden>' + sections(F.sections.filter(function(s){ return s.page === p.id; })) + '</div>';
   }).join('');
-  drawYears(); drawLatest(); drawStats(); rotation(); numbers(); slideshows(); tilts(); reveals(); motion(); onScroll();
+  orgLinks(); drawYears(); drawLatest(); drawStats(); rotation(); numbers(); slideshows(); tilts(); reveals(); motion(); onScroll();
   all('.js-jump').forEach(function(nav){
     var hs = [].slice.call(nav.closest('.view').querySelectorAll('section[data-h]'));
     nav.innerHTML = hs.length > 1 ? '<b>On this page</b>' + hs.map(function(sec){ return '<button type="button" data-jump="' + sec.id + '">' + esc(sec.getAttribute('data-h')) + '</button>'; }).join('') : '';
@@ -977,6 +980,34 @@ function render(feed){
   if (!QUIET) setTimeout(function(){ document.body.classList.add('settled'); }, 1600);
   show(current(), true);
   loadSystem3d();
+}
+// Web Settings "org_links": one line per organisation, "Name on the site | https://link".
+// On the Experience page and the Education and Research parts of Profile, the first mention of each name in an organisation
+// line becomes a quiet link that opens the organisation's site in a new tab.
+function orgLinks(){
+  var L = lines(F.site.org_links || '').map(cells).filter(function(c){ return c[0] && /^https?:\/\//.test(c[1] || ''); })
+    .sort(function(a, b){ return b[0].length - a[0].length; });
+  if (!L.length) return;
+  all('#v-experience .role .org, #v-experience .clist span, #s-pro-edu .badge span, #s-pro-edu-extra .badge span, #s-pro-research .badge span').forEach(function(el){
+    var done = {};
+    L.forEach(function(c){
+      if (done[c[1]]) return;
+      var w = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, null), n;
+      while ((n = w.nextNode())){
+        if (n.parentNode.closest('a')) continue;
+        var i = n.nodeValue.indexOf(c[0]);
+        if (i < 0) continue;
+        var mid = n.splitText(i); mid.splitText(c[0].length);
+        var a = document.createElement('a');
+        a.className = 'olink'; a.href = c[1]; a.target = '_blank'; a.rel = 'noopener';
+        a.title = 'Visit the ' + c[0] + ' website (opens in a new tab)';
+        a.textContent = c[0];
+        mid.parentNode.replaceChild(a, mid);
+        done[c[1]] = 1;
+        break;
+      }
+    });
+  });
 }
 // load the 3D system model only when the page has that section, and only once
 var GL = (function(){ try { var c = document.createElement('canvas'); return !!(window.WebGLRenderingContext && (c.getContext('webgl2') || c.getContext('webgl'))); } catch (e) { return false; } })();
