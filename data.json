@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-18T01:21:31.907Z",
+ "updated": "2026-11-18T01:38:13.648Z",
  "site": {
   "name": "Engr. Sk Nayem Uddin",
   "role": "Manager, Administration and Operations",
@@ -65,9 +65,9 @@
    "type": "system",
    "tone": "dark",
    "column": "full",
-   "heading": "How I *build* systems",
-   "body": "The same points of light rebuild themselves into each part of my work as you scroll.",
-   "items": "Infrastructure | Coordinating a seven-storey mosque and an eleven-storey academic building\nSupply chain | From RFQ and comparative statement to purchase order and delivery\nDigital systems | Income, expenses, KPIs and attendance turned into live dashboards\nPeople | A team of 8 to 10, connected to each other and to the plan\nThe institution | Everything above working together, every day",
+   "heading": "How I drive *operational excellence*",
+   "body": "Five pillars of my work. As you scroll, the same points of light rebuild into each one.",
+   "items": "Institutional Operations | Day-to-day administration, procedures and reporting that keep a multi-programme trust running\nProcurement & Supply Chain | A written SOP covering every step from RFQ and comparative statement to purchase order and delivery\nProject Coordination | The operations side of a seven-storey mosque and an eleven-storey academic building\nDigital Transformation | Income, expense, KPI, inventory and attendance systems, and planning for an ERP\nPeople & Organisational Development | A team of 8 to 10, with clear roles, staff training and HR policy",
    "show": true
   },
   {
