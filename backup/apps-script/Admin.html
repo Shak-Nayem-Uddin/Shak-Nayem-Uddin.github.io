@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<base target="_blank">
+<meta charset="utf-8">
+<style>
+:root{--navy:#0D1B2E;--navy2:#213A5C;--paper:#EEF0F4;--white:#FFFFFF;--ink:#101A2B;--mute:#566179;--gold:#C19A4B;--cel:#C7D2E2;--rule:#D5DAE3;--red:#B3261E;--green:#1E7A4F}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.bar{background:var(--navy);color:#fff;position:sticky;top:0;z-index:5}
+.bar .in{max-width:1100px;margin:0 auto;padding:0 20px;display:flex;align-items:center;gap:20px;height:58px}
+.bar b{font-size:17px;margin-right:auto}
+.bar a{color:var(--cel);text-decoration:none;font-size:14px}
+.bar a:hover{color:#fff}
+.tabs{max-width:1100px;margin:0 auto;padding:18px 20px 0;display:flex;gap:6px;flex-wrap:wrap}
+.tabs button{border:0;background:none;padding:9px 14px;border-radius:6px;font-weight:600;color:var(--mute)}
+.tabs button[aria-selected=true]{background:var(--navy);color:#fff}
+.wrap{max-width:1100px;margin:0 auto;padding:18px 20px 80px}
+h2{font-size:22px;margin:6px 0 4px}
+.hint{color:var(--mute);margin:0 0 18px;max-width:52em}
+.card{background:var(--white);border:1px solid var(--rule);border-radius:8px;padding:16px;margin-bottom:12px}
+.row{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.btn{border:0;border-radius:6px;padding:8px 14px;background:var(--navy);color:#fff;font-weight:600}
+.btn.alt{background:none;color:var(--ink);box-shadow:inset 0 0 0 1px var(--rule)}
+.btn.gold{background:var(--gold);color:var(--navy)}
+.btn.danger{background:none;color:var(--red);box-shadow:inset 0 0 0 1px #E6B8B4}
+.btn.danger.sure{background:var(--red);color:#fff}
+.btn.sm{padding:5px 10px;font-size:13px}
+.btn[disabled]{opacity:.45;cursor:default}
+.pages{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px}
+.pages button{border:1px solid var(--rule);background:var(--white);border-radius:99px;padding:6px 14px;font-weight:600}
+.pages button[aria-pressed=true]{background:var(--navy);color:#fff;border-color:var(--navy)}
+.sec{display:grid;grid-template-columns:28px 1fr auto;gap:12px;align-items:center;background:var(--white);border:1px solid var(--rule);border-radius:8px;padding:12px 14px;margin-bottom:8px}
+.sec.off{opacity:.55}
+.sec .n{color:var(--mute);font-weight:700;text-align:center}
+.sec .t{min-width:0}
+.sec .t b{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tag{display:inline-block;font-size:12px;font-weight:600;padding:1px 8px;border-radius:99px;background:#E4E9F2;color:var(--navy2);margin-right:4px}
+.tag.d{background:var(--navy);color:#fff}
+.tag.w{background:#fff;box-shadow:inset 0 0 0 1px var(--rule)}
+.acts{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}
+label{display:block;font-weight:600;font-size:13px;margin:12px 0 4px}
+label small{font-weight:400;color:var(--mute)}
+input[type=text],input[type=email],input[type=tel],input[type=url],input[type=number],select,textarea{width:100%;border:1px solid #BFC7D4;border-radius:6px;padding:8px 10px;background:#fff}
+textarea{min-height:90px;resize:vertical}
+textarea.big{min-height:170px}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:0 16px}
+.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:0 16px}
+.form{border:2px solid var(--navy);background:#fff;border-radius:8px;padding:18px;margin:6px 0 18px}
+.form h3{margin:0 0 4px}
+.dis{opacity:.4}
+.photos{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px}
+.ph{background:#fff;border:1px solid var(--rule);border-radius:8px;overflow:hidden}
+.ph.off{opacity:.55}
+.ph .img{aspect-ratio:4/3;background:var(--cel) center/cover no-repeat}
+.ph .body{padding:10px 12px 12px}
+.ph label{margin-top:8px}
+.drop{border:2px dashed #AEB8C8;border-radius:8px;padding:18px;background:#fff;margin-bottom:18px}
+.toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%);background:var(--navy);color:#fff;padding:11px 18px;border-radius:8px;box-shadow:0 6px 24px rgba(13,27,46,.25);max-width:90vw;z-index:9;display:none}
+.toast.err{background:var(--red)}
+.busy{position:fixed;top:58px;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--gold),transparent);background-size:40% 100%;animation:mv 1s linear infinite;display:none;z-index:6}
+@keyframes mv{from{background-position:-40% 0}to{background-position:140% 0}}
+.plist .pr{display:grid;grid-template-columns:150px 1fr auto;gap:10px;align-items:center;margin-bottom:8px}
+.empty{color:var(--mute);padding:14px 0}
+a.link{color:var(--navy2)}
+@media(max-width:700px){.g2,.g4{grid-template-columns:1fr}.sec{grid-template-columns:1fr}.sec .n{display:none}.acts{justify-content:flex-start}.plist .pr{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="bar"><div class="in"><b>Portfolio admin</b><a id="view" href="#">View the site</a><a id="sheet" href="#">Open the content sheet</a></div></div>
+<div class="busy" id="busy"></div>
+<div class="tabs" role="tablist">
+  <button role="tab" data-tab="sections" aria-selected="true">Pages and sections</button>
+  <button role="tab" data-tab="photos" aria-selected="false">Photo library</button>
+  <button role="tab" data-tab="site" aria-selected="false">Site details</button>
+  <button role="tab" data-tab="journal" aria-selected="false">Journal</button>
+</div>
+<div class="wrap" id="app"><p class="empty">Loading your content…</p></div>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+var TYPES = {
+  hero:    {name: 'Opening with rotating portrait', heading: 'Headline', body: 'Short introduction', items: 'Buttons, one per line: Label | #page-id or https://link'},
+  title:   {name: 'Page title', heading: 'Title', body: 'Lead paragraph (optional)'},
+  text:    {name: 'Text', heading: 'Heading (optional)', body: 'Paragraphs. Leave an empty line between paragraphs.'},
+  columns: {name: 'Columns', heading: 'Heading', items: 'One per line: Title | Text'},
+  list:    {name: 'List', heading: 'Heading', items: 'One per line: Title | Second line (optional)'},
+  roles:   {name: 'Roles or timeline', heading: 'Heading (optional)', items: 'One per line: When | Title | Organisation | Summary | point; point; point'},
+  gallery: {name: 'Photo gallery (photos tagged gallery)', heading: 'Heading', body: 'Intro line (optional)'},
+  photo:   {name: 'Single photo (rotates if several share the tag)', heading: 'Caption (optional)', body: 'Photo tag to show, for example profile'},
+  contact: {name: 'Contact block (uses Site details)', heading: 'Heading', body: 'Intro line'},
+  years:   {name: 'Journal: entries per year chart', heading: 'Heading'},
+  latest:  {name: 'Journal: latest entries', heading: 'Heading', body: 'How many entries to show, for example 4'},
+  record:  {name: 'Journal: full searchable record'},
+  stats:   {name: 'Journal: work areas, skills and tools'}
+};
+var TAGS = 'portrait = rotates in the home page arch · gallery = On the ground gallery · big = wide in the gallery · profile, contact = shown on those blocks. Any other tag can be used with a Single photo section.';
+var S = {cms: null, meta: null, tab: 'sections', page: null, edit: null};
+
+function $(id){ return document.getElementById(id); }
+function esc(s){ return String(s == null ? '' : s).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+function toast(msg, err){ var t = $('toast'); t.textContent = msg; t.className = 'toast' + (err ? ' err' : ''); t.style.display = 'block'; clearTimeout(toast.h); toast.h = setTimeout(function(){ t.style.display = 'none'; }, err ? 7000 : 3200); }
+function busy(on){ $('busy').style.display = on ? 'block' : 'none'; }
+function call(fn, args, msg){
+  return new Promise(function(res, rej){
+    busy(true);
+    var r = google.script.run.withSuccessHandler(function(out){
+      busy(false);
+      if (out && out.cms){ S.cms = out.cms; S.meta = out; }
+      if (msg) toast(msg);
+      draw(); res(out);
+    }).withFailureHandler(function(e){ busy(false); toast((e && e.message) || String(e), true); rej(e); });
+    r[fn].apply(r, args || []);
+  });
+}
+
+document.querySelector('.tabs').addEventListener('click', function(e){
+  var b = e.target.closest('[data-tab]'); if (!b) return;
+  S.tab = b.dataset.tab; S.edit = null;
+  document.querySelectorAll('.tabs button').forEach(function(x){ x.setAttribute('aria-selected', x === b); });
+  draw();
+});
+
+function draw(){
+  if (!S.cms) return;
+  $('view').href = S.meta.siteUrl; $('sheet').href = S.meta.sheetUrl;
+  if (!S.page || !S.cms.pages.some(function(p){ return p.id === S.page; })) S.page = (S.cms.pages[0] || {}).id;
+  ({sections: drawSections, photos: drawPhotos, site: drawSite, journal: drawJournal})[S.tab]();
+}
+
+// ------------------------------------------------ pages and sections
+function drawSections(){
+  var c = S.cms, list = c.sections.filter(function(s){ return s.page === S.page; });
+  var orphans = c.sections.filter(function(s){ return !c.pages.some(function(p){ return p.id === s.page; }); });
+  var h = '<h2>Pages and sections</h2><p class="hint">Each page is a stack of sections, shown top to bottom. Changes go live on the site as soon as you save. To add or rename a page, use Site details.</p>';
+  h += '<div class="pages">' + c.pages.map(function(p){ return '<button data-page="' + esc(p.id) + '" aria-pressed="' + (p.id === S.page) + '">' + esc(p.label) + '</button>'; }).join('') +
+       (orphans.length ? '<button data-page="__none" aria-pressed="' + (S.page === '__none') + '">Not on any page (' + orphans.length + ')</button>' : '') + '</div>';
+  if (S.page === '__none') list = orphans;
+  h += '<div class="row" style="margin-bottom:12px"><button class="btn gold" id="add-sec">Add a section to this page</button></div>';
+  if (S.edit && S.edit.kind === 'section' && S.edit.isNew) h += sectionForm(S.edit.rec);
+  if (!list.length) h += '<p class="empty">This page has no sections yet.</p>';
+  list.forEach(function(s, i){
+    var t = TYPES[s.type] || {name: s.type};
+    h += '<div class="sec' + (s.show ? '' : ' off') + '"><div class="n">' + (i + 1) + '</div><div class="t"><b>' + esc(s.heading || t.name) + '</b>' +
+      '<span class="tag">' + esc(t.name) + '</span><span class="tag ' + (s.tone === 'dark' ? 'd' : s.tone === 'white' ? 'w' : '') + '">' + esc(s.tone) + '</span>' +
+      (s.column !== 'full' ? '<span class="tag">' + esc(s.column) + ' column</span>' : '') + (s.show ? '' : '<span class="tag">hidden</span>') + '</div>' +
+      '<div class="acts"><button class="btn alt sm" data-up="' + esc(s.id) + '"' + (i ? '' : ' disabled') + ' aria-label="Move up">↑</button><button class="btn alt sm" data-down="' + esc(s.id) + '"' + (i < list.length - 1 ? '' : ' disabled') + ' aria-label="Move down">↓</button>' +
+      '<button class="btn alt sm" data-edit="' + esc(s.id) + '">Edit</button><button class="btn danger sm" data-del="' + esc(s.id) + '">Delete</button></div></div>';
+    if (S.edit && S.edit.kind === 'section' && S.edit.rec.ID === s.id) h += sectionForm(S.edit.rec);
+  });
+  $('app').innerHTML = h;
+  if (S.edit && S.edit.kind === 'section') typeHints();
+}
+function secRec(s){ return {ID: s.id, Page: s.page, Order: s.order, Type: s.type, Tone: s.tone, Column: s.column, Heading: s.heading, Body: s.body, Items: s.items, Show: s.show ? 'Yes' : 'No'}; }
+function sectionForm(r){
+  var opt = function(vals, cur, labels){ return vals.map(function(v, i){ return '<option value="' + esc(v) + '"' + (v === cur ? ' selected' : '') + '>' + esc(labels ? labels[i] : v) + '</option>'; }).join(''); };
+  var keys = Object.keys(TYPES);
+  return '<form class="form" id="sec-form"><h3>' + (S.edit.isNew ? 'New section' : 'Edit section') + '</h3>' +
+    '<div class="g4"><div><label>Page</label><select name="Page">' + opt(S.cms.pages.map(function(p){ return p.id; }), r.Page, S.cms.pages.map(function(p){ return p.label; })) + '</select></div>' +
+    '<div><label>Type</label><select name="Type" id="f-type">' + opt(keys, r.Type, keys.map(function(k){ return TYPES[k].name; })) + '</select></div>' +
+    '<div><label>Background</label><select name="Tone">' + opt(['dark', 'light', 'white'], r.Tone, ['Dark navy', 'Light grey', 'White']) + '</select></div>' +
+    '<div><label>Width <small>left and right sit side by side</small></label><select name="Column">' + opt(['full', 'left', 'right'], r.Column, ['Full width', 'Left column', 'Right column']) + '</select></div></div>' +
+    '<label id="l-heading">Heading</label><input type="text" name="Heading" value="' + esc(r.Heading) + '">' +
+    '<label id="l-body">Body</label><textarea name="Body">' + esc(r.Body) + '</textarea>' +
+    '<label id="l-items">Items</label><textarea class="big" name="Items">' + esc(r.Items) + '</textarea>' +
+    '<label><input type="checkbox" name="Show"' + (r.Show !== 'No' ? ' checked' : '') + '> Show this section on the site</label>' +
+    '<div class="row" style="margin-top:14px"><button class="btn" type="submit">Save section</button><button class="btn alt" type="button" id="cancel">Cancel</button></div></form>';
+}
+function typeHints(){
+  var f = $('sec-form'); if (!f) return;
+  var t = TYPES[f.Type.value] || {};
+  [['heading', 'Heading'], ['body', 'Body'], ['items', 'Items']].forEach(function(x){
+    var on = !!t[x[0]], lab = $('l-' + x[0]), el = f[x[1]];
+    lab.textContent = on ? t[x[0]] : x[1] + ' (not used by this type)';
+    lab.classList.toggle('dis', !on); el.classList.toggle('dis', !on);
+  });
+}
+
+// ------------------------------------------------ photos
+function drawPhotos(){
+  var h = '<h2>Photo library</h2><p class="hint">Upload photos, then tag them to decide where they appear. ' + esc(TAGS) + ' Photos with the same tag rotate one after another.</p>';
+  h += '<div class="drop"><div class="g2"><div><label>Choose photos <small>JPG or PNG, several at once is fine</small></label><input type="file" id="files" accept="image/*" multiple></div>' +
+       '<div><label>Tags for these photos</label><input type="text" id="up-tags" value="gallery"></div></div>' +
+       '<label>Caption <small>optional, used for all chosen photos</small></label><input type="text" id="up-cap">' +
+       '<div class="row" style="margin-top:12px"><button class="btn gold" id="upload">Upload</button><span id="up-note" class="hint" style="margin:0"></span></div></div>';
+  var ps = S.cms.photos;
+  if (!ps.length) h += '<p class="empty">No photos yet.</p>';
+  h += '<div class="photos">' + ps.map(function(p, i){
+    return '<div class="ph' + (p.show ? '' : ' off') + '" data-id="' + esc(p.id) + '"><div class="img" style="background-image:url(&quot;' + esc(p.preview) + '&quot;);background-position:' + esc(p.position || '50% 50%') + '"></div><div class="body">' +
+      '<label>Caption</label><input type="text" data-f="Caption" value="' + esc(p.caption) + '">' +
+      '<label>Tags</label><input type="text" data-f="Tags" value="' + esc(p.tags.join(', ')) + '">' +
+      '<label>Focus point <small>e.g. 50% 20% keeps the face in frame</small></label><input type="text" data-f="Position" value="' + esc(p.position) + '">' +
+      '<label><input type="checkbox" data-f="Show"' + (p.show ? ' checked' : '') + '> Show on the site</label>' +
+      '<div class="row" style="margin-top:10px"><button class="btn sm" data-psave="' + esc(p.id) + '">Save</button><button class="btn alt sm" data-pup="' + esc(p.id) + '"' + (i ? '' : ' disabled') + ' aria-label="Earlier">←</button><button class="btn alt sm" data-pdown="' + esc(p.id) + '"' + (i < ps.length - 1 ? '' : ' disabled') + ' aria-label="Later">→</button><button class="btn danger sm" data-pdel="' + esc(p.id) + '">Delete</button></div></div></div>';
+  }).join('') + '</div>';
+  $('app').innerHTML = h;
+}
+function shrink(file){
+  return new Promise(function(res, rej){
+    var fr = new FileReader();
+    fr.onload = function(){
+      var img = new Image();
+      img.onload = function(){
+        var max = 1600, k = Math.min(1, max / Math.max(img.naturalWidth, img.naturalHeight));
+        var c = document.createElement('canvas'); c.width = Math.round(img.naturalWidth * k); c.height = Math.round(img.naturalHeight * k);
+        c.getContext('2d').drawImage(img, 0, 0, c.width, c.height);
+        res(c.toDataURL('image/jpeg', 0.84));
+      };
+      img.onerror = function(){ rej(new Error(file.name + ' could not be read as an image.')); };
+      img.src = fr.result;
+    };
+    fr.onerror = function(){ rej(new Error(file.name + ' could not be read.')); };
+    fr.readAsDataURL(file);
+  });
+}
+function uploadAll(){
+  var files = [].slice.call($('files').files || []);
+  if (!files.length){ toast('Choose one or more photos first.', true); return; }
+  var tags = $('up-tags').value, cap = $('up-cap').value, done = 0;
+  $('upload').disabled = true;
+  var next = function(){
+    if (done === files.length){ toast(files.length + (files.length === 1 ? ' photo' : ' photos') + ' added to the library.'); return; }
+    var f = files[done];
+    $('up-note').textContent = 'Uploading ' + (done + 1) + ' of ' + files.length + '…';
+    shrink(f).then(function(data){
+      return call('adminUploadPhoto', [data, f.name.replace(/\.\w+$/, '') + '.jpg', {tags: tags, caption: cap}]);
+    }).then(function(){ done++; next(); }).catch(function(e){ toast((e && e.message) || 'Upload failed.', true); draw(); });
+  };
+  next();
+}
+function photoRec(id){
+  var card = document.querySelector('.ph[data-id="' + id + '"]'), p = S.cms.photos.filter(function(x){ return x.id === id; })[0];
+  var val = function(f){ var el = card.querySelector('[data-f="' + f + '"]'); return el.type === 'checkbox' ? (el.checked ? 'Yes' : 'No') : el.value.trim(); };
+  return {ID: p.id, Source: p.source, Caption: val('Caption'), Tags: val('Tags'), Order: p.order, Show: val('Show'), Position: val('Position')};
+}
+
+// ------------------------------------------------ site details
+var FIELDS = [['name', 'Your name (with title, e.g. Engr.)'], ['degrees', 'Degrees line'], ['role', 'Role line'], ['location', 'Location'], ['email', 'Personal email', 'email'], ['phone', 'Personal phone', 'tel'], ['work_email', 'Work email', 'email'], ['work_phone', 'Work phones (separate with commas)'], ['office_address', 'Office address'], ['office_website', 'Organisation website', 'url'], ['linkedin', 'LinkedIn link', 'url'], ['rotate_seconds', 'Seconds each portrait stays', 'number']];
+function drawSite(){
+  var s = S.cms.site;
+  var h = '<h2>Site details</h2><p class="hint">Used across the site: the header, footer, contact block and page titles. Leave any contact field empty to hide it. Personal email and phone also appear in the footer.</p><form class="card" id="site-form"><div class="g2">' +
+    FIELDS.map(function(f){ return '<div><label>' + esc(f[1]) + '</label><input type="' + (f[2] || 'text') + '" name="' + f[0] + '" value="' + esc(s[f[0]]) + '"></div>'; }).join('') +
+    '</div><div class="row" style="margin-top:14px"><button class="btn" type="submit">Save details</button></div></form>';
+  h += '<h2 style="margin-top:28px">Pages in the menu</h2><p class="hint">The first page is the home page. The page id appears in links, for example /#contact. Use lower-case letters, numbers and hyphens.</p><div class="card plist" id="plist">' +
+    S.cms.pages.map(function(p, i){ return pageRow(p, i); }).join('') +
+    '</div><div class="row"><button class="btn alt" id="padd">Add a page</button><button class="btn" id="psave">Save pages</button></div>';
+  $('app').innerHTML = h;
+}
+function pageRow(p, i){
+  return '<div class="pr"><input type="text" class="pid" value="' + esc(p.id) + '" aria-label="Page id"><input type="text" class="plabel" value="' + esc(p.label) + '" aria-label="Menu name">' +
+    '<div class="acts"><button class="btn alt sm" data-pgup aria-label="Move up">↑</button><button class="btn alt sm" data-pgdown aria-label="Move down">↓</button><button class="btn danger sm" data-pgdel>Remove</button></div></div>';
+}
+
+// ------------------------------------------------ journal
+function drawJournal(){
+  $('app').innerHTML = '<h2>Achievement journal</h2><p class="hint">The Journal sections (year chart, latest entries, full record, work areas) read your Achievement Journal sheet live. Add a row there and it appears on the site the next time someone opens it.</p>' +
+    '<div class="card"><p style="margin-top:0"><b>' + S.meta.journalCount + '</b> entries are public right now.</p>' +
+    '<p>To keep an entry off the site, write <b>No</b> in its <b>Show on Portfolio</b> column. Only these columns are published: year, date, category, achievement, how it was done, skills, tools and organisation.</p>' +
+    '<a class="btn" href="' + esc(S.meta.sheetUrl) + '">Open the journal sheet</a></div>';
+}
+
+// ------------------------------------------------ events
+document.addEventListener('click', function(e){
+  var t = e.target, d = t.dataset || {};
+  if (t.closest && t.closest('[data-page]') && S.tab === 'sections'){ S.page = t.closest('[data-page]').dataset.page; S.edit = null; draw(); return; }
+  if (t.id === 'add-sec'){ S.edit = {kind: 'section', isNew: true, rec: {ID: '', Page: S.page === '__none' ? (S.cms.pages[0] || {}).id : S.page, Order: 999, Type: 'text', Tone: 'light', Column: 'full', Heading: '', Body: '', Items: '', Show: 'Yes'}}; draw(); return; }
+  if (t.id === 'cancel'){ S.edit = null; draw(); return; }
+  if (d.edit){ var s = S.cms.sections.filter(function(x){ return x.id === d.edit; })[0]; S.edit = {kind: 'section', isNew: false, rec: secRec(s)}; draw(); return; }
+  if (d.up){ call('adminMoveSection', [d.up, -1]); return; }
+  if (d.down){ call('adminMoveSection', [d.down, 1]); return; }
+  if (d.del || d.pdel){
+    if (!t.classList.contains('sure')){ t.classList.add('sure'); t.textContent = 'Click again to delete'; setTimeout(function(){ if (t.isConnected){ t.classList.remove('sure'); t.textContent = 'Delete'; } }, 4000); return; }
+    if (d.del) call('adminDeleteSection', [d.del], 'Section deleted.'); else call('adminDeletePhoto', [d.pdel], 'Photo removed from the library.');
+    return;
+  }
+  if (t.id === 'upload'){ uploadAll(); return; }
+  if (d.psave){ call('adminSavePhoto', [photoRec(d.psave)], 'Photo saved.'); return; }
+  if (d.pup){ call('adminMovePhoto', [d.pup, -1]); return; }
+  if (d.pdown){ call('adminMovePhoto', [d.pdown, 1]); return; }
+  if (t.id === 'padd'){ $('plist').insertAdjacentHTML('beforeend', pageRow({id: '', label: ''}, 0)); return; }
+  var row = t.closest && t.closest('.pr');
+  if (row && t.hasAttribute('data-pgdel')){ row.remove(); return; }
+  if (row && t.hasAttribute('data-pgup') && row.previousElementSibling){ row.parentNode.insertBefore(row, row.previousElementSibling); return; }
+  if (row && t.hasAttribute('data-pgdown') && row.nextElementSibling){ row.parentNode.insertBefore(row.nextElementSibling, row); return; }
+  if (t.id === 'psave'){
+    var pages = [].map.call(document.querySelectorAll('#plist .pr'), function(r){
+      return {id: r.querySelector('.pid').value.trim().toLowerCase().replace(/[^a-z0-9-]+/g, '-').replace(/^-|-$/g, ''), label: r.querySelector('.plabel').value.trim()};
+    }).filter(function(p){ return p.id && p.label; });
+    if (!pages.length){ toast('Keep at least one page.', true); return; }
+    call('adminSaveSettings', [{pages: pages.map(function(p){ return p.id + '=' + p.label; }).join('; ')}], 'Pages saved.');
+  }
+});
+document.addEventListener('change', function(e){ if (e.target.id === 'f-type') typeHints(); });
+document.addEventListener('submit', function(e){
+  e.preventDefault();
+  var f = e.target;
+  if (f.id === 'sec-form'){
+    var r = S.edit.rec;
+    ['Page', 'Type', 'Tone', 'Column', 'Heading', 'Body', 'Items'].forEach(function(k){ r[k] = f[k].value; });
+    r.Show = f.Show.checked ? 'Yes' : 'No';
+    if (S.edit.isNew){ r.Order = 10 * (S.cms.sections.filter(function(s){ return s.page === r.Page; }).length + 1); S.page = r.Page; }
+    S.edit = null;
+    call('adminSaveSection', [r], 'Section saved. It is live on the site now.');
+  }
+  if (f.id === 'site-form'){
+    var o = {}; FIELDS.forEach(function(x){ o[x[0]] = f[x[0]].value.trim(); });
+    call('adminSaveSettings', [o], 'Details saved.');
+  }
+});
+
+call('adminLoad', []);
+</script>
+</body>
+</html>
