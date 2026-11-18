@@ -51,27 +51,64 @@ const SHAPES = {
     return fill(N, parts);
   },
 
-  // three vendors feed a comparative statement, then a purchase order, then delivery
+  // supply chain: stock on a pallet, a loaded truck on the road, a warehouse, and the route between them
   chain(N){
-    const nodes = [[-3.6, 1.1, -0.8], [-3.6, 0, 0.7], [-3.6, -1.1, -0.3], [-1.2, 0, 0], [1.2, 0, 0], [3.6, 0, 0]], parts = [];
-    nodes.forEach((c, k) => parts.push({w: k > 2 ? 5 : 3, f: ball(c, k > 2 ? 0.5 : 0.3)}));
-    [[0, 3], [1, 3], [2, 3], [3, 4], [4, 5]].forEach(([a, b]) => parts.push({w: 4, f: () => {
-      const t = R(), A = nodes[a], B = nodes[b], j = 0.07;
-      return [lerp(A[0], B[0], t) + (R() - 0.5) * j, lerp(A[1], B[1], t) + Math.sin(t * Math.PI) * 0.4 + (R() - 0.5) * j, lerp(A[2], B[2], t) + (R() - 0.5) * j];
-    }}));
-    nodes.slice(3).forEach(([x, y, z]) => parts.push({w: 3, f: () => { const a = R() * 6.283; return [x + Math.cos(a) * 0.95, y + Math.sin(a) * 0.95, z + (R() - 0.5) * 0.04]; }}));
-    return fill(N, parts);
+    const parts = [], Y = -2;
+    // pallet with six crates
+    parts.push(...boxEdges(-3.45, Y, 0, 1.4, 0.12, 1.1));
+    [[-3.78, 0], [-3.12, 0], [-3.78, 0.6], [-3.12, 0.6], [-3.45, 1.2]].forEach(([x, y]) => parts.push(...boxEdges(x, Y + 0.12 + y, -0.15, 0.6, 0.58, 0.6)));
+    [[-3.78, 0], [-3.12, 0]].forEach(([x, y]) => parts.push(...boxEdges(x, Y + 0.12 + y, 0.45, 0.6, 0.58, 0.55)));
+    // truck: container, cab with a sloped windscreen, wheels
+    parts.push(...boxEdges(-0.35, Y + 0.45, 0, 2.3, 1.45, 1.2));
+    parts.push({w: 3, f: () => [lerp(-1.5, 0.8, R()), Y + 0.45 + R() * 1.45, 0.6]});
+    const cab = [[0.85, Y + 0.45], [1.75, Y + 0.45], [1.75, Y + 1.05], [1.35, Y + 1.5], [0.85, Y + 1.5]];
+    [-0.6, 0.6].forEach(z => cab.forEach((c, i) => { const d = cab[(i + 1) % cab.length]; parts.push({w: 0.9, f: edge([c[0], c[1], z], [d[0], d[1], z])}); }));
+    cab.forEach(c => parts.push({w: 0.8, f: edge([c[0], c[1], -0.6], [c[0], c[1], 0.6])}));
+    parts.push({w: 0.8, f: () => { const t = R(); return [lerp(1.0, 1.3, t), Y + 1.05 + R() * 0.38, 0.6]; }});
+    [-1.1, 0.1, 1.35].forEach(x => [-0.62, 0.62].forEach(z => parts.push({w: 2.2, f: () => { const a = R() * 6.283, r = 0.27 + (R() - 0.5) * 0.04; return [x + Math.cos(a) * r, Y + 0.3 + Math.sin(a) * r, z]; }})));
+    // warehouse with a pitched roof, a loading door and racking inside
+    const wx0 = 2.4, wx1 = 4.3;
+    parts.push(...boxEdges((wx0 + wx1) / 2, Y, 0, wx1 - wx0, 1.6, 2));
+    [-1, 1].forEach(z => { parts.push({w: 1.2, f: edge([wx0, Y + 1.6, z], [(wx0 + wx1) / 2, Y + 2.3, z])}, {w: 1.2, f: edge([(wx0 + wx1) / 2, Y + 2.3, z], [wx1, Y + 1.6, z])}); });
+    parts.push({w: 2, f: edge([(wx0 + wx1) / 2, Y + 2.3, -1], [(wx0 + wx1) / 2, Y + 2.3, 1])});
+    [[2.85, Y, 2.85, Y + 1.05], [3.85, Y, 3.85, Y + 1.05], [2.85, Y + 1.05, 3.85, Y + 1.05]].forEach(([x0, y0, x1, y1]) => parts.push({w: 0.9, f: edge([x0, y0, 1], [x1, y1, 1])}));
+    for (let r = 1; r < 6; r++) parts.push({w: 0.35, f: () => [lerp(2.9, 3.8, R()), Y + r * 0.18, 1]});
+    // road with a dashed centre line
+    [-0.95, 0.95].forEach(z => parts.push({w: 3, f: edge([-4.4, Y, z], [4.4, Y, z])}));
+    parts.push({w: 2, f: () => { const k = Math.floor(R() * 14), t = R() * 0.55; return [-4.3 + k * 0.62 + t * 0.35, Y, 0]; }});
+    // the route: an arc from stock to warehouse, ending in an arrow
+    parts.push({w: 4, f: () => { const t = R(); return [lerp(-3.45, 3.35, t), lerp(Y + 2.1, Y + 2.75, t) + Math.sin(t * Math.PI) * 1.3, 0]; }});
+    parts.push({w: 0.6, f: edge([3.35, Y + 2.75, 0], [2.95, Y + 3.05, 0])}, {w: 0.6, f: edge([3.35, Y + 2.75, 0], [3.3, Y + 3.25, 0])});
+    // pulled in a little so the warehouse stays on screen
+    const out = fill(N, parts);
+    for (let i = 0; i < N; i++) out[i * 3] *= 0.86;
+    return out;
   },
 
-  // a 3D bar chart: twelve months by three measures, with a trend line above
+  // digital systems: a laptop showing a dashboard, linked to a server
   bars(N){
-    const parts = [], H = [0.9, 1.2, 1.1, 1.6, 1.5, 2, 1.8, 2.3, 2.6, 2.4, 3, 3.3];
-    H.forEach((h, i) => [0, 1, 2].forEach(r => {
-      const x = -3.3 + i * 0.6, z = -0.8 + r * 0.8, hh = h * (1 - r * 0.22);
-      parts.push({w: hh * 1.4, f: () => [x + (R() - 0.5) * 0.3, -2 + R() * hh, z + (R() - 0.5) * 0.3]});
-    }));
-    for (let g = 0; g <= 12; g++) parts.push({w: 0.7, f: edge([-3.6 + g * 0.6, -2, -1.4], [-3.6 + g * 0.6, -2, 1.4])});
-    parts.push({w: 2.5, f: () => { const t = R(); return [-3.3 + t * 6.6, -0.6 + t * 2.6 + Math.sin(t * 9) * 0.12, 1.5]; }});
+    const parts = [], Y = -2, x0 = -3.2, x1 = 1.2;
+    // keyboard base and keys
+    parts.push(...boxEdges((x0 + x1) / 2, Y, 0.9, x1 - x0, 0.12, 2.2));
+    for (let r = 0; r < 4; r++) parts.push({w: 0.8, f: () => { const k = Math.floor(R() * 13); return [x0 + 0.45 + k * 0.27 + (R() - 0.5) * 0.12, Y + 0.13, 0.25 + r * 0.26 + (R() - 0.5) * 0.1]; }});
+    parts.push(...[[x0 + 1.5, 1.5], [x1 - 1.5, 1.5], [x0 + 1.5, 1.95], [x1 - 1.5, 1.95]].reduce((acc, c, i, arr) => i % 2 ? acc : acc.concat([{w: 0.4, f: edge([c[0], Y + 0.13, c[1]], [arr[i + 1][0], Y + 0.13, arr[i + 1][1]])}]), []));
+    // the screen leans back from the hinge; S(u, v) maps a point on the screen into space
+    const H = 2.9, S = (u, v) => [lerp(x0, x1, u), Y + 0.12 + v * H, -0.2 - v * 0.45];
+    [[0, 0, 1, 0], [1, 0, 1, 1], [1, 1, 0, 1], [0, 1, 0, 0]].forEach(([a, b, c, d]) => parts.push({w: 2.2, f: () => { const t = R(); return S(lerp(a, c, t), lerp(b, d, t)); }}));
+    // dashboard: four KPI tiles, bars, a trend line and a donut
+    for (let k = 0; k < 4; k++){ const u0 = 0.07 + k * 0.22; [[u0, 0.78, u0 + 0.18, 0.78], [u0 + 0.18, 0.78, u0 + 0.18, 0.92], [u0 + 0.18, 0.92, u0, 0.92], [u0, 0.92, u0, 0.78]].forEach(([a, b, c, d]) => parts.push({w: 0.25, f: () => { const t = R(); return S(lerp(a, c, t), lerp(b, d, t)); }})); }
+    const BH = [0.22, 0.3, 0.26, 0.4, 0.36, 0.5, 0.46, 0.6];
+    BH.forEach((h, i) => parts.push({w: h * 2.2, f: () => S(0.08 + i * 0.065 + R() * 0.04, 0.08 + R() * h)}));
+    parts.push({w: 1.4, f: () => { const t = R(); return S(0.08 + t * 0.52, 0.42 + t * 0.26 + Math.sin(t * 10) * 0.03); }});
+    parts.push({w: 2, f: () => { const a = R() * 6.283, r = 0.1 + R() * 0.035; return S(0.79 + Math.cos(a) * r * 0.62, 0.38 + Math.sin(a) * r * 1.5); }});
+    // server rack with drive bays and status lights
+    const sx = 2.9;
+    parts.push(...boxEdges(sx, Y, -0.3, 1.1, 3, 1.1));
+    for (let b = 1; b < 6; b++) parts.push({w: 0.6, f: edge([sx - 0.55, Y + b * 0.5, 0.25], [sx + 0.55, Y + b * 0.5, 0.25])});
+    for (let b = 0; b < 6; b++) parts.push({w: 0.35, f: ball([sx + 0.38, Y + 0.25 + b * 0.5, 0.26], 0.05)});
+    // data flowing from the server to the screen, with a few packets on the way
+    parts.push({w: 3, f: () => { const t = R(); return [lerp(sx - 0.2, 0.6, t), Y + 3.1 + Math.sin(t * Math.PI) * 0.9, lerp(-0.3, -1.4, t)]; }});
+    [0.25, 0.5, 0.75].forEach(t => parts.push(...boxEdges(lerp(sx - 0.2, 0.6, t), Y + 3.0 + Math.sin(t * Math.PI) * 0.9, lerp(-0.3, -1.4, t), 0.22, 0.22, 0.22)));
     return fill(N, parts);
   },
 
