@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-17T22:07:13.694Z",
+ "updated": "2026-11-18T00:09:51.329Z",
  "site": {
   "name": "Engr. Sk Nayem Uddin",
   "role": "Manager, Administration and Operations",
@@ -56,6 +56,18 @@
    "heading": "I build the *systems* that keep *institutions* running.",
    "body": "I am an operations and management professional based in Dhaka, Bangladesh, with experience across institutional administration, procurement, project coordination, financial monitoring and organisational development.\n\nI focus on building structured management systems, improving operational efficiency, strengthening teams, and turning organisational priorities into coordinated action and measurable outcomes.\n\nBuilding systems. Strengthening operations. Enabling growth.",
    "items": "View experience | #experience\nExplore my work | #projects",
+   "show": true
+  },
+  {
+   "id": "home-system",
+   "page": "home",
+   "order": 11,
+   "type": "system",
+   "tone": "dark",
+   "column": "full",
+   "heading": "How I *build* systems",
+   "body": "An organisation runs like an engineered system: five layers, each one built and connected to the next.",
+   "items": "Governance | Committee reporting, policies and KPIs that set direction and measure it\nProcesses | SOPs, approval workflows and documentation that make work repeatable\nSupply chain | From RFQ to delivery, with total cost of ownership behind each purchase\nDigital systems | Dashboards, automation and the move to an ERP\nPeople | A team of 8 to 10, with clear roles, training and accountability",
    "show": true
   },
   {
