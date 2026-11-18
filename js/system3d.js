@@ -286,7 +286,14 @@ function frame(now){
   pts.rotation.x = py * 0.08;
   renderer.render(scene, camera);
   const which = p > 0.985 ? -2 : k;
-  if (which !== shown){ shown = which; labels.forEach((l, i) => l.classList.toggle('on', which === -2 || i === which)); sec.classList.toggle('all', which === -2); }
+  if (which !== shown){
+    shown = which;
+    labels.forEach((l, i) => l.classList.toggle('on', which === -2 || i === which));
+    sec.classList.toggle('all', which === -2);
+    // the line under the picture fades out, changes, and fades back in
+    const cap = sec.querySelector('.sys-cap'), li = labels[which === -2 ? labels.length - 1 : which];
+    if (cap){ cap.classList.add('swap'); clearTimeout(cap._t); cap._t = setTimeout(() => { cap.textContent = li && li.dataset.cap || ''; cap.classList.remove('swap'); }, 300); }
+  }
   if (REDUCE){ running = false; return; }
   requestAnimationFrame(frame);
 }

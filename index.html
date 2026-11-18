@@ -883,6 +883,12 @@ html:not([data-theme=dark]){--head-bg:#FAF6F8}
 .type-preview .feat-all{margin-top:44px}
 .jl{margin:0 0 12px;padding-left:20px}
 .jl li{margin:0 0 4px;line-height:1.55}
+
+/* one line under the 3D picture saying what it shows */
+.sys-cap{position:absolute;left:50%;bottom:6px;transform:translateX(-50%);width:min(92%,34em);margin:0;text-align:center;font-size:15.5px;line-height:1.5;color:var(--fg);opacity:.92;z-index:1;pointer-events:none;transition:opacity .35s ease}
+.sys-cap.swap{opacity:0}
+.sys-cap:empty{display:none}
+@media(max-width:820px){ .sys-cap{font-size:13.5px;bottom:2px} }
 </style>
 </head>
 <body>
@@ -982,7 +988,7 @@ function loadSystem3d(){
   window._sys3d = el;
   if (document.getElementById('s3d')) return;
   var sc = document.createElement('script');
-  sc.type = 'module'; sc.src = 'js/system3d.js?v=7'; sc.id = 's3d';
+  sc.type = 'module'; sc.src = 'js/system3d.js?v=8'; sc.id = 's3d';
   sc.onerror = function(){ var x = document.querySelector('.sys'); if (x) x.classList.add('nogl'); };
   document.body.appendChild(sc);
 }
@@ -1099,9 +1105,10 @@ function inner(s){
         (pbt && pbt[0] ? '<div class="feat-all">' + link(pbt[0], pbt[1], 'outline') + '</div>' : '');
     case 'system':
       // a scroll-driven 3D model drawn by js/system3d.js. Items: "Layer | what it covers", top layer first, up to six
-      var sl = lines(s.items).slice(0, 6).map(function(l){ var c = cells(l); return '<li><b>' + esc(c[0]) + '</b>' + (c[1] ? '<span>' + esc(c[1]) + '</span>' : '') + '</li>'; }).join('');
+      // Items: "Pillar | what it covers | one line on what the 3D picture shows (optional)"
+      var sl = lines(s.items).slice(0, 6).map(function(l){ var c = cells(l); return '<li' + (c[2] ? ' data-cap="' + esc(c[2]) + '"' : '') + '><b>' + esc(c[0]) + '</b>' + (c[1] ? '<span>' + esc(c[1]) + '</span>' : '') + '</li>'; }).join('');
       return '<div class="sys"><div class="sys-pin"><div class="sys-head">' + (h ? '<h2>' + md(h) + '</h2>' : '') + (b ? '<p class="lead2">' + esc(b) + '</p>' : '') + '</div>' +
-        '<div class="sys-body"><div class="sys-stage"></div><ol class="sys-list">' + sl + '</ol></div><p class="sys-hint" aria-hidden="true">Keep scrolling to see the next part</p></div></div>';
+        '<div class="sys-body"><div class="sys-stage"><p class="sys-cap" aria-live="polite"></p></div><ol class="sys-list">' + sl + '</ol></div><p class="sys-hint" aria-hidden="true">Keep scrolling to see the next part</p></div></div>';
     case 'meet':
       // photo on one side, a short personal introduction on the other
       var mp = String(b || '').split(/\n\s*\n/).map(function(x){ return x.trim(); }).filter(Boolean);
