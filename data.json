@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-18T00:09:51.329Z",
+ "updated": "2026-11-18T00:33:40.615Z",
  "site": {
   "name": "Engr. Sk Nayem Uddin",
   "role": "Manager, Administration and Operations",
@@ -66,8 +66,8 @@
    "tone": "dark",
    "column": "full",
    "heading": "How I *build* systems",
-   "body": "An organisation runs like an engineered system: five layers, each one built and connected to the next.",
-   "items": "Governance | Committee reporting, policies and KPIs that set direction and measure it\nProcesses | SOPs, approval workflows and documentation that make work repeatable\nSupply chain | From RFQ to delivery, with total cost of ownership behind each purchase\nDigital systems | Dashboards, automation and the move to an ERP\nPeople | A team of 8 to 10, with clear roles, training and accountability",
+   "body": "The same points of light rebuild themselves into each part of my work as you scroll.",
+   "items": "Infrastructure | Coordinating a seven-storey mosque and an eleven-storey academic building\nSupply chain | From RFQ and comparative statement to purchase order and delivery\nDigital systems | Income, expenses, KPIs and attendance turned into live dashboards\nPeople | A team of 8 to 10, connected to each other and to the plan\nThe institution | Everything above working together, every day",
    "show": true
   },
   {
