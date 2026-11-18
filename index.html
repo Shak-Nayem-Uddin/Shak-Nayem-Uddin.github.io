@@ -862,6 +862,21 @@ html:not([data-theme=dark]){--head-bg:#FAF6F8}
   .sys-list li::before{top:10px}
   .sys-list li span{font-size:14px;line-height:1.4}
 }
+
+/* ---------- soft light around photos and cards when the pointer rests on them */
+.rotbox,.pg-img,.stage,.card,.xp article,.badge,.area,.vc{transition:box-shadow .9s ease,transform .5s cubic-bezier(.2,.7,.2,1),opacity .6s}
+@media (hover:hover){
+  .proj-pic:hover .rotbox,.meet-pic:hover .rotbox,.depth:hover .rotbox,.pgrid figure:hover .pg-img,.stage:hover,
+  .card:hover,.xp article:hover,.badge:hover,.area:hover{
+    box-shadow:0 0 0 1px rgba(234,214,225,.42),0 0 30px 0 rgba(214,169,192,.32),0 0 90px 8px rgba(126,58,94,.32),0 40px 80px -40px rgba(0,0,0,.6)}
+  html:not([data-theme=dark]) :is(.proj-pic:hover .rotbox,.meet-pic:hover .rotbox,.depth:hover .rotbox,.pgrid figure:hover .pg-img,.stage:hover,.card:hover,.xp article:hover,.badge:hover,.area:hover){
+    box-shadow:0 0 0 1px rgba(126,58,94,.35),0 0 26px 0 rgba(126,58,94,.16),0 0 70px 6px rgba(214,169,192,.35),0 30px 60px -36px rgba(28,20,24,.35)}
+}
+/* the same faint guideline grid as the opening, behind the 3D system */
+.type-system{position:relative;isolation:isolate}
+.type-system::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background-image:linear-gradient(rgba(234,214,225,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(234,214,225,.045) 1px,transparent 1px);background-size:56px 56px;
+  -webkit-mask-image:linear-gradient(180deg,transparent,#000 12%,#000 88%,transparent);mask-image:linear-gradient(180deg,transparent,#000 12%,#000 88%,transparent)}
 </style>
 </head>
 <body>
@@ -958,7 +973,7 @@ function loadSystem3d(){
   window._sys3d = el;
   if (document.getElementById('s3d')) return;
   var sc = document.createElement('script');
-  sc.type = 'module'; sc.src = 'js/system3d.js?v=5'; sc.id = 's3d';
+  sc.type = 'module'; sc.src = 'js/system3d.js?v=6'; sc.id = 's3d';
   sc.onerror = function(){ var x = document.querySelector('.sys'); if (x) x.classList.add('nogl'); };
   document.body.appendChild(sc);
 }
@@ -1363,23 +1378,7 @@ function motion(){
     });
   }
   if (!FINE) return;
-  // a soft light follows the pointer on dark bands
-  all('.sec.tone-dark').forEach(function(s){
-    s.addEventListener('pointermove', function(e){ var r = s.getBoundingClientRect(); s.classList.add('spot'); s.style.setProperty('--mx', (e.clientX - r.left) + 'px'); s.style.setProperty('--my', (e.clientY - r.top) + 'px'); });
-    s.addEventListener('pointerleave', function(){ s.classList.remove('spot'); });
-  });
-  // a soft highlight follows the pointer across cards (no tilting, so the page stays calm)
-  all('.card,.xp article,.badge,.area').forEach(function(c){
-    c.classList.add('lean');
-    c.addEventListener('pointermove', function(e){
-      if (c.classList.contains('r3')) return;
-      var r = c.getBoundingClientRect(), x = (e.clientX - r.left) / r.width, y = (e.clientY - r.top) / r.height;
-      c.classList.add('on');
-      c.style.transition = 'transform .12s linear, box-shadow .25s';
-      c.style.setProperty('--gx', (x * 100).toFixed(1) + '%'); c.style.setProperty('--gy', (y * 100).toFixed(1) + '%');
-    });
-    c.addEventListener('pointerleave', function(){ c.classList.remove('on'); c.style.transition = 'transform .6s cubic-bezier(.2,.7,.2,1), box-shadow .25s'; c.style.transform = ''; });
-  });
+  // photos and cards light up at their edges on hover (CSS only: see 'soft light around photos and cards')
   // buttons drift a few pixels toward the pointer
   all('.btn').forEach(function(b){
     b.addEventListener('pointermove', function(e){ var r = b.getBoundingClientRect(); b.style.setProperty('--bx', ((e.clientX - r.left - r.width / 2) * .18).toFixed(1) + 'px'); b.style.setProperty('--by', ((e.clientY - r.top - r.height / 2) * .3 - 1).toFixed(1) + 'px'); });

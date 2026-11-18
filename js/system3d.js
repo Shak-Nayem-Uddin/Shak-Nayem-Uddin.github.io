@@ -51,37 +51,47 @@ const SHAPES = {
     return fill(N, parts);
   },
 
-  // supply chain: stock on a pallet, a loaded truck on the road, a warehouse, and the route between them
+  // supply chain, from manufacturing to the customer: a factory, finished stock on a pallet,
+  // a truck on the road, and a shop with the customer at the end, joined by one route
   chain(N){
-    const parts = [], Y = -2;
-    // pallet with six crates
-    parts.push(...boxEdges(-3.45, Y, 0, 1.4, 0.12, 1.1));
-    [[-3.78, 0], [-3.12, 0], [-3.78, 0.6], [-3.12, 0.6], [-3.45, 1.2]].forEach(([x, y]) => parts.push(...boxEdges(x, Y + 0.12 + y, -0.15, 0.6, 0.58, 0.6)));
-    [[-3.78, 0], [-3.12, 0]].forEach(([x, y]) => parts.push(...boxEdges(x, Y + 0.12 + y, 0.45, 0.6, 0.58, 0.55)));
+    const parts = [], Y = -2, add = a => a.forEach(p => parts.push(p));
+    // factory: sawtooth roof, chimney with smoke
+    add(boxEdges(-3.25, Y, 0, 1.6, 1.15, 1.4));
+    for (let i = 0; i < 3; i++){ const x = -4.05 + i * 0.533; [-0.7, 0.7].forEach(z => parts.push({w: 0.5, f: edge([x, Y + 1.15, z], [x, Y + 1.6, z])}, {w: 0.6, f: edge([x, Y + 1.6, z], [x + 0.533, Y + 1.15, z])})); parts.push({w: 0.8, f: edge([x, Y + 1.6, -0.7], [x, Y + 1.6, 0.7])}); }
+    add(boxEdges(-2.7, Y + 1.15, -0.35, 0.26, 1.15, 0.26));
+    [[0.15, 0.13], [0.45, 0.18], [0.85, 0.24]].forEach(([h, r], k) => parts.push({w: 0.7, f: ball([-2.7 + k * 0.12, Y + 2.3 + h, -0.35], r)}));
+    [[-3.7, 0.45], [-3.2, 0.45], [-2.7, 0.45]].forEach(([x, y]) => parts.push({w: 0.25, f: edge([x - 0.15, Y + y, 0.7], [x + 0.15, Y + y, 0.7])}, {w: 0.25, f: edge([x - 0.15, Y + y + 0.3, 0.7], [x + 0.15, Y + y + 0.3, 0.7])}));
+    // finished goods: three crates on a pallet
+    add(boxEdges(-1.55, Y, 0, 1, 0.1, 0.9));
+    [[-1.8, 0], [-1.3, 0], [-1.55, 0.48]].forEach(([x, y]) => add(boxEdges(x, Y + 0.1 + y, 0, 0.46, 0.46, 0.5)));
     // truck: container, cab with a sloped windscreen, wheels
-    parts.push(...boxEdges(-0.35, Y + 0.45, 0, 2.3, 1.45, 1.2));
-    parts.push({w: 3, f: () => [lerp(-1.5, 0.8, R()), Y + 0.45 + R() * 1.45, 0.6]});
-    const cab = [[0.85, Y + 0.45], [1.75, Y + 0.45], [1.75, Y + 1.05], [1.35, Y + 1.5], [0.85, Y + 1.5]];
-    [-0.6, 0.6].forEach(z => cab.forEach((c, i) => { const d = cab[(i + 1) % cab.length]; parts.push({w: 0.9, f: edge([c[0], c[1], z], [d[0], d[1], z])}); }));
-    cab.forEach(c => parts.push({w: 0.8, f: edge([c[0], c[1], -0.6], [c[0], c[1], 0.6])}));
-    parts.push({w: 0.8, f: () => { const t = R(); return [lerp(1.0, 1.3, t), Y + 1.05 + R() * 0.38, 0.6]; }});
-    [-1.1, 0.1, 1.35].forEach(x => [-0.62, 0.62].forEach(z => parts.push({w: 2.2, f: () => { const a = R() * 6.283, r = 0.27 + (R() - 0.5) * 0.04; return [x + Math.cos(a) * r, Y + 0.3 + Math.sin(a) * r, z]; }})));
-    // warehouse with a pitched roof, a loading door and racking inside
-    const wx0 = 2.4, wx1 = 4.3;
-    parts.push(...boxEdges((wx0 + wx1) / 2, Y, 0, wx1 - wx0, 1.6, 2));
-    [-1, 1].forEach(z => { parts.push({w: 1.2, f: edge([wx0, Y + 1.6, z], [(wx0 + wx1) / 2, Y + 2.3, z])}, {w: 1.2, f: edge([(wx0 + wx1) / 2, Y + 2.3, z], [wx1, Y + 1.6, z])}); });
-    parts.push({w: 2, f: edge([(wx0 + wx1) / 2, Y + 2.3, -1], [(wx0 + wx1) / 2, Y + 2.3, 1])});
-    [[2.85, Y, 2.85, Y + 1.05], [3.85, Y, 3.85, Y + 1.05], [2.85, Y + 1.05, 3.85, Y + 1.05]].forEach(([x0, y0, x1, y1]) => parts.push({w: 0.9, f: edge([x0, y0, 1], [x1, y1, 1])}));
-    for (let r = 1; r < 6; r++) parts.push({w: 0.35, f: () => [lerp(2.9, 3.8, R()), Y + r * 0.18, 1]});
-    // road with a dashed centre line
-    [-0.95, 0.95].forEach(z => parts.push({w: 3, f: edge([-4.4, Y, z], [4.4, Y, z])}));
-    parts.push({w: 2, f: () => { const k = Math.floor(R() * 14), t = R() * 0.55; return [-4.3 + k * 0.62 + t * 0.35, Y, 0]; }});
-    // the route: an arc from stock to warehouse, ending in an arrow
-    parts.push({w: 4, f: () => { const t = R(); return [lerp(-3.45, 3.35, t), lerp(Y + 2.1, Y + 2.75, t) + Math.sin(t * Math.PI) * 1.3, 0]; }});
-    parts.push({w: 0.6, f: edge([3.35, Y + 2.75, 0], [2.95, Y + 3.05, 0])}, {w: 0.6, f: edge([3.35, Y + 2.75, 0], [3.3, Y + 3.25, 0])});
-    // pulled in a little so the warehouse stays on screen
+    const tx = 0.15;
+    add(boxEdges(tx - 0.35, Y + 0.35, 0, 1.6, 1.05, 0.95));
+    const cab = [[tx + 0.45, Y + 0.35], [tx + 1.05, Y + 0.35], [tx + 1.05, Y + 0.8], [tx + 0.78, Y + 1.12], [tx + 0.45, Y + 1.12]];
+    [-0.47, 0.47].forEach(z => cab.forEach((c, i) => { const d = cab[(i + 1) % cab.length]; parts.push({w: 0.6, f: edge([c[0], c[1], z], [d[0], d[1], z])}); }));
+    cab.forEach(c => parts.push({w: 0.5, f: edge([c[0], c[1], -0.47], [c[0], c[1], 0.47])}));
+    [tx - 0.85, tx + 0.1, tx + 0.8].forEach(x => [-0.48, 0.48].forEach(z => parts.push({w: 1.5, f: () => { const a = R() * 6.283, r = 0.2 + (R() - 0.5) * 0.03; return [x + Math.cos(a) * r, Y + 0.22 + Math.sin(a) * r, z]; }})));
+    // shop: striped awning, sign, door and window; the customer stands outside
+    const sx = 2.7;
+    add(boxEdges(sx, Y, 0, 1.6, 1.2, 1.3));
+    parts.push({w: 1.2, f: () => { const t = R(), u = R(); return [sx - 0.85 + t * 1.7, Y + 1.2 - u * 0.32, 0.65 + u * 0.4]; }});
+    for (let k = 0; k <= 6; k++) parts.push({w: 0.35, f: () => { const u = R(); return [sx - 0.85 + k * 0.283, Y + 1.2 - u * 0.32, 0.65 + u * 0.4]; }});
+    parts.push({w: 1, f: () => { const k = Math.floor(R() * 6), a = R() * Math.PI; return [sx - 0.85 + (k + 0.5) * 0.283 + Math.cos(a) * 0.14, Y + 0.88 - Math.sin(a) * 0.1, 1.05]; }});
+    [[sx - 0.6, Y + 1.32, sx + 0.6, Y + 1.32], [sx + 0.6, Y + 1.32, sx + 0.6, Y + 1.58], [sx + 0.6, Y + 1.58, sx - 0.6, Y + 1.58], [sx - 0.6, Y + 1.58, sx - 0.6, Y + 1.32]].forEach(([a, b, c, d]) => parts.push({w: 0.4, f: edge([a, b, 0.65], [c, d, 0.65])}));
+    [[sx - 0.55, Y, sx - 0.55, Y + 0.75], [sx - 0.55, Y + 0.75, sx - 0.1, Y + 0.75], [sx - 0.1, Y + 0.75, sx - 0.1, Y]].forEach(([a, b, c, d]) => parts.push({w: 0.4, f: edge([a, b, 0.65], [c, d, 0.65])}));
+    [[sx + 0.15, Y + 0.3, sx + 0.6, Y + 0.3], [sx + 0.6, Y + 0.3, sx + 0.6, Y + 0.7], [sx + 0.6, Y + 0.7, sx + 0.15, Y + 0.7], [sx + 0.15, Y + 0.7, sx + 0.15, Y + 0.3]].forEach(([a, b, c, d]) => parts.push({w: 0.3, f: edge([a, b, 0.65], [c, d, 0.65])}));
+    const cx = 3.95, cz = 0.9;
+    parts.push({w: 1.2, f: ball([cx, Y + 1.12, cz], 0.17)});
+    parts.push({w: 1.8, f: () => { const t = R(), a = R() * 6.283, r = 0.06 + t * 0.22; return [cx + r * Math.cos(a), Y + 0.9 - t * 0.9, cz + r * Math.sin(a)]; }});
+    // the road, and the route from factory to customer
+    [-0.75, 0.75].forEach(z => parts.push({w: 2.4, f: edge([-4.3, Y, z], [4.3, Y, z])}));
+    parts.push({w: 1.5, f: () => { const k = Math.floor(R() * 14), t = R() * 0.55; return [-4.25 + k * 0.62 + t * 0.35, Y, 0]; }});
+    parts.push({w: 4, f: () => { const t = R(); return [lerp(-3.25, 3.0, t), lerp(Y + 3.4, Y + 2.3, t) + Math.sin(t * Math.PI) * 0.9, -0.2]; }});
+    parts.push({w: 0.5, f: edge([3.0, Y + 2.3, -0.2], [2.62, Y + 2.55, -0.2])}, {w: 0.5, f: edge([3.0, Y + 2.3, -0.2], [2.88, Y + 2.75, -0.2])});
+    // four stops on the route: made, stored, shipped, delivered
+    [0.0, 0.3, 0.62, 1].forEach(t => parts.push({w: 0.6, f: ball([lerp(-3.25, 3.0, t), lerp(Y + 3.4, Y + 2.3, t) + Math.sin(t * Math.PI) * 0.9, -0.2], 0.12)}));
     const out = fill(N, parts);
-    for (let i = 0; i < N; i++) out[i * 3] *= 0.86;
+    for (let i = 0; i < N; i++) out[i * 3] *= 0.92;
     return out;
   },
 
