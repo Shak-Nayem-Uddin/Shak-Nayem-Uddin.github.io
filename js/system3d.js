@@ -46,9 +46,19 @@ const SHAPES = {
     parts.push({w: 1, f: () => { const t = R(), a = R() * 6.283, r = 0.24 * (1 - t); return [-3.3 + r * Math.cos(a), 1.6 + t * 0.7, -0.8 + r * Math.sin(a)]; }});
     boxEdges(1.9, -2, 0.2, 1.5, 4.4, 1.5).forEach(p => parts.push(p));
     for (let f = 1; f < 11; f++){ const y = -2 + f * 0.4; parts.push({w: 1.5, f: edge([1.15, y, 0.95], [2.65, y, 0.95])}, {w: 1.5, f: edge([2.65, y, -0.55], [2.65, y, 0.95])}); }
+    // tower crane beside the academic building
+    const cx = 3.45, top = 2.85;
+    [[-0.15, -0.15], [0.15, -0.15], [0.15, 0.15], [-0.15, 0.15]].forEach(([dx, dz]) => parts.push({w: 1.6, f: edge([cx + dx, -2, dz], [cx + dx, top, dz])}));
+    for (let k = 0; k < 12; k++){ const y0 = -2 + k * 0.405, y1 = y0 + 0.405; parts.push({w: 0.25, f: edge([cx - 0.15, y0, 0.15], [cx + 0.15, y1, 0.15])}); }
+    parts.push({w: 2.2, f: edge([0.6, top, 0], [cx + 0.3, top, 0])}, {w: 1.6, f: edge([1.1, top + 0.32, 0], [cx, top + 0.6, 0])}, {w: 0.9, f: edge([cx, top, 0], [cx + 1.1, top, 0])});
+    parts.push({w: 0.5, f: edge([cx, top, 0], [cx, top + 0.6, 0])}, {w: 0.6, f: edge([cx + 0.6, top, 0], [cx + 0.6, top - 0.35, 0])});
+    parts.push({w: 0.7, f: edge([1.3, top, 0], [1.3, 1.2, 0])});
+    parts.push(...boxEdges(1.3, 0.85, 0, 0.36, 0.32, 0.36));
     for (let g = -4; g <= 4; g++) parts.push({w: 1.1, f: edge([g, -2, -2.4], [g, -2, 2.4])});
     for (let g = -2; g <= 2; g++) parts.push({w: 1.3, f: edge([-4, -2, g * 1.2], [4, -2, g * 1.2])});
-    return fill(N, parts);
+    const out = fill(N, parts);
+    for (let i = 0; i < N; i++){ out[i * 3] *= 0.86; out[i * 3 + 1] = out[i * 3 + 1] * 0.84 - 0.35; }
+    return out;
   },
 
   // supply chain, from manufacturing to the customer: a factory, finished stock on a pallet,
@@ -122,16 +132,50 @@ const SHAPES = {
     return fill(N, parts);
   },
 
-  // a team: ten people around a centre, each linked to the centre and to the next person
+  // institutional operations: a columned institution on its steps, with two meshing gears beside it
+  institution(N){
+    const parts = [], Y = -2, X = -1.35;
+    [[4.4, 0], [4.0, 0.16], [3.6, 0.32]].forEach(([w, y]) => parts.push(...boxEdges(X, Y + y, 0, w, 0.16, 1.9 - y)));
+    for (let k = 0; k < 6; k++){
+      const x = X - 1.5 + k * 0.6;
+      parts.push({w: 3.2, f: () => { const a = R() * 6.283, r = 0.13; return [x + Math.cos(a) * r, Y + 0.48 + R() * 2.05, 0.55 + Math.sin(a) * r]; }});
+      parts.push(...boxEdges(x, Y + 0.48, 0.55, 0.36, 0.08, 0.36), ...boxEdges(x, Y + 2.45, 0.55, 0.36, 0.08, 0.36));
+    }
+    parts.push(...boxEdges(X, Y + 2.53, 0.1, 3.9, 0.34, 1.3));
+    const py = Y + 2.87, peak = Y + 3.75;
+    [-0.55, 0.75].forEach(z => parts.push({w: 1.6, f: edge([X - 1.95, py, z], [X, peak, z])}, {w: 1.6, f: edge([X, peak, z], [X + 1.95, py, z])}, {w: 1.4, f: edge([X - 1.95, py, z], [X + 1.95, py, z])}));
+    parts.push({w: 1.2, f: edge([X, peak, -0.55], [X, peak, 0.75])});
+    parts.push({w: 0.9, f: () => { const a = R() * 6.283; return [X + Math.cos(a) * 0.26, py + 0.35 + Math.sin(a) * 0.26, 0.75]; }});
+    const gear = (cx, cy, r, teeth, w) => () => {
+      const k = R();
+      if (k < 0.45){ const a = R() * 6.283; return [cx + Math.cos(a) * r, cy + Math.sin(a) * r, 0]; }
+      if (k < 0.6){ const a = R() * 6.283; return [cx + Math.cos(a) * r * 0.32, cy + Math.sin(a) * r * 0.32, 0]; }
+      if (k < 0.7){ const a = Math.floor(R() * 4) * 1.5708, t = r * (0.32 + R() * 0.68); return [cx + Math.cos(a) * t, cy + Math.sin(a) * t, 0]; }
+      const i = Math.floor(R() * teeth), a = (i + 0.5) / teeth * 6.283 + (R() - 0.5) * (3.6 / teeth * 0.5), t = r + R() * r * 0.28;
+      return [cx + Math.cos(a) * t, cy + Math.sin(a) * t, 0];
+    };
+    parts.push({w: 9, f: gear(2.0, -0.6, 0.92, 12)}, {w: 6, f: gear(3.02, 0.92, 0.6, 8)});
+    return fill(N, parts);
+  },
+
+  // people and organisational development: an org chart of people, one lead, three teams, six members
   people(N){
-    const parts = [], P = [];
-    for (let i = 0; i < 10; i++){ const a = i / 10 * 6.283; P.push([Math.cos(a) * 3, Math.sin(a * 2) * 0.35, Math.sin(a) * 2.2]); }
-    P.forEach(([x, y, z]) => {
-      parts.push({w: 3, f: ball([x, y + 0.6, z], 0.2)});
-      parts.push({w: 4, f: () => { const t = R(), a = R() * 6.283, r = 0.08 + t * 0.28; return [x + r * Math.cos(a), y + 0.3 - t * 0.75, z + r * Math.sin(a)]; }});
-    });
-    parts.push({w: 6, f: ball([0, 0, 0], 0.5)});
-    P.forEach((p, i) => { parts.push({w: 1.6, f: edge([0, 0, 0], p)}); parts.push({w: 1.2, f: edge(p, P[(i + 1) % 10])}); });
+    const parts = [], fig = (x, y) => {
+      parts.push({w: 2.2, f: ball([x, y + 0.5, 0], 0.17)});
+      parts.push({w: 3, f: () => { const t = R(), a = R() * 6.283, r = 0.07 + t * 0.24; return [x + r * Math.cos(a), y + 0.27 - t * 0.68, r * Math.sin(a)]; }});
+    };
+    const L1 = [[0, 1.6]], L2 = [[-2.6, 0], [0, 0], [2.6, 0]], L3 = [];
+    L2.forEach(([x]) => L3.push([x - 0.75, -1.6], [x + 0.75, -1.6]));
+    [L1, L2, L3].forEach(l => l.forEach(([x, y]) => fig(x, y)));
+    const link = (p, kids) => {
+      const bar = (p[1] - 0.45 + kids[0][1] + 0.72) / 2;
+      parts.push({w: 0.6, f: edge([p[0], p[1] - 0.45, 0], [p[0], bar, 0])});
+      parts.push({w: Math.abs(kids[kids.length - 1][0] - kids[0][0]) * 0.5, f: edge([kids[0][0], bar, 0], [kids[kids.length - 1][0], bar, 0])});
+      kids.forEach(k => parts.push({w: 0.45, f: edge([k[0], bar, 0], [k[0], k[1] + 0.72, 0])}));
+    };
+    link(L1[0], L2);
+    L2.forEach((m, i) => link(m, L3.slice(i * 2, i * 2 + 2)));
+    parts.push({w: 2, f: () => { const a = R() * 6.283, r = 0.55; return [Math.cos(a) * r, 1.6 + 0.08 + Math.sin(a) * r * 0.25, Math.sin(a) * r]; }});
     return fill(N, parts);
   },
 
@@ -147,10 +191,11 @@ const SHAPES = {
 };
 function shapeFor(label){
   const l = label.toLowerCase();
-  if (/build|struct|infra|construct|site/.test(l)) return 'building';
   if (/supply|procure|chain|vendor|purchas/.test(l)) return 'chain';
   if (/digital|data|dashboard|tech/.test(l)) return 'bars';
-  if (/people|team|staff|\bhr\b/.test(l)) return 'people';
+  if (/people|team|staff|\bhr\b|organisational dev|organizational dev/.test(l)) return 'people';
+  if (/project|build|struct|infra|construct|site/.test(l)) return 'building';
+  if (/institution|operation|admin/.test(l)) return 'institution';
   return 'sphere';
 }
 

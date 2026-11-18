@@ -982,7 +982,7 @@ function loadSystem3d(){
   window._sys3d = el;
   if (document.getElementById('s3d')) return;
   var sc = document.createElement('script');
-  sc.type = 'module'; sc.src = 'js/system3d.js?v=6'; sc.id = 's3d';
+  sc.type = 'module'; sc.src = 'js/system3d.js?v=7'; sc.id = 's3d';
   sc.onerror = function(){ var x = document.querySelector('.sys'); if (x) x.classList.add('nogl'); };
   document.body.appendChild(sc);
 }
