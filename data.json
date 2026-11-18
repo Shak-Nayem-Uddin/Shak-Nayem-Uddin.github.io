@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-18T00:33:40.615Z",
+ "updated": "2026-11-18T01:21:31.907Z",
  "site": {
   "name": "Engr. Sk Nayem Uddin",
   "role": "Manager, Administration and Operations",
@@ -12,7 +12,7 @@
   "degrees": "B.Sc. Engg. (ETE) · MBA (Supply Chain Management)",
   "work_email": "nayem.ibt@gmail.com",
   "work_phone": "+880 1306-746437",
-  "office_address": "House 17, Road 6/A, Sector 5, Uttara, Dhaka 1230",
+  "office_address": "",
   "office_website": "https://www.imambukharitrust.com",
   "current": "Manager, Administration and Operations at Imam Bukhari Trust",
   "hide_tags": "Communication, Attention to Detail, Time Management, Analytical Thinking, Problem Solving, WhatsApp, Phone Communication, Mobile Devices, Physical, Computer System, Receipt Printer, Email, Facebook, YouTube, Excell, Offce Suite, Google sheet, Communication Platforms (WhatsApp",
@@ -54,8 +54,8 @@
    "tone": "dark",
    "column": "full",
    "heading": "I build the *systems* that keep *institutions* running.",
-   "body": "I am an operations and management professional based in Dhaka, Bangladesh, with experience across institutional administration, procurement, project coordination, financial monitoring and organisational development.\n\nI focus on building structured management systems, improving operational efficiency, strengthening teams, and turning organisational priorities into coordinated action and measurable outcomes.\n\nBuilding systems. Strengthening operations. Enabling growth.",
-   "items": "View experience | #experience\nExplore my work | #projects",
+   "body": "I lead institutional operations, strengthen management systems and coordinate complex projects, improving how organisations work through structured processes, careful use of resources and practical technology.\n\nBuilding systems. Strengthening operations. Enabling growth.",
+   "items": "View experience | #experience\nExplore projects | #projects",
    "show": true
   },
   {
@@ -89,7 +89,7 @@
    "type": "numbers",
    "tone": "dark",
    "column": "full",
-   "heading": "",
+   "heading": "Management *at a glance*",
    "body": "",
    "items": "4+ | Years of Professional Experience | three of them running administration and operations at Imam Bukhari Trust\n140 | Programmes and Sessions | held by the Trust since Nov 2023, coordinated within my operations role\n{entries} | Documented Achievements | work, projects, training and certificates, each logged in my journal as it happened\n30+ | Certificates and Courses | completed, from project management and Six Sigma to automation and networking",
    "show": true
@@ -113,33 +113,33 @@
    "type": "columns",
    "tone": "light",
    "column": "full",
-   "heading": "What I *bring* to an organisation",
+   "heading": "Core *capabilities*",
    "body": "",
    "items": "Effective operational systems | Administrative procedures, procurement frameworks, approval workflows, KPI structures and organisational policies that make work consistent and accountable.\nProcess improvement and digitalisation | Manual processes turned into structured digital workflows, dashboards and reporting systems, built with practical technology and automation.\nProjects and institutional initiatives | Construction projects, organisational programmes, staff development and stakeholder engagement, coordinated from planning through to delivery.",
    "show": true
   },
   {
-   "id": "home-ground",
+   "id": "home-featured",
    "page": "home",
    "order": 40,
-   "type": "gallery",
-   "tone": "dark",
+   "type": "featured",
+   "tone": "white",
    "column": "full",
-   "heading": "On the *ground*",
-   "body": "Most of this work happens in rooms and on sites, not on a screen.",
+   "heading": "Featured *projects*",
+   "body": "3",
    "items": "",
    "show": true
   },
   {
-   "id": "home-featured",
+   "id": "home-exp",
    "page": "home",
-   "order": 45,
-   "type": "featured",
+   "order": 46,
+   "type": "preview",
    "tone": "white",
    "column": "full",
-   "heading": "Featured *work*",
-   "body": "3",
-   "items": "",
+   "heading": "Professional *experience*",
+   "body": "",
+   "items": "exp-career\nView full experience | #experience",
    "show": true
   },
   {
@@ -157,12 +157,60 @@
   {
    "id": "home-years",
    "page": "home",
-   "order": 60,
+   "order": 52,
    "type": "years",
    "tone": "light",
    "column": "full",
    "heading": "Achievements *by year*",
    "body": "",
+   "items": "",
+   "show": true
+  },
+  {
+   "id": "home-scope",
+   "page": "home",
+   "order": 56,
+   "type": "preview",
+   "tone": "dark",
+   "column": "full",
+   "heading": "Leadership and management *scope*",
+   "body": "",
+   "items": "exp-scope\nHow I work at Imam Bukhari Trust | #experience",
+   "show": true
+  },
+  {
+   "id": "home-edu",
+   "page": "home",
+   "order": 62,
+   "type": "preview",
+   "tone": "white",
+   "column": "full",
+   "heading": "Education and *certifications*",
+   "body": "",
+   "items": "pro-edu, pro-cert\nView full profile | #profile",
+   "show": true
+  },
+  {
+   "id": "home-research",
+   "page": "home",
+   "order": 64,
+   "type": "preview",
+   "tone": "light",
+   "column": "full",
+   "heading": "Research and *publications*",
+   "body": "",
+   "items": "pro-research\nSee all research and training | #profile",
+   "show": true
+  },
+  {
+   "id": "home-ground",
+   "page": "home",
+   "order": 66,
+   "type": "gallery",
+   "tone": "dark",
+   "column": "full",
+   "heading": "On the *ground*",
+   "body": "Most of this work happens in rooms and on sites, not on a screen.",
    "items": "",
    "show": true
   },
@@ -174,7 +222,7 @@
    "tone": "dark",
    "column": "full",
    "heading": "Have something that needs to run well?",
-   "body": "I am open to management roles in operations, administration, procurement and projects, and to collaborations with institutions working to strengthen how they run.",
+   "body": "I am open to roles such as Manager – Operations, Manager – Administration and Operations, Manager – Project and Operations, and Manager – Supply Chain and Procurement, and to collaborations with institutions working to strengthen how they run.",
    "items": "Get in touch | #contact\nLinkedIn profile | https://www.linkedin.com/in/sk-nayem",
    "show": true
   },
@@ -211,7 +259,7 @@
    "column": "full",
    "heading": "",
    "body": "",
-   "items": "Nov 2023 to present | Manager, Administration and Operations | Imam Bukhari Trust, Dhaka | I manage administration and operations for a multi-programme educational and social-welfare trust. I lead a team of 8 to 10 staff, report to the Management Committee, and work with scholars, contractors, suppliers, partner institutions and donors. | Administration and operations: coordinate day-to-day operations, develop internal procedures and reporting structures, and support management decisions with documentation, follow-up and performance monitoring; Procurement and supply chain: wrote the procurement SOP and coordinate the purchasing cycle, from RFQs, vendor evaluation and comparative statements to purchase orders and delivery follow-up, with total-cost-of-ownership analysis for high-value purchases; Project and infrastructure coordination: coordinate the operations side of the mosque and academic building construction with engineers, contractors and suppliers, follow up on decisions and prepare progress updates for the Management Committee, and managed the sales process for a 90-unit residential project, in which 70 units have been sold; Financial monitoring and controls: support budgeting, expense monitoring, financial documentation and reporting to the Management Committee, and keep the records that internal controls depend on; People and team: supervise a team of 8 to 10, allocate and follow up tasks, monitor attendance and performance, support recruitment and onboarding, and design and deliver staff training; Digital systems: built the Trust's first digital income, expense, KPI, inventory and attendance systems and a live task dashboard, and lead the move to an ERP; Programmes and fundraising: coordinate programmes, training and events with staff and volunteers (the Trust has held 140 programmes and sessions since Nov 2023, with 14,000+ recorded attendances), and supervise fundraising across 32 campaigns; Governance: prepare committee reports and work on policy reform and the revision of the Trust's constitution\nJul to Nov 2023 | Assistant Manager, Sales and Service | TecTesla Technologies Ltd, Chattogram | Industrial automation sales and service. | Managed industrial-automation projects from scoping through handover, coordinating engineers, suppliers and customers; Supported sales and service operations, translating client requirements into technical solutions\nFeb to Jun 2023 | IT Executive | YouthBees (remote, part-time) | IT support and planning. | Provided IT support and system monitoring; Contributed to technology strategy and market research for IT initiatives\n2017 to 2018 | Early career: MIS and point of sale | Sajeeb Group and Dot BD Solutions Ltd | Two short contracts that grounded my later work in operations data. | MIS Executive, Sajeeb Group (2018): maintained MIS and inventory data supporting operational and supply-chain decisions; Point of Sale Executive, Dot BD Solutions (2017): ran POS and cash handling at a major international trade fair with fully accurate daily reconciliation",
+   "items": "Nov 2023 to present | Manager, Administration and Operations | Imam Bukhari Trust, Dhaka | I manage administration and operations for a multi-programme educational and social-welfare trust. I lead a team of 8 to 10 staff, report to the Management Committee, and work with scholars, contractors, suppliers, partner institutions and donors. | Strategic and institutional operations: run day-to-day administration and operations across the Trust's programmes, set up internal procedures and reporting structures, and turn Management Committee priorities into assigned, tracked work; Procurement and supply chain: wrote the procurement SOP and coordinate the full cycle of RFQs, vendor evaluation, comparative statements, purchase orders, approvals and delivery follow-up, using total-cost-of-ownership analysis for high-value purchases; Project and infrastructure coordination: coordinate the operations side of a seven-storey mosque and an eleven-storey academic building with engineers, contractors and suppliers (the engineers and contractors manage the technical construction, and the Management Committee approves budgets), and managed the sales process for the Trust's 90-unit residential project, in which 70 units are recorded as sold; Financial monitoring and internal controls: support budgeting, monitor expenses, keep financial documentation in order and report to the Management Committee; People and team management: supervise a team of 8 to 10 staff, allocate and follow up tasks, monitor attendance and performance, support recruitment and onboarding, and design and deliver staff training; Digital transformation and process improvement: built the Trust's digital systems for income, expenses, KPIs, inventory, attendance, tasks and reporting in Google Sheets and Apps Script, and lead the planning for an ERP; Programme and stakeholder coordination: coordinate programmes, training and events with scholars, partner institutions, staff and volunteers (the Trust has held 140 programmes and sessions since Nov 2023), and coordinate fundraising across 32 campaigns; Governance and management reporting: prepare reports for the Management Committee and contribute to policy reform and the revision of the Trust's constitution\nJul to Nov 2023 | Assistant Manager, Sales and Service | TecTesla Technologies Ltd, Chattogram | Industrial automation sales and service. | Managed industrial-automation projects from scoping through handover, coordinating engineers, suppliers and customers; Supported sales and service operations, translating client requirements into technical solutions\nFeb to Jun 2023 | IT Executive | YouthBees (remote, part-time) | IT support and planning. | Provided IT support and system monitoring; Contributed to technology strategy and market research for IT initiatives\n2017 to 2018 | Early career: MIS and point of sale | Sajeeb Group and Dot BD Solutions Ltd | Two short contracts that grounded my later work in operations data. | MIS Executive, Sajeeb Group (2018): maintained MIS and inventory data supporting operational and supply-chain decisions; Point of Sale Executive, Dot BD Solutions (2017): ran POS and cash handling at a major international trade fair with fully accurate daily reconciliation",
    "show": true
   },
   {
@@ -259,7 +307,7 @@
    "column": "full",
    "heading": "",
    "body": "",
-   "items": "Infrastructure | Imam Bukhari Jame Masjid Complex and academic building | Two large buildings are going up at the same time, with several contractors, engineers and suppliers involved, and the Management Committee needs one reliable picture of progress and spending. | I coordinate the project on the operations side and report to the Management Committee. The engineers and contractors run the construction itself, and the budget is approved by the committee. | Coordinate contractors, engineers and suppliers, follow up site work and material supply, track the timeline and costs, prepare progress updates for management, and arrange site services such as separate three-phase power connections for each building. | As of November 2026, the mosque's second floor is complete and work on the academic building's first floor is under way. Since piling began in 2024, management has had one consistent view of progress and spending. | Project coordination, Contractor management, Cost tracking, Stakeholder management, Risk management |  | The Trust is building the Imam Bukhari Jame Masjid Complex, a seven-storey mosque, alongside an eleven-storey academic building. | Site photos on this page. Progress reports and cost records are internal to the Trust.\nProcurement | Procurement and supply chain system | Purchases and service contracts needed a written, repeatable procedure that the Management Committee could review and trust. | I wrote the procurement SOP and coordinate the purchasing cycle up to the committee's decision. | Set out the steps for RFQs, vendor evaluation, comparative statements, purchase orders, approvals and delivery follow-up, and introduced total-cost-of-ownership analysis for high-value purchases, including a three-firm comparison to select the external auditor. | Ad-hoc buying was replaced by a documented procedure. Purchases now reach the committee with a comparative statement behind them, as they did when the external auditor was selected in 2026. | Procurement management, Vendor evaluation, Total cost of ownership, Policy development, Financial compliance |  | A written procurement procedure for a growing trust, from the request for quotation to delivery. | The image is an illustration of the comparative statement format. The SOP and real statements stay internal.\nDigital systems | Digital operations and management systems | Income, expenses, KPIs, stock, attendance and staff tasks sat in separate files and paper registers, and monthly reports were put together by hand. | I designed and built the systems, wrote the user guides, and lead the move to an ERP. | Built the Trust's first digital income, expense, KPI and inventory systems; merged income and expense into one entry sheet with automatic monthly Receipts and Payments reports; added an attendance and leave system that follows the HR policy, a live task dashboard, a participant directory and a login-based data app for the programme team; and started an ERP covering finance, HR, procurement, inventory and donors. | Monthly Receipts and Payments reports are now produced automatically, each area is tracked in one place, and less data has to be entered twice. | Process design, Google Sheets and Apps Script, Dashboards, ERP planning, Change management |  | A set of Google Sheets and Apps Script systems that replaced separate files and paper registers. | The image is an illustration of the dashboard style. The live systems hold donor and staff data, so they are not shown.\nProgrammes | Programmes, training and events | Courses, workshops, special programmes and a weekly halaqa bring thousands of people together each year, in person and online, and every one needs a plan that staff and volunteers can follow. | I coordinate the operations behind them with programme managers, scholars, staff and volunteers, and design and deliver staff training. | Built plans and volunteer maps, assigned roles across IBT staff, partner institutions and volunteers, managed logistics on the day, and designed and delivered staff training on professional ethics, team building, and task, time and SMART planning. | Since November 2023 the Trust has held 140 programmes and sessions with 14,296 recorded attendances. These are institutional figures. My part is the planning, coordination and logistics behind them, including family get-togethers of 432 (2025) and 605 (2026) and a day-long dawah skills training. | Programme management, Event operations, Volunteer management, Training design and delivery |  | The Trust's courses, workshops, special programmes and weekly halaqa, run with staff, scholars, partner institutions and volunteers. | Programme photos on this page. Attendance figures come from the Trust's programme records.\nInstitutional development | Fundraising and institutional development | A growing trust needed steady donor income, clear governance and strong links with partner institutions. | I supervise fundraising and support the Management Committee on governance and planning. | Supervised fundraising campaigns and donor follow-up, recorded and acknowledged donations across mobile and bank channels, prepared committee reports, and worked on policy reform and the revision of the Trust's constitution. | The Trust has run 32 fundraising campaigns under my supervision, and 70 of the 90 units in its residential project have been sold. Committee decisions are backed by regular reports. | Fundraising, Donor relations, Governance and reporting, Policy development, Stakeholder engagement |  | Donor income, governance support and partnerships for a growing trust. | Photos of partner visits and an MoU signing on this page.",
+   "items": "Infrastructure | Imam Bukhari Jame Masjid Complex and academic building | Two large buildings are going up at the same time, with several contractors, engineers and suppliers involved, and the Management Committee needs one reliable picture of progress and spending. | I coordinate the project on the operations side and report to the Management Committee. The engineers and contractors run the construction itself, and the budget is approved by the committee. | Coordinate contractors, engineers and suppliers, follow up site work and material supply, track the timeline and costs, prepare progress updates for management, and arrange site services such as separate three-phase power connections for each building. | As of November 2026, the mosque's second floor is complete and work on the academic building's first floor is under way. Since piling began in 2024, management has had one consistent view of progress and spending. | Project coordination, Contractor management, Cost tracking, Stakeholder management, Risk management |  | The Trust is building the Imam Bukhari Jame Masjid Complex, a seven-storey mosque, alongside an eleven-storey academic building. | Site photos on this page. Progress reports and cost records are internal to the Trust.\nProcurement | Procurement and supply chain system | Purchases and service contracts needed a written, repeatable procedure that the Management Committee could review and trust. | I wrote the procurement SOP and coordinate the purchasing cycle up to the committee's decision. | Set out the steps for RFQs, vendor evaluation, comparative statements, purchase orders, approvals and delivery follow-up, and introduced total-cost-of-ownership analysis for high-value purchases, including a three-firm comparison to select the external auditor. | Ad-hoc buying was replaced by a documented procedure. Purchases now reach the committee with a comparative statement behind them, as they did when the external auditor was selected in 2026. | Procurement management, Vendor evaluation, Total cost of ownership, Policy development, Financial compliance |  | A written procurement procedure for a growing trust, from the request for quotation to delivery. | The image is an illustration of the comparative statement format. The SOP and real statements stay internal.\nDigital systems | Digital operations and management systems | Income, expenses, KPIs, stock, attendance and staff tasks sat in separate files and paper registers, and monthly reports were put together by hand. | I designed and built the systems, wrote the user guides, and lead the planning for an ERP. | Built the Trust's first digital income, expense, KPI and inventory systems; merged income and expense into one entry sheet with automatic monthly Receipts and Payments reports; added an attendance and leave system that follows the HR policy, a live task dashboard, a participant directory and a login-based data app for the programme team; and began planning an ERP covering finance, HR, procurement, inventory and donors. | Monthly Receipts and Payments reports are now produced automatically, each area is tracked in one place, and less data has to be entered twice. | Process design, Google Sheets and Apps Script, Dashboards, ERP planning, Change management |  | A set of Google Sheets and Apps Script systems that replaced separate files and paper registers. | The image is an illustration of the dashboard style. The live systems hold donor and staff data, so they are not shown.\nProgrammes | Programmes, training and events | Courses, workshops, special programmes and a weekly halaqa bring thousands of people together each year, in person and online, and every one needs a plan that staff and volunteers can follow. | I coordinate the operations behind them with programme managers, scholars, staff and volunteers, and design and deliver staff training. | Built plans and volunteer maps, assigned roles across IBT staff, partner institutions and volunteers, managed logistics on the day, and designed and delivered staff training on professional ethics, team building, and task, time and SMART planning. | Since November 2023 the Trust has held 140 programmes and sessions with 14,296 recorded attendances. These are institutional figures. My part is the planning, coordination and logistics behind them, including family get-togethers of 432 (2025) and 605 (2026) and a day-long dawah skills training. | Programme management, Event operations, Volunteer management, Training design and delivery |  | The Trust's courses, workshops, special programmes and weekly halaqa, run with staff, scholars, partner institutions and volunteers. | Programme photos on this page. Attendance figures come from the Trust's programme records.\nInstitutional development | Fundraising and institutional development | A growing trust needed steady donor income, clear governance and strong links with partner institutions. | I supervise fundraising and support the Management Committee on governance and planning. | Supervised fundraising campaigns and donor follow-up, recorded and acknowledged donations across mobile and bank channels, prepared committee reports, and worked on policy reform and the revision of the Trust's constitution. | The Trust has run 32 fundraising campaigns under my supervision, and 70 of the 90 units in its residential project have been sold. Committee decisions are backed by regular reports. | Fundraising, Donor relations, Governance and reporting, Policy development, Stakeholder engagement |  | Donor income, governance support and partnerships for a growing trust. | Photos of partner visits and an MoU signing on this page.",
    "show": true
   },
   {
@@ -354,7 +402,7 @@
    "tone": "light",
    "column": "left",
    "heading": "Professional profile",
-   "body": "I am an operations and administration professional with 4+ years of experience, an engineering background and an MBA in Supply Chain Management. My work spans institutional administration, procurement, project coordination, financial monitoring, people management and organisational systems.\n\nAs Manager, Administration and Operations at Imam Bukhari Trust, I work across these functions to make operations more efficient, improve internal processes and support the Management Committee in carrying out its plans. I lead a team of 8 to 10 and report to the Management Committee.\n\nI am most interested in building management systems that scale, strengthening institutional governance, and using technology to make organisations more accountable and efficient. Over the coming years I want to take on broader operations leadership, where systems, people and strategy meet. Alongside this, I co-author research on Islamic education and keep studying the Islamic sciences and Arabic.",
+   "body": "I am an operations and management professional with 4+ years of experience, an engineering background and an MBA in Supply Chain Management. My work spans institutional operations, administration, procurement and supply chain, project coordination, digital transformation, financial monitoring and organisational development.\n\nAs Manager, Administration and Operations at Imam Bukhari Trust, I work across these functions to make operations more efficient, improve internal processes and support the Management Committee in carrying out its plans. I lead a team of 8 to 10 and report to the Management Committee.\n\nThe roles I am looking for next are in operations, administration and operations, project and operations, and supply chain and procurement management. Over the longer term I want to lead operations as a head of operations or operations director. Alongside this, I co-author research on Islamic education and keep studying the Islamic sciences and Arabic.",
    "items": "",
    "show": true
   },
@@ -379,7 +427,19 @@
    "column": "full",
    "heading": "Education",
    "body": "",
-   "items": "MBA, Supply Chain Management | International Islamic University Chittagong (IIUC). Thesis: Impact of Procurement Efficiency on Project Performance in Infrastructure Development Projects | 2023–2026\nB.Sc. Engg., Electronics and Telecommunication | International Islamic University Chittagong (IIUC) | 2018–2022\nIslamic Sciences, two-year programme | Zad Academy | 2026\nDiploma in Islamic Studies | Taibah Academy | 2021",
+   "items": "MBA, Supply Chain Management | International Islamic University Chittagong (IIUC). Completed, with the thesis Impact of Procurement Efficiency on Project Performance in Infrastructure Development Projects | 2023–2026\nB.Sc. Engineering, Electronics and Telecommunication | International Islamic University Chittagong (IIUC) | 2018–2022",
+   "show": true
+  },
+  {
+   "id": "pro-edu-extra",
+   "page": "profile",
+   "order": 52,
+   "type": "badges",
+   "tone": "white",
+   "column": "full",
+   "heading": "Additional education",
+   "body": "Islamic studies alongside my professional degrees.",
+   "items": "Islamic Sciences, two-year programme | Zad Academy. Completed | 2026\nDiploma in Islamic Studies | Taibah Academy | 2021\nTalimul Quran, advanced programme | Taibah Academy | 2022",
    "show": true
   },
   {
@@ -391,7 +451,7 @@
    "column": "full",
    "heading": "Research and publications",
    "body": "",
-   "items": "Impact of Procurement Efficiency on Project Performance in Infrastructure Development Projects | MBA thesis, IIUC. Completed. A quantitative Likert-scale survey analysed in SPSS | 2026\nA Qur'an and Sunnah-Based Framework of Knowledge, Skills and Human Values for Developing a Balanced Pre-University Student | Co-author and presenter, ICKIEL 2026 international conference, AUST, Dhaka. Certificate of Paper Presentation received | 2026\nToward a Qur'an- and Sunnah-Based AI Ethics Literacy Framework for Students | Abstract submitted to an international conference, prepared with co-researchers | 2026\nThe Authenticity of the Sunnah in the Light of the Qur'an and Related Doubts: An Analytical Review | Co-author and paper presenter, international academic conference, Dhaka | 2024",
+   "items": "Impact of Procurement Efficiency on Project Performance in Infrastructure Development Projects | MBA thesis, IIUC. Status: completed. A quantitative Likert-scale survey analysed in SPSS | 2026\nA Qur'an and Sunnah-Based Framework of Knowledge, Skills and Human Values for Developing a Balanced Pre-University Student | Status: presented, ICKIEL 2026 international conference, AUST, Dhaka (October 2026). Co-author and presenter; Certificate of Paper Presentation received | 2026\nToward a Qur'an- and Sunnah-Based AI Ethics Literacy Framework for Students | Status: abstract submitted to an international conference. Prepared with co-researchers | 2026\nThe Authenticity of the Sunnah in the Light of the Qur'an and Related Doubts: An Analytical Review | Status: presented at an international academic conference, Dhaka. Co-author and presenter | 2024",
    "show": true
   },
   {
@@ -401,9 +461,9 @@
    "type": "badges",
    "tone": "white",
    "column": "full",
-   "heading": "Professional and management certifications",
+   "heading": "Completed certifications",
    "body": "",
-   "items": "Google Project Management Professional Certificate | Google, via Coursera. The programme's coursework included Agile Project Management | 2025\nSix Sigma White Belt | Council for Six Sigma Certification | 2025\nBudgeting and Methods of Budgeting | Imam Bukhari Trust and Taibah Academy | 2025\nKPI Development and Analysis | Professional training |",
+   "items": "Google Project Management Professional Certificate | Google, via Coursera. Completed; the programme included Agile project management | 2025\nSix Sigma White Belt | Council for Six Sigma Certification. Completed | 2025\nBudgeting and Methods of Budgeting | Workshop by Imam Bukhari Trust and Taibah Academy. Completed | 2025\nKPI Development and Analysis | Professional training. Completed |",
    "show": true
   },
   {
@@ -449,21 +509,9 @@
    "type": "badges",
    "tone": "dark",
    "column": "full",
-   "heading": "Awards",
+   "heading": "Awards and recognition",
    "body": "",
-   "items": "Best Employee of 2025 | Imam Bukhari Trust | 2025",
-   "show": true
-  },
-  {
-   "id": "pro-honours",
-   "page": "profile",
-   "order": 70,
-   "type": "badges",
-   "tone": "dark",
-   "column": "full",
-   "heading": "Research and academic recognition",
-   "body": "",
-   "items": "Certificate of Paper Presentation, ICKIEL 2026 | Universiti Sains Islam Malaysia, BIIT and AUST | 2026\nCertificate of Appreciation, Sunnah Conference Bangladesh 2024 | Kulliyatul Quranil Kareem and Daffodil Islamic Center | 2024",
+   "items": "Best Employee of 2025 | Imam Bukhari Trust | 2025\nCertificate of Paper Presentation, ICKIEL 2026 | Universiti Sains Islam Malaysia, BIIT and AUST | 2026\nCertificate of Appreciation, Sunnah Conference Bangladesh 2024 | Kulliyatul Quranil Kareem and Daffodil Islamic Center | 2024",
    "show": true
   },
   {
@@ -1235,7 +1283,7 @@
    "year": "2026",
    "date": "",
    "cat": "Operations",
-   "ach": "Started the move to an ERP covering finance, HR, procurement, inventory, donors and reporting.",
+   "ach": "Leading the planning of an ERP to cover finance, HR, procurement, inventory, donors and reporting.",
    "action": "Conducted requirements analysis, evaluated ERP solutions, coordinated stakeholders, mapped business processes, supervised implementation, data migration, user training, and system adoption",
    "metric": "",
    "skills": "Project Management, Business Process Analysis, Change Management, ERP Implementation, Stakeholder Management, Data Management",
