@@ -946,19 +946,19 @@ function render(feed){
   });
   if (!QUIET) setTimeout(function(){ document.body.classList.add('settled'); }, 1600);
   show(current(), true);
-  sys3d();
+  loadSystem3d();
 }
 // load the 3D system model only when the page has that section, and only once
 var GL = (function(){ try { var c = document.createElement('canvas'); return !!(window.WebGLRenderingContext && (c.getContext('webgl2') || c.getContext('webgl'))); } catch (e) { return false; } })();
-function sys3d(){
+function loadSystem3d(){
   var el = document.querySelector('.sys-stage');
   if (!el) return;
   if (!GL){ el.closest('.sys').classList.add('nogl'); return; }
-  if (window.sys3d && window.sys3d.mount) return window.sys3d.mount(el);
+  if (window.SYS3D) return window.SYS3D.mount(el);
   window._sys3d = el;
   if (document.getElementById('s3d')) return;
   var sc = document.createElement('script');
-  sc.type = 'module'; sc.src = 'js/system3d.js?v=3'; sc.id = 's3d';
+  sc.type = 'module'; sc.src = 'js/system3d.js?v=4'; sc.id = 's3d';
   sc.onerror = function(){ var x = document.querySelector('.sys'); if (x) x.classList.add('nogl'); };
   document.body.appendChild(sc);
 }

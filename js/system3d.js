@@ -224,5 +224,5 @@ function mount(el){
   io.observe(sec);
 }
 
-window.sys3d = {mount};
+window.SYS3D = {mount};
 if (window._sys3d) mount(window._sys3d);
