@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://shak-nayem-uddin.github.io/sitemap.xml

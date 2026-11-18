@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Engr. Sk Nayem Uddin | Manager, Administration and Operations</title>
+<title>Engr. Sk Nayem Uddin | Operations &amp; Management Professional</title>
 <meta name="description" content="Engr. Sk Nayem Uddin, operations and management professional in Dhaka, Bangladesh: administration and operations, procurement and supply chain, project coordination and digital management systems. Case studies, experience and CV.">
 <meta name="theme-color" content="#0E0B0D">
 <script>(function(){var t;try{t=localStorage.getItem('theme')}catch(e){}if(t!=='light'&&t!=='dark')t='dark';document.documentElement.setAttribute('data-theme',t)})()</script>
@@ -12,7 +12,7 @@
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <meta property="og:type" content="profile">
 <meta property="og:site_name" content="Sk Nayem Uddin">
-<meta property="og:title" content="Engr. Sk Nayem Uddin | Manager, Administration and Operations">
+<meta property="og:title" content="Engr. Sk Nayem Uddin | Operations &amp; Management Professional">
 <meta property="og:description" content="I build the systems that keep institutions running. Operations and administration, procurement and supply chain, project coordination and digital management systems.">
 <meta property="og:url" content="https://shak-nayem-uddin.github.io/">
 <meta property="og:image" content="https://shak-nayem-uddin.github.io/img/og.jpg">
@@ -877,6 +877,12 @@ html:not([data-theme=dark]){--head-bg:#FAF6F8}
 .type-system::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
   background-image:linear-gradient(rgba(234,214,225,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(234,214,225,.045) 1px,transparent 1px);background-size:56px 56px;
   -webkit-mask-image:linear-gradient(180deg,transparent,#000 12%,#000 88%,transparent);mask-image:linear-gradient(180deg,transparent,#000 12%,#000 88%,transparent)}
+
+/* ---------- home previews of other pages */
+.pv + .pv{margin-top:34px}
+.type-preview .feat-all{margin-top:44px}
+.jl{margin:0 0 12px;padding-left:20px}
+.jl li{margin:0 0 4px;line-height:1.55}
 </style>
 </head>
 <body>
@@ -898,19 +904,22 @@ var FEED = 'https://script.google.com/macros/s/AKfycbzWSjYxyV9uwzzUYLCOJSlAuK-ST
 var MON = {jan:1,feb:2,mar:3,apr:4,may:5,jun:6,jul:7,aug:8,sep:9,oct:10,nov:11,dec:12};
 var MN = ['','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
 var F = null, DATA = [], cats = ['Highlights'], st = {cat: 'Highlights', year: 0, q: ''};
-// the achievement record is sorted into six areas; the journal's own category is only a hint
-var GROUPS = ['Operations and administration', 'Procurement and supply chain', 'Project and programme management', 'Leadership and organisational development', 'Digital transformation and technology', 'Education, research and professional development'];
+// the achievement record is sorted into eight areas; the journal's own category is only a hint
+var GROUPS = ['Operations', 'Administration', 'Procurement', 'Project management', 'Digital transformation', 'Leadership', 'Technical development', 'Professional development'];
 function grp(d){
   var a = String(d.ach || '').toLowerCase(), c = String(d.cat || '').toLowerCase().trim();
-  if (/appointed|founding member|helped build|transform|fundrais|donation/.test(a)) return GROUPS[3];
-  if (/^(led|delivered|organised) .*\b(session|training)\b/.test(a)) return GROUPS[3];
-  if (/construction|mosque/.test(a)) return GROUPS[2];
-  if (/procure|comparative statement|vendor|purchas|supplier|audit firm/.test(a)) return GROUPS[1];
-  if (c === 'linguistics' || c === 'personal education' || /^(certified|achieved level|earned|started (an? )?arabic|completed (a|the) (full-day |two-year )?(workshop|programme|islamic))|certificat|fundamentals|workshop|diploma|degree|b\.sc|thesis|paper|research|abstract|lecture deck|codebook|agenda and session|guidelines|competency|\((google|cisco|pstu|who|ndg|ndg\/cisco|iiuc|bteb|univ\. of london)\)/.test(a)) return GROUPS[5];
+  if (/appointed|founding member|helped build|transform|fundrais|donation|best employee/.test(a)) return GROUPS[5];
+  if (/^(led|delivered|organised) .*\b(session|training)\b/.test(a)) return GROUPS[5];
+  if (/construction|mosque/.test(a)) return GROUPS[3];
+  if (/\berp\b/.test(a)) return GROUPS[4];
+  if (/procure|comparative statement|vendor|purchas|supplier|audit firm/.test(a)) return GROUPS[2];
+  var learning = c === 'linguistics' || c === 'personal education' || /^(certified|achieved level|earned|started (an? )?arabic|completed (a|the) (full-day |two-year )?(workshop|programme|islamic))|certificat|fundamentals|workshop|diploma|degree|b\.sc|thesis|paper|research|abstract|lecture deck|codebook|agenda and session|guidelines|competency|\((google|cisco|pstu|who|ndg|ndg\/cisco|iiuc|bteb|univ\. of london)\)/.test(a);
+  if (learning) return (c === 'technical' || /automation|network|linux|cyber|python|splunk|routing|server|security|data center|sensor|electricity|infosec|computer office|digital marketing/.test(a)) ? GROUPS[6] : GROUPS[7];
   if (/digital|dashboard|data app|directory|automat|\berp\b|entry sheet|tracking system|accounting system/.test(a)) return GROUPS[4];
-  if (c === 'technical') return GROUPS[5];
-  if (/event|programme|project/.test(a) || c === 'project management') return GROUPS[2];
-  if (c === 'leadership' || c === 'entrepreneurship' || /hiring|salary/.test(a)) return GROUPS[3];
+  if (c === 'technical') return GROUPS[6];
+  if (/event|programme|project/.test(a) || c === 'project management') return GROUPS[3];
+  if (c === 'administration' || /kpi|salary|hiring|policy|recruit/.test(a)) return GROUPS[1];
+  if (c === 'leadership' || c === 'entrepreneurship') return GROUPS[5];
   return GROUPS[0];
 }
 var PAGES = [], HOME = 'home', RECPAGE = null, animated = false, live = false, rotTimer = null, showTimer = null, counted = false, SIG = '';
@@ -1067,11 +1076,27 @@ function inner(s){
       var lede = ps.map(function(x, i){ return '<p' + (ps.length > 1 && i === ps.length - 1 && x.length < 90 ? ' class="motto"' : '') + '>' + esc(x) + '</p>'; }).join('');
       // centred opening: positioning line, headline, first paragraph, buttons; the rest of the body lives in the Meet section
       // centred opening: positioning line, headline, first paragraph, two buttons, nothing moving behind them
-      var hb = lines(s.items).map(function(l, i){ var c = cells(l); return link(c[0], c[1], i ? 'outline' : ''); }).join('');
+      var hb = lines(s.items).map(function(l, i){ var c = cells(l); return link(c[0], c[1], i ? 'outline' : ''); }).join('') + (F.site.cv_url ? cv('outline') : '');
       return '<div class="hero2"><div class="blueprint" aria-hidden="true"></div>' +
         '<div class="hero2-in">' + ((F.site.positioning || F.site.role) ? '<p class="eyebrow">' + esc(F.site.positioning || F.site.role) + '</p>' : '') + kin(h) +
         (ps[0] ? '<p class="sub">' + esc(ps[0]) + '</p>' : '') +
         (hb ? '<div class="acts">' + hb + '</div>' : '') + '</div><span class="scrollhint" aria-hidden="true">Scroll to explore</span></div>';
+    case 'preview':
+      // a short look at sections that live on other pages, so the home page can introduce them without
+      // copying their content. Items: line 1 = the section IDs, separated by commas; line 2 = "Button | #page".
+      // Long lists are cut to their first four items.
+      var pl = lines(s.items), pids = parts(pl[0] || ''), pbt = pl[1] ? cells(pl[1]) : null;
+      var pbody = pids.map(function(id){
+        var src = (F.sections || []).filter(function(x){ return x.id === id; })[0];
+        if (!src || src.type === 'preview') return '';
+        var cp = {}; for (var k in src) cp[k] = src[k];
+        cp.heading = ''; if (cp.type !== 'career') cp.body = '';
+        if (['badges', 'roles', 'list', 'expertise', 'columns'].indexOf(cp.type) > -1) cp.items = lines(cp.items).slice(0, 4).join('\n');
+        return '<div class="pv pv-' + esc(cp.type) + '">' + inner(cp) + '</div>';
+      }).join('');
+      if (!pbody) return '';
+      return (h ? '<h2>' + md(h) + '</h2>' : '') + (b ? '<p class="lead2">' + esc(b) + '</p>' : '') + pbody +
+        (pbt && pbt[0] ? '<div class="feat-all">' + link(pbt[0], pbt[1], 'outline') + '</div>' : '');
     case 'system':
       // a scroll-driven 3D model drawn by js/system3d.js. Items: "Layer | what it covers", top layer first, up to six
       var sl = lines(s.items).slice(0, 6).map(function(l){ var c = cells(l); return '<li><b>' + esc(c[0]) + '</b>' + (c[1] ? '<span>' + esc(c[1]) + '</span>' : '') + '</li>'; }).join('');
@@ -1170,11 +1195,11 @@ function inner(s){
         var pic = pics.length ? '<figure class="proj-pic"><div class="rotbox" data-tag="' + esc(ptg) + '"></div></figure>' : '';
         // Overview (cell 9) leads when present, and the challenge moves under Learn more; Evidence is cell 10
         var lead = c[8] || c[2] || '';
-        var more = (c[8] && c[2] ? '<div><dt>The challenge</dt><dd>' + esc(c[2]) + '</dd></div>' : '') + (c[3] ? '<div><dt>My role</dt><dd>' + esc(c[3]) + '</dd></div>' : '') + (c[4] ? '<div><dt>What I did</dt><dd>' + esc(c[4]) + '</dd></div>' : '') +
+        var more = (c[8] && c[2] ? '<div><dt>The challenge</dt><dd>' + esc(c[2]) + '</dd></div>' : '') + (c[3] ? '<div><dt>My role</dt><dd>' + esc(c[3]) + '</dd></div>' : '') + (c[4] ? '<div><dt>Key actions</dt><dd>' + esc(c[4]) + '</dd></div>' : '') +
           (c[9] ? '<div><dt>Evidence</dt><dd>' + esc(c[9]) + '</dd></div>' : '') +
           (c[6] ? '<div class="skl"><dt>Skills applied</dt><dd><span class="tags">' + parts(c[6]).map(function(x){ return '<span class="tag">' + esc(x) + '</span>'; }).join('') + '</span></dd></div>' : '');
         return '<article class="proj' + (pic ? ' has-pic' + (n % 2 ? ' flip' : '') : '') + '" id="pj-' + esc(ptg) + '">' + pic + '<div class="proj-body">' + (c[0] ? '<span class="proj-tag">' + esc(c[0]) + '</span>' : '') + '<h3>' + esc(c[1] || '') + '</h3>' +
-          (lead ? '<p>' + esc(lead) + '</p>' : '') + (c[5] ? '<p class="res"><b>Result.</b> ' + esc(c[5]) + '</p>' : '') +
+          (lead ? '<p>' + esc(lead) + '</p>' : '') + (c[5] ? '<p class="res"><b>Outcomes.</b> ' + esc(c[5]) + '</p>' : '') +
           (more ? '<details class="pmore"><summary><span class="lm">Learn more</span><span class="ls">Show less</span></summary><dl>' + more + '</dl></details>' : '') + '</div></article>';
       }).join('') + '</div>';
     case 'career':
@@ -1422,13 +1447,13 @@ function numbers(){
   all('.js-num').forEach(function(el){
     var m = String(el.dataset.v).match(/^(\D*)(\d+)(.*)$/);
     if (!m) return;
-    el.textContent = m[1] + '0' + m[3];
     var io = new IntersectionObserver(function(es){
       if (!es[0].isIntersecting) return;
       io.disconnect();
       var t0 = performance.now(), to = +m[2];
+      el.textContent = m[1] + '0' + m[3];
       (function step(t){ var k = Math.min(1, (t - t0) / 1500), e = 1 - Math.pow(1 - k, 3); el.textContent = m[1] + Math.round(to * e).toLocaleString('en-US') + m[3]; if (k < 1) requestAnimationFrame(step); })(t0);
-    }, {threshold: .5});
+    }, {threshold: 0, rootMargin: '0px 0px -10% 0px'});
     io.observe(el);
   });
 }
@@ -1505,7 +1530,7 @@ function show(v, keepScroll){
   SHOWN = v;
   all('.nav a').forEach(function(a){ if (a.dataset.go === v) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current'); });
   var p = PAGES.filter(function(x){ return x.id === v; })[0] || {}, s = F.site;
-  document.title = v === HOME ? (s.name || '') + (s.role ? ' | ' + s.role : '') : p.label + ' | ' + (s.name || '');
+  document.title = v === HOME ? (s.name || '') + ((s.positioning || s.role) ? ' | ' + (s.positioning || s.role) : '') : p.label + ' | ' + (s.name || '');
   if (v === RECPAGE) drawRecord();
   all('.js-bars').forEach(function(el){ if (el.offsetParent && el.clientWidth !== el._w) paintYears(el); });
   if (!keepScroll) window.scrollTo(0, 0);
@@ -1580,13 +1605,13 @@ function paintYears(el){
   for (var i = 0; i < n; i++){
     var y = Y.minY + i, c = Y.perY[y] || 0, x = 8 + i * slot + (slot - bw - dx) / 2, hgt = c ? Math.max(8, c / Y.peak * room) : 0, t = floor - hgt;
     var lab = (narrow && slot < 46) ? '’' + String(y).slice(2) : String(y);
-    var yl = '<text class="y" x="' + (x + bw / 2).toFixed(1) + '" y="' + (floor + 26) + '" text-anchor="middle">' + lab + '</text>';
+    var yl = '<text class="y" x="' + (x + bw / 2).toFixed(1) + '" y="' + (floor + 26) + '" text-anchor="middle">' + lab + '<tspan font-size="0">. </tspan></text>';
     if (!c){ out += yl; continue; }
     var g = '<g class="b3' + (c === Y.peak ? ' pk' : '') + '" style="--i:' + i + '">' +
       '<polygon class="s" points="' + P([[x + bw, t], [x + bw + dx, t + dy], [x + bw + dx, floor + dy], [x + bw, floor]]) + '"/>' +
       '<rect class="f" x="' + x.toFixed(1) + '" y="' + t.toFixed(1) + '" width="' + bw.toFixed(1) + '" height="' + hgt.toFixed(1) + '"/>' +
       '<polygon class="t" points="' + P([[x, t], [x + dx, t + dy], [x + bw + dx, t + dy], [x + bw, t]]) + '"/>' +
-      '<text class="n" x="' + (x + (bw + dx) / 2).toFixed(1) + '" y="' + (t + dy - 8).toFixed(1) + '" text-anchor="middle">' + c + '</text></g>';
+      '<text class="n" x="' + (x + (bw + dx) / 2).toFixed(1) + '" y="' + (t + dy - 8).toFixed(1) + '" text-anchor="middle">' + c + '<tspan font-size="0"> ' + (c === 1 ? 'entry' : 'entries') + ' in </tspan></text></g>';
     out += RECPAGE ? '<a href="#' + esc(RECPAGE) + '" data-go="' + esc(RECPAGE) + '" data-year="' + y + '" aria-label="' + y + ', ' + c + (c === 1 ? ' entry' : ' entries') + '">' + g + yl + '</a>' : g + yl;
   }
   el.innerHTML = out + '</svg>';
@@ -1603,7 +1628,7 @@ function drawLatest(){
     box.innerHTML = DATA.slice(0, +box.dataset.n || 3).map(function(d){
       var go = RECPAGE ? ' href="#' + esc(RECPAGE) + '" data-go="' + esc(RECPAGE) + '"' : '';
       var org = /^personal development$/i.test(d.org || '') ? '' : d.org;
-      return '<a class="card"' + go + '><div class="meta"><b>' + esc(d.cat) + '</b><span>' + (d.m ? MN[d.m] + ' ' : '') + (d.y || '') + '</span></div><h3>' + esc(d.ach) + '</h3>' +
+      return '<a class="card"' + go + '><div class="meta"><b>' + esc(d.g) + '</b><span>' + (d.m ? MN[d.m] + ' ' : '') + (d.y || '') + '</span></div><h3>' + esc(d.ach) + '</h3>' +
         (d.action ? '<p>' + esc(d.action.replace(/\s+/g, ' ')) + '</p>' : '') + (org ? '<div class="org">' + esc(org) + '</div>' : '') + '</a>';
     }).join('');
   });
@@ -1613,11 +1638,11 @@ function drawRecord(){
   $('chips').innerHTML = cats.map(function(c){ return '<button data-c="' + esc(c) + '" aria-pressed="' + (c === st.cat) + '">' + esc(c) + '</button>'; }).join('');
   $('yearnote').innerHTML = st.year ? '<button id="clr">Showing ' + st.year + ' only. Show every year</button>' : '';
   if ($('q').value.trim().toLowerCase() !== st.q) $('q').value = st.q;
-  var inCat = function(d){ return st.cat === 'Everything' || (st.cat === 'Highlights' ? d.g !== GROUPS[5] && d.y >= 2023 : d.g === st.cat); };
+  var inCat = function(d){ return st.cat === 'Everything' || (st.cat === 'Highlights' ? d.g !== GROUPS[6] && d.g !== GROUPS[7] && d.y >= 2023 : d.g === st.cat); };
   var rows = DATA.filter(function(d){ return inCat(d) && (!st.year || d.y === st.year) && (!st.q || d.hay.indexOf(st.q) > -1); });
   if (!rows.length){ $('list').innerHTML = '<p class="none">Nothing matches. Clear the search or choose another category.</p>'; return; }
   var html = '', cur = null, group = [];
-  function flush(){ if (cur !== null) html += '<section class="yr"><h3>' + (cur || 'Undated') + '<small>' + group.length + (group.length === 1 ? ' entry' : ' entries') + '</small></h3><ul>' + group.join('') + '</ul></section>'; }
+  function flush(){ if (cur !== null) html += '<section class="yr"><h3>' + (cur || 'Undated') + '<span class="sr">: </span><small>' + group.length + (group.length === 1 ? ' entry' : ' entries') + '</small></h3><ul>' + group.join('') + '</ul></section>'; }
   rows.forEach(function(d){
     if (d.y !== cur){ flush(); cur = d.y; group = []; }
     var dl = '';
@@ -1625,25 +1650,38 @@ function drawRecord(){
     if (d.tools) dl += '<dt>Tools</dt><dd>' + esc(parts(d.tools).join(', ')) + '</dd>';
     if (d.org) dl += '<dt>For</dt><dd>' + esc(d.org) + '</dd>';
     group.push('<li class="entry"><button class="line" aria-expanded="false"><span class="when">' + (d.m ? MN[d.m] : '') + '</span><span class="what">' + esc(d.ach) + '</span><span class="cat">' + esc(d.g) + '</span></button><div class="more" hidden>' +
-      (d.action ? '<p>' + esc(d.action) + '</p>' : '') + (d.metric ? '<p>' + esc(d.metric) + '</p>' : '') + (dl ? '<dl>' + dl + '</dl>' : '') + '</div></li>');
+      paras(d.action) + paras(d.metric) + (dl ? '<dl>' + dl + '</dl>' : '') + '</div></li>');
   });
   flush();
   $('list').innerHTML = html;
 }
+function paras(t){
+  var ps = String(t || '').split(/\n+/).map(function(x){ return x.trim(); }).filter(Boolean);
+  if (!ps.length) return '';
+  return ps.length > 1 ? '<ul class="jl">' + ps.map(function(x){ return '<li>' + esc(x) + '</li>'; }).join('') + '</ul>' : '<p>' + esc(ps[0]) + '</p>';
+}
 function tally(key, split){
   var o = {}, hide = parts(F.site.hide_tags).map(function(x){ return x.toLowerCase(); });
-  DATA.forEach(function(d){ (split ? parts(d[key]) : [d[key]]).forEach(function(k){ if (k && hide.indexOf(k.toLowerCase()) < 0) o[k] = (o[k] || 0) + 1; }); });
-  return Object.keys(o).map(function(k){ return [k, o[k]]; }).sort(function(a, b){ return b[1] - a[1]; });
+  var label = {};
+  DATA.forEach(function(d){
+    var seen = {};
+    (split ? parts(d[key]) : [d[key]]).forEach(function(k){
+      k = String(k || '').trim(); var low = k.toLowerCase();
+      if (!k || hide.indexOf(low) > -1 || seen[low]) return;
+      seen[low] = 1; label[low] = label[low] || k; o[low] = (o[low] || 0) + 1;
+    });
+  });
+  return Object.keys(o).map(function(k){ return [label[k], o[k]]; }).sort(function(a, b){ return b[1] - a[1]; });
 }
 function meter(list){
   var max = list.length ? list[0][1] : 1;
   return list.map(function(r){ return '<div class="m"><div style="--p:' + Math.round(r[1] / max * 100) + '%">' + esc(r[0]) + '</div><b>' + r[1] + '</b></div>'; }).join('');
 }
 function drawStats(){
-  all('.js-mcat').forEach(function(el){ el.innerHTML = meter(tally('cat', false)); });
+  all('.js-mcat').forEach(function(el){ el.innerHTML = meter(tally('g', false)); });
   all('.js-mskill').forEach(function(el){ el.innerHTML = tally('skills', true).slice(0, 14).map(function(r){ return '<span class="tag">' + esc(r[0]) + '</span>'; }).join(''); });
   all('.js-areas').forEach(function(el){
-    var t = tally('cat', false), top = t.slice(0, 6), rest = t.slice(6), max = top.length ? top[0][1] : 1;
+    var t = tally('g', false), top = t.slice(0, 8), rest = t.slice(8), max = top.length ? top[0][1] : 1;
     if (rest.length) top.push(['Other areas', rest.reduce(function(a, r){ return a + r[1]; }, 0)]);
     el.innerHTML = top.map(function(r){
       return '<div class="area"><b>' + r[1] + '<small>' + (r[1] === 1 ? 'entry' : 'entries') + '</small></b><span>' + esc(r[0]) + '</span><i style="--p:' + Math.min(100, Math.round(r[1] / max * 100)) + '%"></i></div>';
