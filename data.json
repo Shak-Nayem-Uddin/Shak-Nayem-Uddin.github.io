@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-18T02:05:40.307Z",
+ "updated": "2026-11-20T11:46:29.216Z",
  "site": {
   "name": "Engr. Sk Nayem Uddin",
   "role": "Manager, Administration and Operations",
@@ -595,7 +595,7 @@
   {
    "id": "ph-cert",
    "url": "img/certificate.jpg",
-   "caption": "Receiving the certificate of paper presentation at an international academic conference, October 2026",
+   "caption": "Receiving the Certificate of Paper Presentation from Prof. Madya Dr. Mohd Rushdan Mohd Jailani, Dean, Faculty of Leadership and Management, Universiti Sains Islam Malaysia (USIM), at an International Academic Conference, October 2026.",
    "tags": [
     "gallery",
     "big",
@@ -769,6 +769,16 @@
    "tags": [
     "gallery",
     "training"
+   ],
+   "position": "50% 30%"
+  },
+  {
+   "id": "7e38b105",
+   "url": "https://lh3.googleusercontent.com/d/161VvsHeEo12bfQnkgyK-XQsPuTGzHbio=w1400",
+   "caption": "Imam Bukhari Trust – Upcoming Institutional Building | 3D Architectural Visualization & Infrastructure",
+   "tags": [
+    "projects",
+    "infrastructure"
    ],
    "position": "50% 30%"
   }
