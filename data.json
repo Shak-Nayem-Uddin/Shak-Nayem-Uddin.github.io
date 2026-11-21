@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-20T11:46:29.216Z",
+ "updated": "2026-11-21T18:02:13.081Z",
  "site": {
   "name": "Engr. Sk Nayem Uddin",
   "role": "Manager, Administration and Operations",
@@ -1553,6 +1553,28 @@
    "skills": "Teaching Methodology, Educational Leadership, Islamic Education",
    "tools": "",
    "org": "Kulliyatul Quran Model Madrasha"
+  },
+  {
+   "year": "2026",
+   "date": "Nov 2026",
+   "cat": "Administration",
+   "ach": "Delivered a complete, evidence-based briefing pack that gave the Management Committee a single view of finance, construction, programs, donors and relief work, and a clear status of every decision taken at the previous meeting.",
+   "action": "Consolidated data from the accounts, construction, program and donor records into a 23-slide presentation covering financial position, construction progress and budget versus spend, initiatives, digital reach, donor membership and collections, with appendices of the building budgets; reviewed each 20th-meeting decision against its responsible person and deadline and classified its status; prepared the agenda in Word and PDF.",
+   "metric": "",
+   "skills": "Reporting, Data Analysis, Data Visualization, Governance & Decision Tracking, Presentation Design, Bangla Business Writing",
+   "tools": "PowerPoint, MS Word, Google Sheets, Google Drive",
+   "org": "Imam Bukhari Trust"
+  },
+  {
+   "year": "2026",
+   "date": "Nov 2026",
+   "cat": "Professional Development",
+   "ach": "Produced a ready-to-use awareness package, combining a presentation and a detailed FAQ guide grounded in the Qur'an and Sunnah, for students, parents, teachers and general internet users.",
+   "action": "Structured the talk around six key online risks with relevant Qur'an and Hadith references and practical precautions at personal, family and institutional levels; developed a companion FAQ guide with sections on online fraud and cyber security, social media conduct, child safety and Islamic ethics, plus a quiz with answers and awareness slogans; delivered both in Word and PDF.",
+   "metric": "",
+   "skills": "Content Development, Research, Presentation Design, Bangla Writing, Awareness Programme Design",
+   "tools": "PowerPoint, MS Word, Google Drive",
+   "org": "Imam Bukhari Trust"
   }
  ]
 }
